@@ -16,12 +16,20 @@
 ```
 
 ```
---- Resize ---\
+--- Resize ---
 
 (alt + shift + down) - Resize Down
 (alt + shift + up) - Resize Up
 (alt + shift + right) - Resize Right
 (alt + shift + left) - Resize Left
+```
+
+```
+--- Windows ---
+
+(ctrl + shift + w) - Close Window
+(ctrl + shift + t) - New Window
+(ctrl + tab) - Switch Tab
 ```
 
 ## Neovim Keybindings
