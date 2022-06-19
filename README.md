@@ -6,30 +6,30 @@
 
 ## Windows Terminal Keybindings
 
-'''
+```
 - Split
-'ctrl + alt + down' - Split Down
-'ctrl + alt + up' - Split Up
-'ctrl + alt + right' - Split Right
-'ctrl + alt + left' - Split Left
-'''
+`ctrl + alt + down` - Split Down
+`ctrl + alt + up` - Split Up
+`ctrl + alt + right` - Split Right
+`ctrl + alt + left` - Split Left
+```
 
-'''
+```
 - Resize
-'alt + shift + down' - Resize Down
-'alt + shift + up' - Resize Up
-'alt + shift + right' - Resize Right
-'alt + shift + left' - Resize Left
-'''
+`alt + shift + down` - Resize Down
+`alt + shift + up` - Resize Up
+`alt + shift + right` - Resize Right
+`alt + shift + left` - Resize Left
+```
 
 ## Neovim Keybindings
 
-'\ + f' - Telescope Find Files
+`\ + f` - Telescope Find Files
 
-'\ + r' - Telescope Live Grep
+`\ + r` - Telescope Live Grep
 
-'\ + \' - Telescope Buffers
+`\ + \` - Telescope Buffers
 
-'\ + h' - Telescope Help Tags
+`\ + h` - Telescope Help Tags
 
-'\ + t' - Neovim Tree
+`\ + t` - Neovim Tree
