@@ -32,6 +32,29 @@
 (ctrl + tab) - Switch Tab
 ```
 
+## Fonts
+- [DejaVuSansMono Nerd Font](https://www.nerdfonts.com/font-downloads) - Font
+
+## Setup
+
+- [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
+- [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
+- [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
+- [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
+- [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop bucket add main`
+- [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
+- [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
+- [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
+
+## Neovim Plugins
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
+- [nvim-Web-Devicons](https://github.com/kyazdani42/nvim-web-devicons) - Icons
+- [Nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) - Neovim Tree
+- [Dracula](https://draculatheme.com/) - Dracula Color Theme
+- [LSPConfig](https://github.com/neovim/nvim-lspconfig) - Keys Configuration
+- [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
+
 ## Neovim Keybindings
 
 `\ + f` - Telescope Find Files
