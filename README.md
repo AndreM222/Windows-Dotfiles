@@ -30,6 +30,10 @@
 (ctrl + shift + w) - Close Window
 (ctrl + shift + t) - New Window
 (ctrl + tab) - Switch Tab
+(alt + right) - Switch Split right
+(alt + left) - Switch Split left
+(alt + up) - Switch Split up
+(alt + down) - Switch Split down
 ```
 
 ## Fonts
