@@ -10,6 +10,7 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 
 # Alias
 
+Set-Alias clr clear
 Set-Alias vi nvim
 Set-Alias grep findstr
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
