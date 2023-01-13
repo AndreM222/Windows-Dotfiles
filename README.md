@@ -44,6 +44,7 @@
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
+- [SQLite | MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite` 
 - [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop bucket add main`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
