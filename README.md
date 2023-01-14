@@ -49,6 +49,7 @@
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop bucket add main`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
+- [Http-Server](https://learn.microsoft.com/en-us/gaming/playfab/features/authentication/platform-specific-authentication/running-an-http-server-for-testing) - `npm install -g http-server`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
 
 ## Neovim Plugins
