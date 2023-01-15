@@ -37,6 +37,7 @@
 ```
 
 ## Fonts
+
 - [DejaVuSansMono Nerd Font](https://www.nerdfonts.com/font-downloads) - Font
 
 ## Setup
@@ -51,8 +52,10 @@
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
 - [Http-Server](https://learn.microsoft.com/en-us/gaming/playfab/features/authentication/platform-specific-authentication/running-an-http-server-for-testing) - `npm install -g http-server`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
+- [Yarn & NodeJS](https://scoop.sh/#/) - `scoop install nodejs yarn`
 
 ## Neovim Plugins
+
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
 - [nvim-Web-Devicons](https://github.com/kyazdani42/nvim-web-devicons) - Icons
 - [Nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) - Neovim Tree
@@ -60,6 +63,7 @@
 - [LSPConfig](https://github.com/neovim/nvim-lspconfig) - Keys Configuration
 - [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
+- [Makrdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
 
 ## Neovim Keybindings
 
@@ -72,3 +76,7 @@
 `\ + h` - Telescope Help Tags
 
 `\ + t` - Neovim Tree
+ 
+`\ + m` - Markdown Preview On
+
+`\ + n` - Markdown Preview Off
