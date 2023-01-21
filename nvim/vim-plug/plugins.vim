@@ -9,6 +9,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'akinsho/bufferline.nvim'
 
 " AutoCompletion
 Plug 'hrsh7th/cmp-nvim-lsp'

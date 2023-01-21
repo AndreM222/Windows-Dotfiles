@@ -64,6 +64,11 @@
 - [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
 - [Makrdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
+- [Nvim-CMP](https://github.com/hrsh7th/nvim-cmp) - Auto Complete Setup
+- [Lspkind-Nvim](https://github.com/onsails/lspkind.nvim) - Icons for Nvim LSP
+- [Nvim-Lsp-Installer](https://github.com/williamboman/nvim-lsp-installer) - Auto complete language server installer
+- [Buffer-Line](https://github.com/akinsho/bufferline.nvim) - File Tabs
+- [Git-Signs](https://github.com/lewis6991/gitsigns.nvim) - Git Changes Sign Bar
 
 ## Neovim Keybindings
 
