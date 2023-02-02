@@ -2,13 +2,19 @@
 
 set completeopt=menu,menuone,noselect
 lua << EOF
-
+    local status, cmp = pcall(require, "cmp")    
+    if (not status) then return end
   -- Set up nvim-cmp.
-  local cmp = require'cmp'
-  local lspkind = require'lspkind'
+    local lspkind = require'lspkind'
 
   cmp.setup({ 
-  
+    
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C->'] = cmp.mapping.scroll_docs(4),

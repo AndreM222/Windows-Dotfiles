@@ -12,6 +12,10 @@ nnoremap <silent> \t <Cmd>:NvimTreeToggle<CR>
 nnoremap <silent> \m <Cmd>:MarkdownPreview<CR>
 nnoremap <silent> \n <Cmd>:MarkdownPreviewStop<CR>
 
+"etc
+nnoremap <silent> <C-s> <Cmd>:w<CR>
+nnoremap <silent> <C-w> <Cmd>:wq<CR>
+nnoremap <silent> <A-q> <Cmd>:q!<CR>
 
 lua << EOF
 
@@ -24,16 +28,20 @@ local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
 
 bufferline.setup{
-  
-  highlights = {
-    separator = {
-      fg = '#282A36',
+    options = { 
+        always_show_bufferline = false,
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        color_icons = true 
     },
-    separator_selected = {
-      fg = '#073642',
-    }, 
-    
-  },
+    highlights = {
+        separator = {
+            fg = '#282A36',
+        },
+        separator_selected = {
+            fg = '#073642',
+        }, 
+    },
 }
 
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
