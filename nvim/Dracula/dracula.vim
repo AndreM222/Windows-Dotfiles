@@ -227,7 +227,6 @@ call s:h('StatusLineTermNC', s:none, s:bglight)
 call s:h('WildMenu', s:bg, s:purple, [s:attrs.bold])
 call s:h('CursorLine', s:none, s:subtle)
 
-hi! Normal guibg=NONE ctermbg=NONE
 hi! link ColorColumn  DraculaBgDark
 hi! link CursorColumn CursorLine
 hi! link CursorLineNr DraculaOrange
