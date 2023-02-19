@@ -63,7 +63,9 @@
 
 `Typescript` npm i -g typescript-language-server
 
-`GCC` scoop install gcc
+`C++` scoop install gcc
+
+`Lua` scoop install lua-language-server
 
 ## Neovim Plugins
 
