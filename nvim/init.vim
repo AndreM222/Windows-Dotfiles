@@ -5,6 +5,9 @@ require('lualine').setup()
 require("nvim-tree").setup()
 
 END
+scriptencoding=utf-8
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Setup for startup "
 
@@ -26,3 +29,11 @@ set expandtab
 set cursorline
 set cursorlineopt=number
 set clipboard+=unnamedplus
+set autoindent
+set smarttab
+set breakindent
+set ai 
+set si
+set backspace=start,eol,indent
+set path:append{'**'}
+set wildignore:append{'*/node_modules/*'}

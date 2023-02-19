@@ -106,3 +106,7 @@
 `Ctrl - w` - Save And Quit
  
 `Alt - q` - Force Quit
+
+`Shift - Up` - Move Line | Block up
+
+`Shift - Down` - Move Line | Block Down

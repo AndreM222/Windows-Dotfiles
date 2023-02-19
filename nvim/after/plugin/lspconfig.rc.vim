@@ -16,6 +16,10 @@ nnoremap <silent> \n <Cmd>MarkdownPreviewStop<CR>
 nnoremap <silent> <C-s> <Cmd>w<CR>
 nnoremap <silent> <C-w> <Cmd>wq<CR>
 nnoremap <silent> <A-q> <Cmd>q!<CR>
+nnoremap <S-Up> <Cmd>m-2<CR>
+nnoremap <S-Down> <Cmd>m+<CR>
+vnoremap <S-Down> :m '>+1<CR>gv=gv
+vnoremap <S-Up> :m '<-2<CR>gv=gv
 
 lua << EOF
 
