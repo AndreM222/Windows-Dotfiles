@@ -15,6 +15,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " AutoCompletion
 Plug 'hrsh7th/cmp-nvim-lsp'

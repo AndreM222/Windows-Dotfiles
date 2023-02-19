@@ -21,6 +21,8 @@ nnoremap <S-Down> <Cmd>m+<CR>
 vnoremap <S-Down> :m '>+1<CR>gv=gv
 vnoremap <S-Up> :m '<-2<CR>gv=gv
 
+let g:Hexokinase_highlighters = ['sign_column']
+
 lua << EOF
 
 local status, gitsigns = pcall(require, "gitsigns")

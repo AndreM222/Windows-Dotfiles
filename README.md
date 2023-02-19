@@ -53,6 +53,7 @@
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
 - [Yarn & NodeJS](https://scoop.sh/#/) - `scoop install nodejs yarn`
 - [NVM](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
+- [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
 
 ## Servers
 
@@ -84,6 +85,7 @@
 - [Auto-Pair](https://github.com/jiangmiao/auto-pairs) - Auto Pair Characters
 - [Close-Tag](https://github.com/alvan/vim-closetag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
+- [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
 
 ## Neovim Keybindings
 
