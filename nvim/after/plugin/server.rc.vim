@@ -1,4 +1,6 @@
 lua << EOF
+local status, nvim_lsp = pcall(require, "lspconfig")
+if (not status) then return end
 
 require("nvim-lsp-installer").setup({
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -11,22 +13,7 @@ require("nvim-lsp-installer").setup({
     }
 })
 
-local status, nvim_lsp = pcall(require, "lspconfig")
-if (not status) then return end
-
 local protocol = require('vim.lsp.protocol')
-
-local on_attach = function(client, bufnr)
-  -- format on save
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = vim.api.nvim_create_augroup("Format", { clear = true }),
-      buffer = bufnr,
-      callback = function() vim.lsp.buf.formatting_seq_sync() end
-    })
-  end
-end
-
 
 ----- Servers Setup -----
 
@@ -39,8 +26,32 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.clangd.setup { on_attach = on_attach }
 
 -- Lua
-nvim_lsp.sumneko_lua.setup { on_attach = on_attach}
+nvim_lsp.sumneko_lua.setup { on_attach = on_attach }
 
 -- html
 nvim_lsp.html.setup { on_attach = on_attach }
+
+-- Python
+nvim_lsp.pyright.setup { on_attach = on_attach }
+
+-- vim
+nvim_lsp.vimls.setup { on_attach = on_attach }
+
+-- Diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '♦'
+  },
+  update_in_insert = true,
+  float = {
+    source = "always",
+  },
+})
+
 EOF

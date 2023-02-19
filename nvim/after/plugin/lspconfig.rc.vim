@@ -6,16 +6,16 @@ nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> \h <Cmd>Telescope help_tags<CR>
 
 " NVIM Tree Bndings
-nnoremap <silent> \t <Cmd>:NvimTreeToggle<CR>
+nnoremap <silent> \t <Cmd>NvimTreeToggle<CR>
 
 " Markdown Bindings
-nnoremap <silent> \m <Cmd>:MarkdownPreview<CR>
-nnoremap <silent> \n <Cmd>:MarkdownPreviewStop<CR>
+nnoremap <silent> \m <Cmd>MarkdownPreview<CR>
+nnoremap <silent> \n <Cmd>MarkdownPreviewStop<CR>
 
-"etc
-nnoremap <silent> <C-s> <Cmd>:w<CR>
-nnoremap <silent> <C-w> <Cmd>:wq<CR>
-nnoremap <silent> <A-q> <Cmd>:q!<CR>
+" etc
+nnoremap <silent> <C-s> <Cmd>w<CR>
+nnoremap <silent> <C-w> <Cmd>wq<CR>
+nnoremap <silent> <A-q> <Cmd>q!<CR>
 
 lua << EOF
 
@@ -46,5 +46,11 @@ bufferline.setup{
 
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+vim.keymap.set('n', '<C-_>', '<Plug>(comment_toggle_linewise_current)')
+vim.keymap.set('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)')
+vim.keymap.set('x', '<C-A-_>', '<Plug>(comment_toggle_blockwise_visual)')
+
+-- auto_comment
+require('Comment').setup()
 
 EOF

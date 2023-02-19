@@ -50,9 +50,19 @@
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop bucket add main`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
-- [Http-Server](https://learn.microsoft.com/en-us/gaming/playfab/features/authentication/platform-specific-authentication/running-an-http-server-for-testing) - `npm install -g http-server`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
 - [Yarn & NodeJS](https://scoop.sh/#/) - `scoop install nodejs yarn`
+- [NVM](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
+
+## Servers
+
+`Http-Server` npm i -g http-server
+
+`Python` npm i -g pyright
+
+`Typescript` npm i -g typescript-language-server
+
+`GCC` scoop install gcc
 
 ## Neovim Plugins
 
@@ -69,6 +79,11 @@
 - [Nvim-Lsp-Installer](https://github.com/williamboman/nvim-lsp-installer) - Auto complete language server installer
 - [Buffer-Line](https://github.com/akinsho/bufferline.nvim) - File Tabs
 - [Git-Signs](https://github.com/lewis6991/gitsigns.nvim) - Git Changes Sign Bar
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Highlight Functions
+- [Comment](https://github.com/numToStr/Comment.nvim) - Commenter For Languages
+- [Auto-Pair](https://github.com/jiangmiao/auto-pairs) - Auto Pair Characters
+- [Close-Tag](https://github.com/alvan/vim-closetag) - Close Tags
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 
 ## Neovim Keybindings
 
@@ -85,3 +100,9 @@
 `\ + m` - Markdown Preview On
 
 `\ + n` - Markdown Preview Off
+
+`Ctrl - s` - Save
+
+`Ctrl - w` - Save And Quit
+ 
+`Alt - q` - Force Quit
