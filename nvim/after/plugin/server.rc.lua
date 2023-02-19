@@ -1,4 +1,3 @@
-lua << EOF
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
@@ -26,7 +25,7 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.clangd.setup { on_attach = on_attach }
 
 -- Lua
-nvim_lsp.sumneko_lua.setup { on_attach = on_attach }
+nvim_lsp.lua_ls.setup { on_attach = on_attach }
 
 -- html
 nvim_lsp.html.setup { on_attach = on_attach }
@@ -53,5 +52,3 @@ vim.diagnostic.config({
     source = "always",
   },
 })
-
-EOF

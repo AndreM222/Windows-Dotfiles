@@ -21,6 +21,15 @@ nnoremap <S-Down> <Cmd>m+<CR>
 vnoremap <S-Down> :m '>+1<CR>gv=gv
 vnoremap <S-Up> :m '<-2<CR>gv=gv
 
+" Bufferline
+nnoremap <S-q> <Cmd>bdelete<CR>
+nnoremap <Tab> <Cmd>BufferLineCycleNext<CR> {}
+nnoremap <S-Tab> <Cmd>BufferLineCyclePrev<CR> {}
+
+nnoremap <C-_> <Plug>(comment_toggle_linewise_current)
+xnoremap <C-_> <Plug>(comment_toggle_linewise_visual)
+xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
+
 let g:Hexokinase_highlighters = ['sign_column']
 
 lua << EOF
@@ -49,12 +58,6 @@ bufferline.setup{
         }, 
     },
 }
-
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
-vim.keymap.set('n', '<C-_>', '<Plug>(comment_toggle_linewise_current)')
-vim.keymap.set('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)')
-vim.keymap.set('x', '<C-A-_>', '<Plug>(comment_toggle_blockwise_visual)')
 
 -- auto_comment
 require('Comment').setup()
