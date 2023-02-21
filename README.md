@@ -45,7 +45,7 @@
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
-- [SQLite | MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite` 
+- [SQLite | MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
 - [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop bucket add main`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
@@ -67,6 +67,14 @@
 
 `Lua` scoop install lua-language-server
 
+## Format Languages
+
+`Python` pip install --upgrade autopep8
+
+`Typescript` npm install -g @fsouza/prettierd
+
+`C Languages` scoop install astyle
+
 ## Neovim Plugins
 
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
@@ -79,7 +87,9 @@
 - [Makrdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
 - [Nvim-CMP](https://github.com/hrsh7th/nvim-cmp) - Auto Complete Setup
 - [Lspkind-Nvim](https://github.com/onsails/lspkind.nvim) - Icons for Nvim LSP
-- [Nvim-Lsp-Installer](https://github.com/williamboman/nvim-lsp-installer) - Auto complete language server installer
+- [Mason-nvim](https://github.com/williamboman/mason.nvim) - Language server installer
+- [Mason-Null-LS](https://github.com/jay-babu/mason-null-ls.nvim) - Integrate Null-LS with Mason
+- [Mason-LspConfig](https://github.com/williamboman/mason-lspconfig.nvim) - Integrate LspConfig with mason 
 - [Buffer-Line](https://github.com/akinsho/bufferline.nvim) - File Tabs
 - [Git-Signs](https://github.com/lewis6991/gitsigns.nvim) - Git Changes Sign Bar
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Highlight Functions
@@ -88,6 +98,7 @@
 - [Close-Tag](https://github.com/alvan/vim-closetag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
+- [Null-LS](https://github.com/jose-elias-alvarez/null-ls.nvim) - Formatting Languages
 
 ## Neovim Keybindings
 
@@ -100,7 +111,7 @@
 `\ + h` - Telescope Help Tags
 
 `\ + t` - Neovim Tree
- 
+
 `\ + m` - Markdown Preview On
 
 `\ + n` - Markdown Preview Off
@@ -108,7 +119,7 @@
 `Ctrl - s` - Save
 
 `Ctrl - w` - Save And Quit
- 
+
 `Alt - q` - Force Quit
 
 `Shift - Up` - Move Line | Block up

@@ -3,13 +3,13 @@ source $HOME\AppData\Local\nvim\vim-plug\plugins.vim
 lua << END
 require('lualine').setup()
 require("nvim-tree").setup()
-
 END
+
 set encoding=utf-8
 scriptencoding=utf-8
 set fileencoding=utf-8
 
-" Setup for startup "
+" Setup for startup
 
 if exists("&termguicolors") && exists("&winblend")
     syntax enable
@@ -18,7 +18,7 @@ if exists("&termguicolors") && exists("&winblend")
     set wildoptions=pum
     set pumblend=10
     set background=dark
-    let g:dracula_colorterm = 0
+    let g:dracula_colorterm=0
     colorscheme dracula
 end
 
@@ -37,3 +37,5 @@ set si
 set backspace=start,eol,indent
 set path:append{'**'}
 set wildignore:append{'*/node_modules/*'}
+set scrolloff=10
+set ignorecase

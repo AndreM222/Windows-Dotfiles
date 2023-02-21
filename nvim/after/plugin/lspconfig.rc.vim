@@ -26,23 +26,32 @@ nnoremap <S-q> <Cmd>bdelete<CR>
 nnoremap <Tab> <Cmd>BufferLineCycleNext<CR> {}
 nnoremap <S-Tab> <Cmd>BufferLineCyclePrev<CR> {}
 
+" Comment
 nnoremap <C-_> <Plug>(comment_toggle_linewise_current)
 xnoremap <C-_> <Plug>(comment_toggle_linewise_visual)
 xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
 
+" Format
+nnoremap <C-f> <Cmd>lua vim.lsp.buf.format{ async = true }<CR>
+
+" Set Color previewer
 let g:Hexokinase_highlighters = ['sign_column']
 
 lua << EOF
 
+-- Call gitsigns
 local status, gitsigns = pcall(require, "gitsigns")
 if (not status) then return end
 
-gitsigns.setup {}
+-- set gitsigns
+gitsigns.setup()
 
+-- Call buffer
 local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
 
-bufferline.setup{
+-- To bufferline
+bufferline.setup({
     options = { 
         always_show_bufferline = false,
         show_buffer_close_icons = false,
@@ -50,14 +59,10 @@ bufferline.setup{
         color_icons = true 
     },
     highlights = {
-        separator = {
-            fg = '#282A36',
-        },
-        separator_selected = {
-            fg = '#073642',
-        }, 
-    },
-}
+        separator = {fg = '#282A36'},
+        separator_selected = {fg = '#073642'} 
+    }
+})
 
 -- auto_comment
 require('Comment').setup()

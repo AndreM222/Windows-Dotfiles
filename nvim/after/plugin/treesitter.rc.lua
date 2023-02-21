@@ -1,7 +1,6 @@
 require'nvim-treesitter.configs'.setup ({
 
-    ensure_installed = 
-    {
+    ensure_installed = {
         "markdown",
         "markdown_inline",
         "tsx",
@@ -21,14 +20,12 @@ require'nvim-treesitter.configs'.setup ({
         enable = true,
         disable = {},
     },
-  
+
     indent = {
         enable = true,
         disable = {},
     },
 
-    autotag = {
-        enable = true,
-    },
+    autotag = {enable = true}
 
 })
