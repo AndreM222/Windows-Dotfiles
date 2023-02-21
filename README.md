@@ -125,3 +125,5 @@
 `Shift - Up` - Move Line | Block up
 
 `Shift - Down` - Move Line | Block Down
+
+`CTRL - f` - Format
