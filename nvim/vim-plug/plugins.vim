@@ -18,6 +18,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " AutoCompletion
 Plug 'hrsh7th/cmp-nvim-lsp'

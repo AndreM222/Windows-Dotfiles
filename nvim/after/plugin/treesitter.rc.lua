@@ -1,5 +1,4 @@
-require'nvim-treesitter.configs'.setup ({
-
+require 'nvim-treesitter.configs'.setup({
     ensure_installed = {
         "markdown",
         "markdown_inline",
@@ -15,17 +14,13 @@ require'nvim-treesitter.configs'.setup ({
         "c",
         "python",
     },
-
     highlight = {
         enable = true,
         disable = {},
     },
-
     indent = {
         enable = true,
         disable = {},
     },
-
-    autotag = {enable = true}
-
+    autotag = { enable = true }
 })
