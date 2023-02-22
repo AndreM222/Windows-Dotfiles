@@ -57,7 +57,7 @@
 
 ## Servers
 
-`Http-Server` npm i -g http-server
+`Live-Server` npm install -g live-server
 
 `Python` npm i -g pyright
 
