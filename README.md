@@ -38,7 +38,7 @@
 
 ## Fonts
 
-- [DejaVuSansMono Nerd Font](https://www.nerdfonts.com/font-downloads) - Font
+- [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads) - Font
 
 ## Setup
 
@@ -71,7 +71,7 @@
 
 `Python` pip install --upgrade autopep8
 
-`Typescript` npm install -g @fsouza/prettierd
+`Typescript` npm install -g prettier
 
 `C Languages` scoop install astyle
 
@@ -99,6 +99,7 @@
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
 - [Null-LS](https://github.com/jose-elias-alvarez/null-ls.nvim) - Formatting Languages
+- [Indent-Lines](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 
 ## Neovim Keybindings
 
@@ -125,5 +126,9 @@
 `Shift - Up` - Move Line | Block up
 
 `Shift - Down` - Move Line | Block Down
+
+`Shift - Left` - Move Line | Block Left
+
+`Shift - Right` - Move Line | Block Right
 
 `CTRL - f` - Format

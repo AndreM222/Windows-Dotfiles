@@ -13,12 +13,12 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'jay-babu/mason-null-ls.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " AutoCompletion
 Plug 'hrsh7th/cmp-nvim-lsp'

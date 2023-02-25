@@ -70,6 +70,9 @@ nvim_lsp.lua_ls.setup({
     },
 })
 
+-- LaTeX
+nvim_lsp.texlab.setup({})
+
 -- html
 nvim_lsp.html.setup({})
 
