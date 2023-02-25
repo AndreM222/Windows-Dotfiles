@@ -67,6 +67,8 @@
 
 `Lua` scoop install lua-language-server
 
+`scoop install texlab`
+
 ## Format Languages
 
 `Python` pip install --upgrade autopep8
@@ -74,6 +76,8 @@
 `Typescript` npm install -g prettier
 
 `C Languages` scoop install astyle
+
+`Latex` scoop install latexindent
 
 ## Neovim Plugins
 
@@ -132,3 +136,11 @@
 `Shift - Right` - Move Line | Block Right
 
 `CTRL - f` - Format
+
+## Instalations
+
+- [Miktek](https://miktex.org/) - LaTeX Compiler
+
+- [Strawberry Pearl](https://strawberryperl.com/) - Libraries
+
+- [Python](https://www.python.org/downloads/) - Python Compiler
