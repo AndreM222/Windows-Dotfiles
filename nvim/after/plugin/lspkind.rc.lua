@@ -1,4 +1,7 @@
-require('lspkind').init({
+local status, kind = pcall(require, "lspkind")
+if (not status) then return end
+
+kind.init({
     mode = 'symbol_text',
     preset = 'codicons',
     symbol_map = {
@@ -13,15 +16,15 @@ require('lspkind').init({
         Module = "",
         Property = "ﰠ",
         Unit = "塞",
-        Value = "",
-        Enum = "",
+        Value = "",
+        Enum = "",
         Keyword = "",
         Snippet = "",
         Color = "",
         File = "",
         Reference = "",
         Folder = "",
-        EnumMember = "",
+        EnumMember = "",
         Constant = "",
         Struct = "פּ",
         Event = "",

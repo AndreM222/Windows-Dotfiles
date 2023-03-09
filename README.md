@@ -1,7 +1,9 @@
 # Windows Terminal
 
-<p>
-<img align='center' src="Terminal-Preview.png">
+<p align='center'>
+<img style='padding-bottom:10px' src="Terminal-Preview_1.png">
+<img style='padding-bottom:10px' src="Terminal-Preview_2.png">
+<img src="Terminal-Preview_3.png">
 </p>
 
 ## Windows Terminal Keybindings
@@ -51,7 +53,7 @@
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
-- [Yarn & NodeJS](https://scoop.sh/#/) - `scoop install nodejs yarn`
+- [Yarn & NodeJS](https://scoop.sh/#/) - `scoop install yarn`
 - [NVM](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
 - [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
 
@@ -63,7 +65,7 @@
 
 `Typescript` npm i -g typescript-language-server
 
-`C++` scoop install gcc
+`C++` scoop install clangd
 
 `Lua` scoop install lua-language-server
 
@@ -88,6 +90,7 @@
 - [LSPConfig](https://github.com/neovim/nvim-lspconfig) - Keys Configuration
 - [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
+- [Telescope Browser](https://github.com/nvim-telescope/telescope-file-browser.nvim) - Telescope File Browser
 - [Makrdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
 - [Nvim-CMP](https://github.com/hrsh7th/nvim-cmp) - Auto Complete Setup
 - [Lspkind-Nvim](https://github.com/onsails/lspkind.nvim) - Icons for Nvim LSP
@@ -104,6 +107,13 @@
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
 - [Null-LS](https://github.com/jose-elias-alvarez/null-ls.nvim) - Formatting Languages
 - [Indent-Lines](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
+- [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
+- [Lspsaga](https://github.com/glepnir/lspsaga.nvim) - LSP UI
+- [VGit](https://github.com/tanvirtin/vgit.nvim) - Visual Git
+- [DAP](https://github.com/mfussenegger/nvim-dap) - Debugger
+- [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
+- [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
+
 
 ## Neovim Keybindings
 
@@ -113,9 +123,13 @@
 
 `\ + \` - Telescope Buffers
 
-`\ + h` - Telescope Help Tags
+`\ + t` - Telescope
 
-`\ + t` - Neovim Tree
+`\ + r` - Telescope Resume Search
+
+`F2` - Telescope Help Tags
+
+`F3` Telescope Keymaps
 
 `\ + m` - Markdown Preview On
 
@@ -123,7 +137,7 @@
 
 `Ctrl - s` - Save
 
-`Ctrl - w` - Save And Quit
+`Alt - w` - Save And Quit
 
 `Alt - q` - Force Quit
 
@@ -137,10 +151,68 @@
 
 `CTRL - f` - Format
 
-## Instalations
+`CTRL - c` - Color Picker
+
+`C - Down` - Lspsaga Diagnostic Next
+
+`K` - Lspsaga Hover Doc
+
+`g + d` - lspsaga Finder
+
+`C-Up` - Lspsaga Signature Help
+
+`g + p` - Lspsaga Peek Definition
+
+`g + r` - Lspsaga Rename
+
+`C - l` - Pane Move Up
+
+`C - j ` - Pane Move Down
+
+`C - h` - Pane Move Left
+
+`C - l` - Pane Move Right
+
+`F9` - Debugger Continue
+
+`F10` - Debugger Step Over
+
+`F11` - Debugger Step Into
+
+`F12` - Debugger Step Out
+
+`b` - Debugger Breakpoint
+
+`B` - Debugger Breakpoint With Conditions
+
+`lp` - Debugger Breakpoint With Log Message
+
+`dr` - Debugger Toggle
+
+`C - g` - Git Buffer Hunk Preview
+
+`A - g` - Git Buffer Blame Preview
+
+`C - A - g` - Git Buffer Gutter Blame Preview
+
+`S - g` - Git Toggle Diff Preference
+
+## Installations
 
 - [Miktek](https://miktex.org/) - LaTeX Compiler
 
 - [Strawberry Pearl](https://strawberryperl.com/) - Libraries
 
+## Compilers And Intrepeters
+
+- [NodeJS](https://scoop.sh/#/apps?s=0&d=1&o=true&q=nodejs) - scoop install nodejs
+
+- [CPP - CLANG](https://scoop.sh/#/apps?q=llvm&s=0&d=1&o=true) - scoop install mingw-winlibs-llvm
+
 - [Python](https://www.python.org/downloads/) - Python Compiler
+
+## DAP Adapters
+
+CPP LLDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb`
+
+CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools`

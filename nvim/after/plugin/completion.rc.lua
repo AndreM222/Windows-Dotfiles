@@ -1,8 +1,6 @@
-vim.opt.completeopt = menu, menuone, noselect
-
 local status, cmp = pcall(require, "cmp")
 if (not status) then return end
--- Set up nvim-cmp.
+
 local lspkind = require 'lspkind'
 
 cmp.setup({
@@ -56,3 +54,8 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+
+vim.cmd [[
+    set completeopt=menuone,noinsert,noselect
+    highlight! default link CmpItemKind CmpItemMenuDefault
+]]

@@ -4,6 +4,8 @@ set encoding=utf-8
 scriptencoding=utf-8
 set fileencoding=utf-8
 
+let g:chatgpt_api_key = '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'
+
 " Setup for startup
 
 if exists("&termguicolors") && exists("&winblend")
@@ -15,7 +17,13 @@ if exists("&termguicolors") && exists("&winblend")
     set background=dark
     let g:dracula_colorterm=0
     colorscheme dracula
+    hi FloatBorder guibg=NONE
+    highlight DiffDelete guibg=NONE ctermbg=NONE guifg=red
+    highlight cursorlinenr guibg=NONE guifg=Orange
+    set fillchars+=eob:-
 end
+
+autocmd FileType vgit setlocal diffopt=vertical
 
 set number
 set tabstop=4
