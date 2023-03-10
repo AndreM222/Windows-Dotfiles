@@ -15,6 +15,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'akinsho/bufferline.nvim'
+Plug 'gorbit99/codewindow.nvim'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'

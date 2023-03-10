@@ -4,9 +4,13 @@ nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
+nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
+
+" Minimap
+nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
 
 " Preview Bindings
-nnoremap <silent> \m <Cmd>MarkdownPreviewToggle<CR>
+nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
 
 " Saving Bindings
 nnoremap <silent> <C-s> <Cmd>w<CR>

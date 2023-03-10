@@ -93,7 +93,6 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 end
 
 -- DAP integration
--- Make sure to also have the snippet with the common helper functions in your config!
 
 dap.listeners.before['event_progressStart']['progress-notifications'] = function(session, body)
  local notif_data = get_notif_data("dap", body.progressId)
