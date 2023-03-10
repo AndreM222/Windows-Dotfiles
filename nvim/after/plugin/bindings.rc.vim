@@ -55,10 +55,10 @@ nmap <silent> <C-j>  <Cmd>wincmd j<CR>
 nmap <silent> <C-k> <Cmd>wincmd k<CR>
 
 " DAP Bindings
-nnoremap <F9> <Cmd>DapContinue()<CR>
-nnoremap <F10> <Cmd>DapStepOver()<CR>
-nnoremap <F11> <Cmd>DapStepInto()<CR>
-nnoremap <F12> <Cmd>DapStepOut()<CR>
+nnoremap <F9> <Cmd>DapContinue<CR>
+nnoremap <F10> <Cmd>DapStepOver<CR>
+nnoremap <F11> <Cmd>DapStepInto<CR>
+nnoremap <F12> <Cmd>DapStepOut<CR>
 nnoremap b <Cmd>DapToggleBreakpoint<CR>
 nnoremap B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))()<CR>
 nnoremap lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
