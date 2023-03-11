@@ -1,4 +1,4 @@
-# Windows Terminal
+# Windows Dotfiles
 
 <p align='center'>
 <img style='padding-bottom:10px' src="Terminal-Preview_1.png">
