@@ -69,7 +69,7 @@
 
 `Lua` scoop install lua-language-server
 
-`scoop install texlab`
+`LaTeX` scoop install texlab 
 
 ## Format Languages
 
@@ -113,7 +113,27 @@
 - [DAP](https://github.com/mfussenegger/nvim-dap) - Debugger
 - [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
 - [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
+- [Minimap](https://github.com/gorbit99/codewindow.nvim) - Minimap Code Preview
 
+## Installations
+
+- [Miktek](https://miktex.org/) - LaTeX Compiler
+
+- [Strawberry Pearl](https://strawberryperl.com/) - Libraries
+
+## Compilers And Intrepeters
+
+- [NodeJS](https://scoop.sh/#/apps?s=0&d=1&o=true&q=nodejs) - scoop install nodejs
+
+- [CPP - CLANG](https://scoop.sh/#/apps?q=llvm&s=0&d=1&o=true) - scoop install mingw-winlibs-llvm
+
+- [Python](https://www.python.org/downloads/) - Python Compiler
+
+## DAP Adapters
+
+CPP LLDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb`
+
+CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools`
 
 ## Neovim Keybindings
 
@@ -131,9 +151,9 @@
 
 `F3` Telescope Keymaps
 
-`\ + m` - Markdown Preview On
+`\ + m` - Minimap Toggle
 
-`\ + n` - Markdown Preview Off
+`\ + P` - Markdown Preview Toggle
 
 `Ctrl - s` - Save
 
@@ -196,23 +216,3 @@
 `C - A - g` - Git Buffer Gutter Blame Preview
 
 `S - g` - Git Toggle Diff Preference
-
-## Installations
-
-- [Miktek](https://miktex.org/) - LaTeX Compiler
-
-- [Strawberry Pearl](https://strawberryperl.com/) - Libraries
-
-## Compilers And Intrepeters
-
-- [NodeJS](https://scoop.sh/#/apps?s=0&d=1&o=true&q=nodejs) - scoop install nodejs
-
-- [CPP - CLANG](https://scoop.sh/#/apps?q=llvm&s=0&d=1&o=true) - scoop install mingw-winlibs-llvm
-
-- [Python](https://www.python.org/downloads/) - Python Compiler
-
-## DAP Adapters
-
-CPP LLDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb`
-
-CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools`
