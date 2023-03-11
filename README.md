@@ -137,6 +137,12 @@ CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vs
 
 ## Neovim Keybindings
 
+Read: `To visualize on vim the keybindings press F3. I also documented all my custom bindings.`
+
+<details>
+
+<summary>Custom Mappings</summary>
+
 `\ + f` - Telescope Find Files
 
 `\ + r` - Telescope Live Grep
@@ -149,7 +155,7 @@ CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vs
 
 `F2` - Telescope Help Tags
 
-`F3` Telescope Keymaps
+`F3` - Telescope Keymaps
 
 `\ + m` - Minimap Toggle
 
@@ -220,3 +226,5 @@ CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vs
 `C - A - c` - Copy
 
 `C - A - v` - Paste
+
+</details>
