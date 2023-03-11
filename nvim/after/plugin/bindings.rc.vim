@@ -28,9 +28,6 @@ vnoremap <S-Right> >gv
 nnoremap <S-Left> <
 nnoremap <S-Right> >
 
-" Paste
-xnoremap p pgvy
-
 " Bufferline Bindings
 nnoremap <S-q> <Cmd>bdelete<CR>
 nnoremap <Tab> <Cmd>BufferLineCycleNext<CR> {}
@@ -78,6 +75,7 @@ nnoremap <S-g> <Cmd>VGit toggle_diff_preference<CR>
 nnoremap <C-c> <Cmd>PickColor<CR>
 inoremap <C-c> <Cmd>PickColorInsert<CR>
 
+" Copy Paste Bindings
 nnoremap <C-A-c> "+y
 vnoremap <C-A-c> "+y
 nnoremap <C-A-v> pgvy
