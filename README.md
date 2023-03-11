@@ -216,3 +216,7 @@ CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vs
 `C - A - g` - Git Buffer Gutter Blame Preview
 
 `S - g` - Git Toggle Diff Preference
+
+`C - A - c` - Copy
+
+`C - A - v` - Paste

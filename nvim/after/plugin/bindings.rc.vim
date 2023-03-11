@@ -18,7 +18,7 @@ nnoremap <silent> <A-w> <Cmd>wq<CR>
 nnoremap <silent> <A-q> <Cmd>q!<CR>
 
 " Moving Selections
-nnoremap <S-Up> <Cmd>m-2<CR>
+nnoremap <S-Up> <Cmd>m-3<CR>
 nnoremap <S-Down> <Cmd>m+<CR>
 vnoremap <S-Down> :m '>+1<CR>gv=gv
 vnoremap <S-Up> :m '<-2<CR>gv=gv
@@ -77,3 +77,8 @@ nnoremap <S-g> <Cmd>VGit toggle_diff_preference<CR>
 " Color Picker
 nnoremap <C-c> <Cmd>PickColor<CR>
 inoremap <C-c> <Cmd>PickColorInsert<CR>
+
+nnoremap <C-A-c> "+y
+vnoremap <C-A-c> "+y
+nnoremap <C-A-v> pgvy
+vnoremap <C-A-v> pgvy
