@@ -37,6 +37,10 @@
 (alt + up) - Switch Split up
 (alt + down) - Switch Split down
 ```
+```
+Duplicate Split Pane:
+https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
+```
 
 ## Fonts
 
