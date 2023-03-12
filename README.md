@@ -43,6 +43,10 @@ https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-direct
 
 Center On Startup:
 https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup
+
+Default Size Startup:
+Columns: 190
+Rows: 50
 ```
 
 ## Fonts
