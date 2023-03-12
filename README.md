@@ -72,9 +72,9 @@ Rows: 50
 
 `Live-Server` npm install -g live-server
 
-`Python` npm i -g pyright
+`Python` npm install -g pyright
 
-`Typescript` npm i -g typescript-language-server
+`Typescript` npm install -g typescript-language-server
 
 `C++` scoop install clangd
 
