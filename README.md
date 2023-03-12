@@ -40,6 +40,9 @@
 ```
 Duplicate Split Pane:
 https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
+
+Center On Startup:
+https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup
 ```
 
 ## Fonts
