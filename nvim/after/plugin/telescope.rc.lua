@@ -54,14 +54,14 @@ vim.api.nvim_create_user_command(
     "BrowseFiles",
     function()
         telescope.extensions.file_browser.file_browser({
-        path = "%:p:h",
-        cwd = telescope_buffer_dir(),
-        respect_gitignore = false,
-        hidden = true,
-        grouped = true,
-        previewer = false,
-        initial_mode = "normal",
-        layout_config = { height = 40 }
+            path = "%:p:h",
+            cwd = telescope_buffer_dir(),
+            respect_gitignore = false,
+            hidden = true,
+            grouped = true,
+            previewer = false,
+            initial_mode = "normal",
+            layout_config = { height = 40 }
         })
     end,
     { nargs = 0 }

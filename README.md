@@ -194,7 +194,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - c` - Color Picker
 
-`K` - Lspsaga Hover Doc
+`f` - Lspsaga Hover Doc
 
 `g + d` - lspsaga Finder
 
