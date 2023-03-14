@@ -18,10 +18,11 @@ if exists("&termguicolors") && exists("&winblend")
     hi FloatBorder guibg=NONE
     highlight DiffDelete guibg=NONE ctermbg=NONE guifg=red
     highlight cursorlinenr guibg=NONE guifg=Orange
-    set fillchars+=eob:- 
-    highlight Folded  guibg=NONE 
+    set fillchars+=eob:-
+    highlight Folded  guibg=NONE
 end
 
+set mouse=a
 set number
 set tabstop=4
 set shiftwidth=4

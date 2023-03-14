@@ -1,4 +1,6 @@
 " Telescope Bindings
+nnoremap <silent> \t <Cmd>BrowseFiles<CR>
+nnoremap <silent> \r <Cmd>ResumeSearch<CR>
 nnoremap <silent> \f <Cmd>Telescope find_files<CR>
 nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
@@ -42,10 +44,8 @@ xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
 nnoremap <C-f> <Cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == "null-ls" end,  bufnr = bufnr, })<CR>
 
 " Lspsaga Setup
-nnoremap <C-Down> <Cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap K <Cmd>Lspsaga hover_doc<CR>
+nnoremap f <Cmd>Lspsaga hover_doc<CR>
 nnoremap gd <Cmd>Lspsaga lsp_finder<CR>
-inoremap <C-Up> <Cmd>Lspsaga signature_help<CR>
 nnoremap gp <Cmd>Lspsaga peek_definition<CR>nnoremap <gr> <Cmd>Lspsaga rename<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 
@@ -76,11 +76,13 @@ nnoremap <C-c> <Cmd>PickColor<CR>
 inoremap <C-c> <Cmd>PickColorInsert<CR>
 
 " Copy Paste Bindings
-nnoremap <C-A-c> "+y
+nnoremap <C-A-c> "+
 vnoremap <C-A-c> "+y
 nnoremap <C-A-v> pgvy
 vnoremap <C-A-v> pgvy
 
 " Folds
-nnoremap + <Cmd>foldopen<CR>
+nnoremap = <Cmd>foldopen<CR>
 nnoremap - <Cmd>foldclose<CR>
+nnoremap + <Cmd>OpenAllFolds<CR>
+nnoremap _ <Cmd>CloseAllFolds<CR>

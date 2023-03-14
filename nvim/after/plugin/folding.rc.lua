@@ -14,3 +14,19 @@ for _, ls in ipairs(language_servers) do
         capabilities = capabilities
     })
 end
+
+vim.api.nvim_create_user_command(
+    "OpenAllFolds",
+    function ()
+        ufo.openAllFolds()
+    end,
+    { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+    "CloseAllFolds",
+    function ()
+        ufo.closeAllFolds()
+    end,
+    { nargs = 0 }
+)
