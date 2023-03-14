@@ -50,10 +50,10 @@ nnoremap gp <Cmd>Lspsaga peek_definition<CR>nnoremap <gr> <Cmd>Lspsaga rename<CR
 nnoremap gr <Cmd>Lspsaga rename<CR>
 
 " Movement between panes
-nmap <silent> <C-h> <Cmd>wincmd h<CR>
-nmap <silent> <C-l> <Cmd>wincmd l<CR>
-nmap <silent> <C-j>  <Cmd>wincmd j<CR>
-nmap <silent> <C-k> <Cmd>wincmd k<CR>
+nmap <silent> <A-h> <Cmd>wincmd h<CR>
+nmap <silent> <A-l> <Cmd>wincmd l<CR>
+nmap <silent> <A-j>  <Cmd>wincmd j<CR>
+nmap <silent> <A-k> <Cmd>wincmd k<CR>
 
 " DAP Bindings
 nnoremap <F9> <Cmd>DapContinue<CR>
@@ -80,3 +80,7 @@ nnoremap <C-A-c> "+y
 vnoremap <C-A-c> "+y
 nnoremap <C-A-v> pgvy
 vnoremap <C-A-v> pgvy
+
+" Folds
+nnoremap + <Cmd>foldopen<CR>
+nnoremap - <Cmd>foldclose<CR>

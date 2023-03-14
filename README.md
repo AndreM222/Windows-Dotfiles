@@ -47,6 +47,9 @@ https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup
 Default Size Startup:
 Columns: 190
 Rows: 50
+
+Opacity Config:
+Opacity: 80
 ```
 
 ## Fonts
@@ -125,6 +128,7 @@ Rows: 50
 - [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
 - [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
 - [Minimap](https://github.com/gorbit99/codewindow.nvim) - Minimap Code Preview
+- [Folding](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 
 ## Installations
 
@@ -202,13 +206,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `g + r` - Lspsaga Rename
 
-`C - l` - Pane Move Up
+`A - l` - Pane Move Up
 
-`C - j ` - Pane Move Down
+`A - j ` - Pane Move Down
 
-`C - h` - Pane Move Left
+`A - h` - Pane Move Left
 
-`C - l` - Pane Move Right
+`A - l` - Pane Move Right
 
 `F9` - Debugger Continue
 
@@ -237,5 +241,9 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `C - A - c` - Copy
 
 `C - A - v` - Paste
+
+`+` - Open Fold
+
+`-` - Close Fold
 
 </details>

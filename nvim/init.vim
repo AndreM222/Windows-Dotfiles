@@ -18,7 +18,8 @@ if exists("&termguicolors") && exists("&winblend")
     hi FloatBorder guibg=NONE
     highlight DiffDelete guibg=NONE ctermbg=NONE guifg=red
     highlight cursorlinenr guibg=NONE guifg=Orange
-    set fillchars+=eob:-
+    set fillchars+=eob:- 
+    highlight Folded  guibg=NONE 
 end
 
 set number
@@ -38,3 +39,6 @@ set path:append{'**'}
 set wildignore:append{'*/node_modules/*'}
 set scrolloff=10
 set ignorecase
+set foldlevel=99
+set foldlevelstart=99
+set foldenable
