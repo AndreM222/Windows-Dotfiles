@@ -194,13 +194,9 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - c` - Color Picker
 
-`C - Down` - Lspsaga Diagnostic Next
-
 `K` - Lspsaga Hover Doc
 
 `g + d` - lspsaga Finder
-
-`C-Up` - Lspsaga Signature Help
 
 `g + p` - Lspsaga Peek Definition
 
@@ -242,8 +238,12 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `C - A - v` - Paste
 
-`+` - Open Fold
+`=` - Open Fold
 
 `-` - Close Fold
+
+`+` - Open All Folds
+
+`_` - Close All Folds
 
 </details>

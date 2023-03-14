@@ -16,8 +16,8 @@ if exists("&termguicolors") && exists("&winblend")
     let g:dracula_colorterm=0
     colorscheme dracula
     hi FloatBorder guibg=NONE
-    highlight DiffDelete guibg=NONE ctermbg=NONE guifg=red
-    highlight cursorlinenr guibg=NONE guifg=Orange
+    highlight DiffDelete guibg=NONE guifg=#ff5555
+    highlight cursorlinenr guifg=Orange
     set fillchars+=eob:-
     highlight Folded  guibg=NONE
 end
