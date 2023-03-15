@@ -32,11 +32,13 @@
 (ctrl + shift + w) - Close Window
 (ctrl + shift + t) - New Window
 (ctrl + tab) - Switch Tab
-(alt + right) - Switch Split right
-(alt + left) - Switch Split left
-(alt + up) - Switch Split up
-(alt + down) - Switch Split down
-```
+(alt + shift + right) - Switch Split right
+(alt + shift + left) - Switch Split left
+(alt + shift + up) - Switch Split up
+(alt + shift + down) - Switch Split down
+``
+
+`
 ```
 Duplicate Split Pane:
 https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
@@ -178,9 +180,11 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Ctrl - s` - Save
 
-`Alt - w` - Save And Quit
+`Ctrl - Alt - s` Save All
 
-`Alt - q` - Force Quit
+`Alt - w` - Save And Quit All
+
+`Alt - q` - Force Quit All
 
 `Shift - Up` - Move Line | Block up
 
@@ -202,13 +206,21 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `g + r` - Lspsaga Rename
 
-`A - l` - Pane Move Up
+`A - k` - Increase Pane Vertical
 
-`A - j ` - Pane Move Down
+`A - i` - Decrease Pane Vertical
 
-`A - h` - Pane Move Left
+`A - l` - Increase Pane Horizontal
 
-`A - l` - Pane Move Right
+`A - j` - Decrease Pane Horizontal
+
+`A - Up` - Pane Move Up
+
+`A - Down` - Pane Move Down
+
+`A - Left` - Pane Move Left
+
+`A - Right` - Pane Move Right
 
 `F9` - Debugger Continue
 

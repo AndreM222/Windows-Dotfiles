@@ -46,20 +46,26 @@ nnoremap <C-f> <Cmd>lua vim.lsp.buf.format({ filter = function(client) return cl
 " Lspsaga Setup
 nnoremap f <Cmd>Lspsaga hover_doc<CR>
 nnoremap gd <Cmd>Lspsaga lsp_finder<CR>
-nnoremap gp <Cmd>Lspsaga peek_definition<CR>nnoremap <gr> <Cmd>Lspsaga rename<CR>
+nnoremap gp <Cmd>Lspsaga peek_definition<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 
 " Movement between panes
-nmap <silent> <A-h> <Cmd>wincmd h<CR>
-nmap <silent> <A-l> <Cmd>wincmd l<CR>
-nmap <silent> <A-j>  <Cmd>wincmd j<CR>
-nmap <silent> <A-k> <Cmd>wincmd k<CR>
+nmap <A-Left> <Cmd>wincmd h<CR>
+nmap <A-Right> <Cmd>wincmd l<CR>
+nmap <A-Down>  <Cmd>wincmd j<CR>
+nmap <A-Up> <Cmd>wincmd k<CR>
+
+" Resize panes
+nmap <A-l> <Cmd>vertical resize +5<CR>
+nmap <A-h> <Cmd>vertical resize -5<CR>
+nmap <A-k>  <Cmd>res +5<CR>
+nmap <A-j> <Cmd>res -5<CR>
 
 " DAP Bindings
 nnoremap <F9> <Cmd>DapContinue<CR>
 nnoremap <F10> <Cmd>DapStepOver<CR>
 nnoremap <F11> <Cmd>DapStepInto<CR>
-nnoremap <F12> <Cmd>DapStepOut<CR>
+nnoremap <F12> <Cmd>DapStepOut<CR> 
 nnoremap b <Cmd>DapToggleBreakpoint<CR>
 nnoremap B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))()<CR>
 nnoremap lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
