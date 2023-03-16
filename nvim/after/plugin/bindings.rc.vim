@@ -16,8 +16,9 @@ nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
 
 " Saving Bindings
 nnoremap <silent> <C-s> <Cmd>w<CR>
-nnoremap <silent> <A-w> <Cmd>wq<CR>
-nnoremap <silent> <A-q> <Cmd>q!<CR>
+nnoremap <silent> <C-A-s> <Cmd>wa<CR>
+nnoremap <silent> <A-w> <Cmd>wqa<CR>
+nnoremap <silent> <A-q> <Cmd>qa!<CR>
 
 " Moving Selections
 nnoremap <S-Up> <Cmd>m-3<CR>
@@ -56,10 +57,10 @@ nmap <A-Down>  <Cmd>wincmd j<CR>
 nmap <A-Up> <Cmd>wincmd k<CR>
 
 " Resize panes
+nmap <A-j> <Cmd>vertical resize -5<CR>
 nmap <A-l> <Cmd>vertical resize +5<CR>
-nmap <A-h> <Cmd>vertical resize -5<CR>
 nmap <A-k>  <Cmd>res +5<CR>
-nmap <A-j> <Cmd>res -5<CR>
+nmap <A-i> <Cmd>res -5<CR>
 
 " DAP Bindings
 nnoremap <F9> <Cmd>DapContinue<CR>

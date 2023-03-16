@@ -36,7 +36,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
 
 -- TypeScript
-nvim_lsp.tsserver.setup({ filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
+nvim_lsp.tsserver.setup({ capabilities = capabilities})
 -- C, C++
 nvim_lsp.clangd.setup({ capabilities = capabilities })
 

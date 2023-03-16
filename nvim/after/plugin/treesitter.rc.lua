@@ -16,6 +16,7 @@ treesitter.setup({
         "cpp",
         "c",
         "python",
+        "javascript"
     },
     highlight = {
         enable = true,
