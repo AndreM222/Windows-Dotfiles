@@ -36,9 +36,8 @@
 (alt + shift + left) - Switch Split left
 (alt + shift + up) - Switch Split up
 (alt + shift + down) - Switch Split down
-``
+```
 
-`
 ```
 Duplicate Split Pane:
 https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
@@ -50,8 +49,9 @@ Default Size Startup:
 Columns: 190
 Rows: 50
 
-Opacity Config:
-Opacity: 80
+Opacity Config: 80
+
+Font Size: 9
 ```
 
 ## Fonts
