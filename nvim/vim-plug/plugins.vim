@@ -51,6 +51,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kylechui/nvim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'L3MON4D3/LuaSnip'
 
