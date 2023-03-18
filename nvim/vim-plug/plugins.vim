@@ -27,6 +27,7 @@ Plug 'tanvirtin/vgit.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'jay-babu/mason-null-ls.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'jay-babu/mason-nvim-dap.nvim'
 
 " Color Editing
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }

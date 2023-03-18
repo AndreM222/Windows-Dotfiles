@@ -43,19 +43,7 @@ nvim_lsp.clangd.setup({ capabilities = capabilities })
 -- Lua
 nvim_lsp.lua_ls.setup({
     capabilities = capabilities,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            },
-
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-        },
-    },
+    settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
 })
 
 -- LaTeX

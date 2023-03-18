@@ -7,6 +7,7 @@ nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
+nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
 
 " Minimap
 nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
@@ -96,3 +97,9 @@ nnoremap = <Cmd>foldopen<CR>
 nnoremap - <Cmd>foldclose<CR>
 nnoremap + <Cmd>OpenAllFolds<CR>
 nnoremap _ <Cmd>CloseAllFolds<CR>
+
+" Ctrl Movement
+
+nnoremap <C-Right> E
+inoremap <C-Right> <C-o>E<Right>
+vnoremap <C-Right> E

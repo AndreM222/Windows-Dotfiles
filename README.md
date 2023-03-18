@@ -113,6 +113,7 @@ Font Size: 9
 - [Mason-nvim](https://github.com/williamboman/mason.nvim) - Language server installer
 - [Mason-Null-LS](https://github.com/jay-babu/mason-null-ls.nvim) - Integrate Null-LS with Mason
 - [Mason-LspConfig](https://github.com/williamboman/mason-lspconfig.nvim) - Integrate LspConfig with mason 
+- [Mason-Dap](https://github.com/jay-babu/mason-nvim-dap.nvim) - Integrate Dap With Mason
 - [Buffer-Line](https://github.com/akinsho/bufferline.nvim) - File Tabs
 - [Git-Signs](https://github.com/lewis6991/gitsigns.nvim) - Git Changes Sign Bar
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Highlight Functions
@@ -172,6 +173,8 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `\ + t` - Telescope
 
 `\ + r` - Telescope Resume Search
+
+`\ + w` - Telescope Diagnostics
 
 `F2` - Telescope Help Tags
 
