@@ -21,15 +21,18 @@ nnoremap <silent> <A-w> <Cmd>wqa<CR>
 nnoremap <silent> <A-q> <Cmd>qa!<CR>
 
 " Moving Selections
-nnoremap <S-Up> <Cmd>m-3<CR>
-nnoremap <S-Down> <Cmd>m+<CR>
-vnoremap <S-Down> :m '>+1<CR>gv=gv
-vnoremap <S-Up> :m '<-2<CR>gv=gv
+nnoremap <S-Up> <Plug>MoveLineUp
+nnoremap <S-Down> <Plug>MoveLineDown
+vnoremap <S-Down> <Plug>MoveBlockDown
+vnoremap <S-Up> <Plug>MoveBlockUp
 
 vnoremap <S-Left> <gv
 vnoremap <S-Right> >gv
 nnoremap <S-Left> <
 nnoremap <S-Right> >
+
+vnoremap <S-j> <Plug>MoveBlockLeft
+vnoremap <S-l> <Plug>MoveBlockRight
 
 " Bufferline Bindings
 nnoremap <S-q> <Cmd>bdelete<CR>

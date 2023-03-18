@@ -4,7 +4,7 @@ local status2, dap = pcall(require,"dap")
 if (not status2) then return end
 
 notify.setup({background_colour = "#000000"})
-vim.notify = require("notify")
+vim.notify = notify
 
 -- Notification update
 local client_notifs = {}
@@ -126,3 +126,6 @@ dap.listeners.before['event_progressEnd']['progress-notifications'] = function(s
     })
     notif_data.spinner = nil
 end
+
+local async = require("plenary.async")
+local notifysync = require("notify").async
