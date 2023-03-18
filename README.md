@@ -150,12 +150,6 @@ Font Size: 9
 
 - [Python](https://www.python.org/downloads/) - Python Compiler
 
-## DAP Adapters
-
-CPP LLDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb`
-
-CPP HDB - `https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools`
-
 ## Neovim Keybindings
 
 Read: `To visualize on vim the keybindings press F3. I also documented all my custom bindings.`
