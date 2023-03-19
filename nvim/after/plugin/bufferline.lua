@@ -11,7 +11,8 @@ bufferline.setup({
         color_icons = true
     },
     highlights = {
+        buffer_selected = { bold = true},
         separator = {fg = '#282A36'},
         separator_selected = {fg = '#073642'}
-    }
+    },
 })

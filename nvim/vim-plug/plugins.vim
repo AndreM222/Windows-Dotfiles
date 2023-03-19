@@ -7,6 +7,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'rcarriga/nvim-notify'
 Plug 'rrethy/vim-illuminate'
+Plug 'lvimuser/lsp-inlayhints.nvim'
 
 " Tools
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

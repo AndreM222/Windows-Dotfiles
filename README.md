@@ -135,6 +135,7 @@ Font Size: 9
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Vim-Move](https://github.com/matze/vim-move) - Moving Selection
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
+- [Inline-Hints](https://github.com/lvimuser/lsp-inlayhints.nvim) - Parameters Hints
 
 ## Installations
 
@@ -177,6 +178,8 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `\ + m` - Minimap Toggle
 
 `\ + P` - Markdown Preview Toggle
+
+`\ + h` - Hint Toggle
 
 `Ctrl - s` - Save
 

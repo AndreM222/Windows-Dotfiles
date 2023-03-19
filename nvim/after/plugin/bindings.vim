@@ -3,14 +3,16 @@ nnoremap <silent> \t <Cmd>BrowseFiles<CR>
 nnoremap <silent> \r <Cmd>ResumeSearch<CR>
 nnoremap <silent> \f <Cmd>Telescope find_files<CR>
 nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
+nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
-nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
 
 " Minimap
 nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
+
+nnoremap <silent> \h <Cmd>lua require('lsp-inlayhints').toggle()<CR>
 
 " Preview Bindings
 nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>

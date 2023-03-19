@@ -32,18 +32,26 @@ protocol.CompletionItemKind = {
     '', -- TypeParameter
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.offsetEncoding = { "utf-16" }
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+capabilities.offsetEncoding = {"utf-16",}
 
 -- TypeScript
 nvim_lsp.tsserver.setup({ capabilities = capabilities})
 -- C, C++
-nvim_lsp.clangd.setup({ capabilities = capabilities })
+nvim_lsp.clangd.setup({
+    capabilities = capabilities,
+    settings = { Lua = {
+        hint = { enable = true }
+    } }
+})
 
 -- Lua
 nvim_lsp.lua_ls.setup({
     capabilities = capabilities,
-    settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+    settings = { Lua = {
+        diagnostics = { globals = { 'vim' } },
+        hint = { enable = true }
+    } }
 })
 
 -- LaTeX
