@@ -188,13 +188,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Alt - q` - Force Quit All
 
-`Shift - Up` - Move Line | Block up
+`Shift - Up` - Move Line | Insert | Block up
 
-`Shift - Down` - Move Line | Block Down
+`Shift - Down` - Move Line| Insert | Block Down
 
-`Shift - Left` - Move Line | Block Left
+`Shift - Left` - Move Line | Insert | Block Left
 
-`Shift - Right` - Move Line | Block Right
+`Shift - Right` - Move Line | Insert | Block Right
 
 `CTRL - f` - Format
 
@@ -240,17 +240,17 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `dr` - Debugger Toggle
 
-`C - g` - Git Buffer Hunk Preview
+`CTRL - g` - Git Buffer Hunk Preview
 
-`A - g` - Git Buffer Blame Preview
+`Alt - g` - Git Buffer Blame Preview
 
-`C - A - g` - Git Buffer Gutter Blame Preview
+`CTRL - Alt - g` - Git Buffer Gutter Blame Preview
 
 `S - g` - Git Toggle Diff Preference
 
-`C - A - c` - Copy
+`CTRL - Alt - c` - Copy
 
-`C - A - v` - Paste
+`CTRL - Alt - v` - Paste
 
 `=` - Open Fold
 
@@ -259,5 +259,9 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `+` - Open All Folds
 
 `_` - Close All Folds
+
+`CTRL - /` - Comment Line In Line | Insert | Visual
+
+`CTRL - Alt - /` - Comment BLock In Visual
 
 </details>

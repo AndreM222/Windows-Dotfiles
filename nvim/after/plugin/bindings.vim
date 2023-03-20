@@ -49,6 +49,7 @@ nnoremap <Tab> <Cmd>BufferLineCycleNext<CR> {}
 nnoremap <S-Tab> <Cmd>BufferLineCyclePrev<CR> {}
 
 " Comment Bindings
+inoremap <C-_> <ESC><Plug>(comment_toggle_linewise_current)<CR>==gi
 nnoremap <C-_> <Plug>(comment_toggle_linewise_current)
 xnoremap <C-_> <Plug>(comment_toggle_linewise_visual)
 xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
