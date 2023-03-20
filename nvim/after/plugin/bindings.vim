@@ -12,7 +12,11 @@ nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
 " Minimap
 nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
 
+" Hints
 nnoremap <silent> \h <Cmd>lua require('lsp-inlayhints').toggle()<CR>
+
+" Installations
+nnoremap <silent> <Home> <Cmd>Mason<CR>
 
 " Preview Bindings
 nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
@@ -24,18 +28,20 @@ nnoremap <silent> <A-w> <Cmd>wqa<CR>
 nnoremap <silent> <A-q> <Cmd>qa!<CR>
 
 " Moving Selections
-nnoremap <S-Up> <Plug>MoveLineUp
-nnoremap <S-Down> <Plug>MoveLineDown
-vnoremap <S-Down> <Plug>MoveBlockDown
-vnoremap <S-Up> <Plug>MoveBlockUp
+
+nnoremap <S-Down> :m .+1<CR>==
+nnoremap <S-Up> :m .-2<CR>==
+inoremap <S-Down> <Esc>:m .+1<CR>==gi
+inoremap <S-Up> <Esc>:m .-2<CR>==gi
+vnoremap <S-Down> :m '>+1<CR>gv=gv
+vnoremap <S-Up> :m '<-2<CR>gv=gv
 
 vnoremap <S-Left> <gv
 vnoremap <S-Right> >gv
-nnoremap <S-Left> <
-nnoremap <S-Right> >
-
-vnoremap <S-j> <Plug>MoveBlockLeft
-vnoremap <S-l> <Plug>MoveBlockRight
+inoremap <S-Left> <Esc><<<CR>==gi
+inoremap <S-Right> <Esc>>><CR>==gi
+nnoremap <S-Left> <<
+nnoremap <S-Right> >>
 
 " Bufferline Bindings
 nnoremap <S-q> <Cmd>bdelete<CR>

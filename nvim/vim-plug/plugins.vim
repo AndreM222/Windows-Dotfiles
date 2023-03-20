@@ -18,7 +18,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'gorbit99/codewindow.nvim'
-Plug 'matze/vim-move'
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'

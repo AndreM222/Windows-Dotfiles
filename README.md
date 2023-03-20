@@ -133,7 +133,6 @@ Font Size: 9
 - [Minimap](https://github.com/gorbit99/codewindow.nvim) - Minimap Code Preview
 - [Folding](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
-- [Vim-Move](https://github.com/matze/vim-move) - Moving Selection
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Inline-Hints](https://github.com/lvimuser/lsp-inlayhints.nvim) - Parameters Hints
 
@@ -196,10 +195,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `Shift - Left` - Move Line | Block Left
 
 `Shift - Right` - Move Line | Block Right
-
-`S-j` - Move Block Selection Left
-
-`S-l` - Move Block Selection Left
 
 `CTRL - f` - Format
 
