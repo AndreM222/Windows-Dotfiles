@@ -10,12 +10,12 @@ protocol.CompletionItemKind = {
     '', -- Function
     '', -- Constructor
     'ﰠ', -- Field
-    "", -- Variable
+    "", -- Variable
     '', -- Class
     '', -- Interface
     '', -- Module
     'ﰠ', -- Property
-    '塞', -- Unit
+    '', -- Unit
     '', -- Value
     '', -- Enum
     '', -- Keyword
@@ -25,7 +25,7 @@ protocol.CompletionItemKind = {
     '', -- Reference
     '', -- Folder
     '', -- EnumMember
-    '', -- Constant
+    '', -- Constant
     'פּ', -- Struct
     '', -- Event
     '', -- Operator
@@ -38,20 +38,15 @@ capabilities.offsetEncoding = {"utf-16",}
 -- TypeScript
 nvim_lsp.tsserver.setup({ capabilities = capabilities})
 -- C, C++
-nvim_lsp.clangd.setup({
-    capabilities = capabilities,
-    settings = { Lua = {
-        hint = { enable = true }
-    } }
-})
+nvim_lsp.clangd.setup({ capabilities = capabilities })
+
+-- C#
+nvim_lsp.csharp_ls.setup({ capabilities = capabilities })
 
 -- Lua
 nvim_lsp.lua_ls.setup({
     capabilities = capabilities,
-    settings = { Lua = {
-        diagnostics = { globals = { 'vim' } },
-        hint = { enable = true }
-    } }
+    settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
 })
 
 -- LaTeX
@@ -75,7 +70,7 @@ end
 
 -- Setup diagnostic symbol
 vim.diagnostic.config({
-    virtual_text = { prefix = '♦' },
+    virtual_text = { prefix = '󰣏' },
     update_in_insert = true,
     float = { source = "always" }
 })

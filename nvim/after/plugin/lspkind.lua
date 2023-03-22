@@ -10,12 +10,12 @@ kind.init({
         Function = "",
         Constructor = "",
         Field = "ﰠ",
-        Variable = "",
+        Variable = "",
         Class = "",
         Interface = "",
         Module = "",
         Property = "ﰠ",
-        Unit = "塞",
+        Unit = "",
         Value = "",
         Enum = "",
         Keyword = "",
@@ -25,10 +25,12 @@ kind.init({
         Reference = "",
         Folder = "",
         EnumMember = "",
-        Constant = "",
+        Constant = "",
         Struct = "פּ",
         Event = "",
         Operator = "",
         TypeParameter = ""
     },
 })
+
+

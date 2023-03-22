@@ -8,5 +8,5 @@ picker.setup({
         ["<S-Left>"] = "<Plug>ColorPickerSlider5Decrease",
         ["<S-Right>"] = "<Plug>ColorPickerSlider5Increase",
     },
-    ["icons"] = { "", " " }
+    ["icons"] = { "", " " },
 })

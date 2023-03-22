@@ -8,8 +8,8 @@ nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
-
 " Minimap
+
 nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
 
 " Hints
@@ -29,17 +29,17 @@ nnoremap <silent> <A-q> <Cmd>qa!<CR>
 
 " Moving Selections
 
-nnoremap <S-Down> :m .+1<CR>==
-nnoremap <S-Up> :m .-2<CR>==
-inoremap <S-Down> <Esc>:m .+1<CR>==gi
-inoremap <S-Up> <Esc>:m .-2<CR>==gi
-vnoremap <S-Down> :m '>+1<CR>gv=gv
-vnoremap <S-Up> :m '<-2<CR>gv=gv
+nnoremap <silent> <S-Down> :m .+1<CR>==
+nnoremap <silent> <S-Up> :m .-2<CR>==
+inoremap <silent> <S-Down> <Esc>:m .+1<CR>==gi
+inoremap <silent> <S-Up> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <S-Down> :m '>+1<CR>gv=gv
+vnoremap <silent> <S-Up> :m '<-2<CR>gv=gv
 
 vnoremap <S-Left> <gv
 vnoremap <S-Right> >gv
-inoremap <S-Left> <Esc><<<CR>==gi
-inoremap <S-Right> <Esc>>><CR>==gi
+inoremap <S-Left> <Esc><<i
+inoremap <S-Right> <Esc>>>i
 nnoremap <S-Left> <<
 nnoremap <S-Right> >>
 
@@ -64,16 +64,10 @@ nnoremap gp <Cmd>Lspsaga peek_definition<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 
 " Movement between panes
-nmap <A-Left> <Cmd>wincmd h<CR>
-nmap <A-Right> <Cmd>wincmd l<CR>
-nmap <A-Down>  <Cmd>wincmd j<CR>
-nmap <A-Up> <Cmd>wincmd k<CR>
-
-" Resize panes
-nmap <A-j> <Cmd>vertical resize -5<CR>
-nmap <A-l> <Cmd>vertical resize +5<CR>
-nmap <A-k>  <Cmd>res +5<CR>
-nmap <A-i> <Cmd>res -5<CR>
+nnoremap <A-h> <Cmd>wincmd h<CR>
+nnoremap <A-l> <Cmd>wincmd l<CR>
+nnoremap <A-j> <Cmd>wincmd j<CR>
+nnoremap <A-k> <Cmd>wincmd k<CR>
 
 " DAP Bindings
 nnoremap <F9> <Cmd>DapContinue<CR>
@@ -108,7 +102,6 @@ nnoremap + <Cmd>OpenAllFolds<CR>
 nnoremap _ <Cmd>CloseAllFolds<CR>
 
 " Ctrl Movement
-
 nnoremap <C-Right> E
 inoremap <C-Right> <C-o>E<Right>
 vnoremap <C-Right> E

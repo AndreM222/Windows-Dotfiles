@@ -9,7 +9,16 @@ local status4, dap = pcall(require, "mason-nvim-dap")
 if (not status4) then return end
 
 -- Setup Mason
-mason.setup()
+mason.setup({
+    ui = {
+        border = "single",
+        icons = {
+            package_installed = "🟢",
+            package_pending = "",
+            package_uninstalled = "⭕"
+        }
+    }
+})
 
 -- Setuo Null-ls on mason
 null_ls.setup({
@@ -26,9 +35,14 @@ lspconfig.setup({
         "pyright",
         "texlab",
         "tsserver",
-        "vimls"
+        "vimls",
+        "csharp_ls"
     },
     automatic_installation = true
 })
 
-dap.setup({ensure_installed = { "codelldb", "cppdbg" }})
+-- Setup dap on mason
+dap.setup({
+    ensure_installed = { "codelldb", "cppdbg" },
+    automatic_installation = true
+})

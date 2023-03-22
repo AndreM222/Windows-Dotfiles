@@ -30,5 +30,3 @@ vim.api.nvim_create_user_command(
     end,
     { nargs = 0 }
 )
-
--- require("statuscol").setup()

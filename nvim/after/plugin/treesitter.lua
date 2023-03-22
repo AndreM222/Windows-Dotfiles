@@ -15,6 +15,7 @@ treesitter.setup({
         "lua",
         "cpp",
         "c",
+        "c_sharp",
         "python",
         "javascript"
     },
