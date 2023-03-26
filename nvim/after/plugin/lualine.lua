@@ -2,10 +2,17 @@
 local status1, lualine = pcall(require, 'lualine')
 if (not status1) then return end
 
+local cozynight = require('lualine.themes.palenight')
+
+cozynight.insert.a.bg = '#f7397c'
+cozynight.insert.b.fg = '#f7397c'
+cozynight.visual.a.bg = '#ff940d'
+cozynight.visual.b.fg = '#ff940d'
+
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = 'cozynight',
+        theme = cozynight,
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
