@@ -313,4 +313,8 @@ For example:
 This will disable the background from dracula so transparency can be seen.
 ```
 
+Problem: `C-Sharp not running`
+
+Fix: `You are required to create a project for it to work`
+
 </details>
