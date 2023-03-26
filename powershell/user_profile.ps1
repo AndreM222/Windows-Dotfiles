@@ -1,6 +1,7 @@
 #Prompt
 
-oh-my-posh init pwsh --config $HOME\scoop\apps\oh-my-posh\7.94.1\themes\minimalNight.omp.json | Invoke-Expression
+# oh-my-posh init pwsh --config $HOME\scoop\apps\oh-my-posh\7.94.1\themes\minimalNight.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config $HOME\.config\powershell\minimalNight.omp.json | Invoke-Expression
 Import-Module Terminal-Icons
 
 # PSReadLine

@@ -6,7 +6,7 @@
 <img src="Terminal-Preview_3.png">
 </p>
 
-## Windows Terminal Keybindings
+## Windows Terminal 🖥️
 
 ```
 --- Split ---
@@ -54,11 +54,20 @@ Opacity Config: 80
 Font Size: 9
 ```
 
-## Fonts
+## Font 🖌️
 
 - [JetBrainsMonoNL NFM](https://www.nerdfonts.com/font-downloads) - Font
 
-## Setup
+## Theme 🎭
+
+- [Dracula](https://draculatheme.com/) - Dracula Color Theme
+
+## Terminal 🏢
+
+- Windows terminal - Terminal
+- [PowerShell](https://learn.microsoft.com/en-us/powershell/) - Shell
+
+## Setup ⚒️
 
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
@@ -75,7 +84,7 @@ Font Size: 9
 - [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - `scoop install dotnet-sdk`
 - [Dotnet-Nuget](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source#examples)- `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
 
-## Servers
+## Servers 🗃️
 
 `Live-Server` npm install -g live-server
 
@@ -91,7 +100,7 @@ Font Size: 9
 
 `C-Sharp` dotnet tool install --global csharp-ls
 
-## Format Languages
+## Format Languages 📄
 
 `Python` pip install --upgrade autopep8
 
@@ -101,12 +110,11 @@ Font Size: 9
 
 `Latex` scoop install latexindent
 
-## Neovim Plugins
+## Neovim Plugins 📲
 
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
 - [nvim-Web-Devicons](https://github.com/kyazdani42/nvim-web-devicons) - Icons
 - [Nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) - Neovim Tree
-- [Dracula](https://draculatheme.com/) - Dracula Color Theme
 - [LSPConfig](https://github.com/neovim/nvim-lspconfig) - Keys Configuration
 - [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
@@ -161,7 +169,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 <details>
 
-<summary>Custom Mappings</summary>
+<summary>Custom Mappings ⌨️</summary>
 
 `\ + f` - Telescope Find Files
 
@@ -272,5 +280,37 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `CTRL - /` - Comment Line In Line | Insert | Visual
 
 `CTRL - Alt - /` - Comment BLock In Visual
+
+</details>
+
+<details>
+<summary>Debugging 🐞</summary>
+
+Problem:
+```
+The script autopep8.exe is installed in 'C:\Users\YOURNAME\AppData\Roaming\Python\Python311\Scripts' 
+which is not on PATH. Consider adding this directory to PATH or, if you prefer to suppress this warning,
+use --no-warn-script-location.
+```
+Fix: `Add environment variable to path: (C:\Users\YOURNAME\AppData\Roaming\Python\Python311\Scripts)`
+
+Problem: `Icons are not showing completly`
+
+Fix:
+```
+Some fonts do not work well with windows terminal and can cause that issue. 
+You have to try until you find the right one. Generaly fonts ending with mono work
+```
+problem: `Transparency Not Available`
+
+Fix: 
+```
+Check you enabled transparency in the temrinal. If you still encounter
+problems then you probably have to enable it from your nvim configuration.
+Dracula theme does not come with transparency so some tweaks are requried.
+For example:
+                let g:dracula_colorterm=0
+This will disable the background from dracula so transparency can be seen.
+```
 
 </details>
