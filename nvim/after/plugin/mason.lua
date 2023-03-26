@@ -36,7 +36,7 @@ lspconfig.setup({
         "texlab",
         "tsserver",
         "vimls",
-        "csharp_ls"
+        "omnisharp"
     },
     automatic_installation = true
 })

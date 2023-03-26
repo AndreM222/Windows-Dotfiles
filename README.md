@@ -98,7 +98,7 @@ Font Size: 9
 
 `LaTeX` scoop install texlab 
 
-`C-Sharp` dotnet tool install --global csharp-ls
+`C-Sharp` At the installation of dotnet
 
 ## Format Languages 📄
 
