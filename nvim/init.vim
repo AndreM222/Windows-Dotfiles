@@ -5,31 +5,31 @@ scriptencoding=utf-8
 set fileencoding=utf-8
 
 " Setup for startup
-
 if exists("&termguicolors") && exists("&winblend")
     syntax enable
     set termguicolors
     set winblend=0
     set wildoptions=pum
     set pumblend=10
-    set background=dark
+    set fillchars+=eob:-
+    let colorscheme_bg = "dark"
     let g:dracula_colorterm=0
     colorscheme dracula
-    hi FloatBorder guibg=NONE guifg=#44475a
+    highlight FloatBorder guibg=NONE guifg=#6272A4
     highlight DiffDelete guibg=NONE guifg=#ff5555
     highlight cursorlinenr guifg=Orange
-    set fillchars+=eob:-
     highlight Folded  guibg=NONE
     highlight NormalFloat guifg=NONE
-    highlight Telescopeborder guifg=#4e5164
+    highlight Telescopeborder guifg=#6272A4
     highlight TelescopeResultsTitle guifg=#50fa7b
     highlight TelescopePromptTitle guifg=#50fa7b
     highlight TelescopePreviewTitle guifg=#50fa7b
     highlight TelescopePromptCounter guifg=#4e5164
-    highlight WinSeparator guibg=NONE guifg=#44475a
-    highlight DraculaSearch cterm=reverse ctermfg=84 gui=reverse guifg=#585d9a guibg=#cad551
-    highlight DraculaOrangeInverse cterm=reverse gui=reverse ctermfg=236 ctermbg=215 guifg=#6272A4 guibg=#d5df7b
-
+    highlight WinSeparator guibg=NONE guifg=#6272A4
+    highlight DraculaSearch cterm=reverse ctermfg=84 gui=reverse guifg=#585d9a guibg=Orange
+    highlight DraculaOrangeInverse cterm=reverse gui=reverse ctermfg=236 ctermbg=215 guifg=#6272A4
+    highlight NullLsInfoBorder guifg=#6272A4
+    highlight LspInfoBorder guifg=#6272A4
 end
 
 set mouse=a
@@ -55,3 +55,7 @@ set foldlevelstart=99
 set foldenable
 set laststatus=3
 set incsearch
+
+" Remove highlight on movement
+autocmd CursorMoved * set nohlsearch
+nnoremap n n:set hlsearch<cr>

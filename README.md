@@ -56,7 +56,7 @@ Font Size: 9
 
 ## Fonts
 
-- [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads) - Font
+- [JetBrainsMonoNL NFM](https://www.nerdfonts.com/font-downloads) - Font
 
 ## Setup
 
@@ -72,6 +72,8 @@ Font Size: 9
 - [Yarn & NodeJS](https://scoop.sh/#/) - `scoop install yarn`
 - [NVM](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
 - [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
+- [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - `scoop install dotnet-sdk`
+- [Dotnet-Nuget](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source#examples)- `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
 
 ## Servers
 
@@ -86,6 +88,8 @@ Font Size: 9
 `Lua` scoop install lua-language-server
 
 `LaTeX` scoop install texlab 
+
+`C-Sharp` dotnet tool install --global csharp-ls
 
 ## Format Languages
 
@@ -135,6 +139,7 @@ Font Size: 9
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Inline-Hints](https://github.com/lvimuser/lsp-inlayhints.nvim) - Parameters Hints
+- [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 
 ## Installations
 
@@ -173,6 +178,10 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `F2` - Telescope Help Tags
 
 `F3` - Telescope Keymaps
+
+`F5` - Lsp Status
+
+`F6` - Null-LS Status
 
 `\ + m` - Minimap Toggle
 

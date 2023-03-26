@@ -18,6 +18,10 @@ nnoremap <silent> \h <Cmd>lua require('lsp-inlayhints').toggle()<CR>
 " Installations
 nnoremap <silent> <Home> <Cmd>Mason<CR>
 
+" Status
+nnoremap <silent> <F5> <Cmd>LspInfo<CR>
+nnoremap <silent> <F6> <Cmd>NullLsInfo<CR>
+
 " Preview Bindings
 nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
 
@@ -27,8 +31,10 @@ nnoremap <silent> <C-A-s> <Cmd>wa<CR>
 nnoremap <silent> <A-w> <Cmd>wqa<CR>
 nnoremap <silent> <A-q> <Cmd>qa!<CR>
 
-" Moving Selections
+inoremap <C-s> <Esc><Cmd>w<CR>==gi
+inoremap <C-A-s> <Esc><Cmd>wa<CR>==gi
 
+" Moving Selections
 nnoremap <silent> <S-Down> :m .+1<CR>==
 nnoremap <silent> <S-Up> :m .-2<CR>==
 inoremap <silent> <S-Down> <Esc>:m .+1<CR>==gi
@@ -64,10 +70,16 @@ nnoremap gp <Cmd>Lspsaga peek_definition<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 
 " Movement between panes
-nnoremap <A-h> <Cmd>wincmd h<CR>
-nnoremap <A-l> <Cmd>wincmd l<CR>
-nnoremap <A-j> <Cmd>wincmd j<CR>
-nnoremap <A-k> <Cmd>wincmd k<CR>
+nnoremap <A-Left> <Cmd>wincmd h<CR>
+nnoremap <A-Right> <Cmd>wincmd l<CR>
+nnoremap <A-Down>  <Cmd>wincmd j<CR>
+nnoremap <A-Up> <Cmd>wincmd k<CR>
+
+" Resize panes
+nnoremap <A-j> <Cmd>vertical resize -5<CR>
+nnoremap <A-l> <Cmd>vertical resize +5<CR>
+nnoremap <A-k>  <Cmd>res +5<CR>
+nnoremap <A-i> <Cmd>res -5<CR>
 
 " DAP Bindings
 nnoremap <F9> <Cmd>DapContinue<CR>
@@ -105,3 +117,7 @@ nnoremap _ <Cmd>CloseAllFolds<CR>
 nnoremap <C-Right> E
 inoremap <C-Right> <C-o>E<Right>
 vnoremap <C-Right> E
+
+" Insert Fast Maps
+inoremap <C-Up> <Esc><Right><Plug>(VM-Add-Cursor-Up)
+inoremap <C-Down> <Esc><Right><Plug>(VM-Add-Cursor-Down)
