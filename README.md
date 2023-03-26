@@ -149,13 +149,13 @@ Font Size: 9
 - [Inline-Hints](https://github.com/lvimuser/lsp-inlayhints.nvim) - Parameters Hints
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 
-## Installations
+## Installations ⬇️
 
 - [Miktek](https://miktex.org/) - LaTeX Compiler
 
 - [Strawberry Pearl](https://strawberryperl.com/) - Libraries
 
-## Compilers And Intrepeters
+## Compilers And Intrepeters ⚙️
 
 - [NodeJS](https://scoop.sh/#/apps?s=0&d=1&o=true&q=nodejs) - scoop install nodejs
 
@@ -163,7 +163,23 @@ Font Size: 9
 
 - [Python](https://www.python.org/downloads/) - Python Compiler
 
-## Neovim Keybindings
+## Directory Structure
+
+```
+📂 $HOME\AppData\Local\Nvim
+|__📂after\plugin
+|__📂autoload\plugged
+|__📂vim-plug
+|   |__📄plugins.vim
+|__📄init.vim
+
+📂$HOME\.config
+|__📂powershell
+    |__📄minimalNight.omp.json
+    |__📄user_profile.ps1
+```
+
+## Info ℹ️
 
 Read: `To visualize on vim the keybindings press F3. I also documented all my custom bindings.`
 
