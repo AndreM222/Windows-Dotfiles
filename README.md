@@ -175,11 +175,10 @@ Font Size: 9
 |   |__📄plugins.vim
 |__📄init.vim
 
-📂$HOME/.config
-|__📂powershell
-    |__📄user_profile.ps1
-    |__📂themes
-        |__📄minimalNight.omp.json
+📂$HOME/.config/powershell
+|__📄user_profile.ps1
+|__📂themes
+    |__📄minimalNight.omp.json
 ```
 
 ## Info ℹ️
