@@ -166,14 +166,14 @@ Font Size: 9
 ## Directory Structure 🗂️
 
 ```
-📂 $HOME\AppData\Local\Nvim
-|__📂after\plugin
-|__📂autoload\plugged
+📂 $HOME/AppData/Local/Nvim
+|__📂after/plugin
+|__📂autoload/plugged
 |__📂vim-plug
 |   |__📄plugins.vim
 |__📄init.vim
 
-📂$HOME\.config
+📂$HOME/.config
 |__📂powershell
     |__📄minimalNight.omp.json
     |__📄user_profile.ps1
