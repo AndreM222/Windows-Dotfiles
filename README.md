@@ -168,7 +168,9 @@ Font Size: 9
 ```
 📂 $HOME/AppData/Local/Nvim
 |__📂after/plugin
-|__📂autoload/plugged
+|__📂autoload
+|   |__📂plugged
+|   |__📄plug.vim
 |__📂vim-plug
 |   |__📄plugins.vim
 |__📄init.vim
