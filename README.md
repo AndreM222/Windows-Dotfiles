@@ -175,8 +175,9 @@ Font Size: 9
 
 📂$HOME/.config
 |__📂powershell
-    |__📄minimalNight.omp.json
     |__📄user_profile.ps1
+    |__📂themes
+        |__📄minimalNight.omp.json
 ```
 
 ## Info ℹ️
