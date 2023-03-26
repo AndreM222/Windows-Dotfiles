@@ -62,7 +62,7 @@ Font Size: 9
 
 - [Dracula](https://draculatheme.com/) - Dracula Color Theme
 
-## Terminal 🏢
+## Terminal 📟
 
 - Windows terminal - Terminal
 - [PowerShell](https://learn.microsoft.com/en-us/powershell/) - Shell
@@ -163,7 +163,7 @@ Font Size: 9
 
 - [Python](https://www.python.org/downloads/) - Python Compiler
 
-## Directory Structure
+## Directory Structure 🗂️
 
 ```
 📂 $HOME\AppData\Local\Nvim
