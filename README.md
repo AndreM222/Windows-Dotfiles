@@ -146,7 +146,6 @@ Font Size: 9
 - [Folding](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
-- [Inline-Hints](https://github.com/lvimuser/lsp-inlayhints.nvim) - Parameters Hints
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 
 ## Installations ⬇️
