@@ -4,7 +4,7 @@ nnoremap <silent> \r <Cmd>ResumeSearch<CR>
 nnoremap <silent> \f <Cmd>Telescope find_files<CR>
 nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
-nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
+nnoremap <silent> \\\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
@@ -115,9 +115,10 @@ nnoremap <C-Right> E
 inoremap <C-Right> <C-o>E<Right>
 vnoremap <C-Right> E
 
-" Insert Fast Maps
+" Multi Cursor
 inoremap <C-Up> <Esc><Right><Plug>(VM-Add-Cursor-Up)
 inoremap <C-Down> <Esc><Right><Plug>(VM-Add-Cursor-Down)
+nnoremap <C-p> <Plug>(VM-Add-Cursor-At-Pos)
 
 " Select all
 nnoremap <C-a> ggVG

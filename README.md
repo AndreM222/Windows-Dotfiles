@@ -119,7 +119,7 @@ Font Size: 9
 - [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
 - [Telescope Browser](https://github.com/nvim-telescope/telescope-file-browser.nvim) - Telescope File Browser
-- [Makrdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
+- [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
 - [Nvim-CMP](https://github.com/hrsh7th/nvim-cmp) - Auto Complete Setup
 - [Lspkind-Nvim](https://github.com/onsails/lspkind.nvim) - Icons for Nvim LSP
 - [Mason-nvim](https://github.com/williamboman/mason.nvim) - Language server installer
@@ -143,7 +143,7 @@ Font Size: 9
 - [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
 - [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
 - [Minimap](https://github.com/gorbit99/codewindow.nvim) - Minimap Code Preview
-- [Folding](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
+- [Nvim-UFO](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
@@ -192,7 +192,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `\ + r` - Telescope Live Grep
 
-`\ + \` - Telescope Buffers
+`\ + \ + \` - Telescope Buffers
 
 `\ + t` - Telescope
 
@@ -297,6 +297,8 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `CTRL - Alt - /` - Comment BLock
 
 `CTRL - a` - Select All
+
+`CTRL - p` - Add Cursor At Current Position
 </details>
 
 <details>
