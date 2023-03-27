@@ -119,6 +119,7 @@ vnoremap <C-Right> E
 inoremap <C-Up> <Esc><Right><Plug>(VM-Add-Cursor-Up)
 inoremap <C-Down> <Esc><Right><Plug>(VM-Add-Cursor-Down)
 nnoremap <C-p> <Plug>(VM-Add-Cursor-At-Pos)
+inoremap <C-p> <Esc><Plug>(VM-Add-Cursor-At-Pos)
 
 " Select all
 nnoremap <C-a> ggVG
