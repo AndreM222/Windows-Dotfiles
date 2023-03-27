@@ -223,13 +223,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Alt - q` - Force Quit All
 
-`Shift - Up` - Move Line | Insert | Block up
+`Shift - Up` - Move Line | Block up
 
-`Shift - Down` - Move Line| Insert | Block Down
+`Shift - Down` - Move Line | Block Down
 
-`Shift - Left` - Move Line | Insert | Block Left
+`Shift - Left` - Move Line | Block Left
 
-`Shift - Right` - Move Line | Insert | Block Right
+`Shift - Right` - Move Line | Block Right
 
 `CTRL - f` - Format
 
@@ -295,10 +295,11 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `_` - Close All Folds
 
-`CTRL - /` - Comment Line In Line | Insert | Visual
+`CTRL - /` - Comment Line In Line
 
-`CTRL - Alt - /` - Comment BLock In Visual
+`CTRL - Alt - /` - Comment BLock
 
+`CTRL - a` - Select All
 </details>
 
 <details>

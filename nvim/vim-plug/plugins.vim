@@ -7,11 +7,11 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'rcarriga/nvim-notify'
 Plug 'rrethy/vim-illuminate'
-Plug 'lvimuser/lsp-inlayhints.nvim'
 
 " Tools
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
+
 " Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'

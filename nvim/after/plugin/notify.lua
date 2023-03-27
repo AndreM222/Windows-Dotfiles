@@ -10,13 +10,9 @@ vim.notify = notify
 local client_notifs = {}
 
 local function get_notif_data(client_id, token)
-    if not client_notifs[client_id] then
-        client_notifs[client_id] = {}
-    end
+    if not client_notifs[client_id] then client_notifs[client_id] = {} end
 
-    if not client_notifs[client_id][token] then
-        client_notifs[client_id][token] = {}
-    end
+    if not client_notifs[client_id][token] then client_notifs[client_id][token] = {} end
 
     return client_notifs[client_id][token]
 end
@@ -36,9 +32,7 @@ local function update_spinner(client_id, token)
             replace = notif_data.notification,
         })
 
-        vim.defer_fn(function()
-            update_spinner(client_id, token)
-            end, 100)
+        vim.defer_fn(function() update_spinner(client_id, token) end, 100)
     end
 end
 
@@ -57,9 +51,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 
     local val = result.value
 
-    if not val.kind then
-    return
-    end
+    if not val.kind then return end
 
     local notif_data = get_notif_data(client_id, result.token)
 
@@ -78,14 +70,14 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
     elseif val.kind == "report" and notif_data then
         notif_data.notification = vim.notify(format_message(val.message, val.percentage), "info", {
             replace = notif_data.notification,
-            hide_from_history = false,
+            hide_from_history = false
         })
     elseif val.kind == "end" and notif_data then
         notif_data.notification =
             vim.notify(val.message and format_message(val.message) or "Complete", "info", {
                 icon = "",
                 replace = notif_data.notification,
-                timeout = 3000,
+                timeout = 3000
             })
 
         notif_data.spinner = nil
@@ -102,7 +94,7 @@ dap.listeners.before['event_progressStart']['progress-notifications'] = function
         title = format_title(body.title, session.config.type),
         icon = spinner_frames[1],
         timeout = false,
-        hide_from_history = false,
+        hide_from_history = false
     })
 
     notif_data.notification.spinner = 1,
@@ -113,7 +105,7 @@ dap.listeners.before['event_progressUpdate']['progress-notifications'] = functio
     local notif_data = get_notif_data("dap", body.progressId)
     notif_data.notification = vim.notify(format_message(body.message, body.percentage), "info", {
         replace = notif_data.notification,
-        hide_from_history = false,
+        hide_from_history = false
     })
 end
 

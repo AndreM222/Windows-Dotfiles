@@ -3,7 +3,14 @@ if (not status) then return end
 
 local lspkind = require 'lspkind'
 
+vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#21222C" })
+
 cmp.setup({
+    window = {
+        documentation = {
+            winhighlight = "Normal:CmpNormal",
+        }
+    },
     snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)

@@ -8,12 +8,9 @@ nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
+
 " Minimap
-
 nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
-
-" Hints
-nnoremap <silent> \h <Cmd>lua require('lsp-inlayhints').toggle()<CR>
 
 " Installations
 nnoremap <silent> <Home> <Cmd>Mason<CR>
@@ -55,7 +52,7 @@ nnoremap <Tab> <Cmd>BufferLineCycleNext<CR> {}
 nnoremap <S-Tab> <Cmd>BufferLineCyclePrev<CR> {}
 
 " Comment Bindings
-inoremap <C-_> <ESC><Plug>(comment_toggle_linewise_current)<CR>==gi
+inoremap <C-_> <ESC><Plug>(comment_toggle_linewise_current)==gi
 nnoremap <C-_> <Plug>(comment_toggle_linewise_current)
 xnoremap <C-_> <Plug>(comment_toggle_linewise_visual)
 xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
@@ -121,3 +118,7 @@ vnoremap <C-Right> E
 " Insert Fast Maps
 inoremap <C-Up> <Esc><Right><Plug>(VM-Add-Cursor-Up)
 inoremap <C-Down> <Esc><Right><Plug>(VM-Add-Cursor-Down)
+
+" Select all
+nnoremap <C-a> ggVG
+inoremap <C-a> <Esc> ggVG

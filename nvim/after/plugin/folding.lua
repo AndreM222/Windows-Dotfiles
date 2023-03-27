@@ -32,5 +32,8 @@ vim.api.nvim_create_user_command(
     { nargs = 0 }
 )
 
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 vim.o.foldcolumn = "1"
 vim.o.statuscolumn = '%s%=%l %{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " } '

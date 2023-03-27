@@ -30,6 +30,7 @@ if exists("&termguicolors") && exists("&winblend")
     highlight DraculaOrangeInverse cterm=reverse gui=reverse ctermfg=236 ctermbg=215 guifg=#6272A4
     highlight NullLsInfoBorder guifg=#6272A4
     highlight LspInfoBorder guifg=#6272A4
+    highlight IndentBlanklineContextChar guifg=#555c84
 end
 
 set mouse=a
@@ -50,9 +51,6 @@ set path:append{'**'}
 set wildignore:append{'*/node_modules/*'}
 set scrolloff=10
 set ignorecase
-set foldlevel=99
-set foldlevelstart=99
-set foldenable
 set laststatus=3
 set incsearch
 
