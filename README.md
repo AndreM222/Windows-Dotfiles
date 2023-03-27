@@ -212,8 +212,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `\ + P` - Markdown Preview Toggle
 
-`\ + h` - Hint Toggle
-
 `Ctrl - s` - Save
 
 `Ctrl - Alt - s` Save All
