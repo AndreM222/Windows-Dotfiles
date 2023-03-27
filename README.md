@@ -135,7 +135,7 @@ Font Size: 9
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
 - [Null-LS](https://github.com/jose-elias-alvarez/null-ls.nvim) - Formatting Languages
-- [Indent-Lines](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
+- [Indent-Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 - [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim) - LSP UI
 - [VGit](https://github.com/tanvirtin/vgit.nvim) - Visual Git
