@@ -1,3 +1,5 @@
+require("indent_blankline").setup { show_current_context = true }
+
 local status, ufo = pcall(require, "ufo")
 if (not status) then return end
 
