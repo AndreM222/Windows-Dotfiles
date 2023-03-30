@@ -1,4 +1,4 @@
-source $HOME\AppData\Local\nvim\vim-plug\plugins.vim
+lua require('plugins')
 
 set encoding=utf-8
 scriptencoding=utf-8
@@ -12,9 +12,9 @@ if exists("&termguicolors") && exists("&winblend")
     set wildoptions=pum
     set pumblend=10
     set fillchars+=eob:-
-    let colorscheme_bg = "dark"
+    let colorscheme_bg="dark"
     let g:dracula_colorterm=0
-    colorscheme dracula
+    colorscheme dracula 
     highlight FloatBorder guibg=NONE guifg=#6272A4
     highlight DiffDelete guibg=NONE guifg=#ff5555
     highlight cursorlinenr guifg=Orange
@@ -57,3 +57,8 @@ set incsearch
 " Remove highlight on movement
 autocmd CursorMoved * set nohlsearch
 nnoremap n n:set hlsearch<cr>
+
+" Preview PDF
+filetype plugin indent on
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'

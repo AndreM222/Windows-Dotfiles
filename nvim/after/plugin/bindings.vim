@@ -58,7 +58,7 @@ xnoremap <C-_> <Plug>(comment_toggle_linewise_visual)
 xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
 
 " Format Bindings
-nnoremap <C-f> <Cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == "null-ls" end,  bufnr = bufnr, })<CR>
+nnoremap <S-f> <Cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == "null-ls" end,  bufnr = bufnr, })<CR>
 
 " Lspsaga Setup
 nnoremap f <Cmd>Lspsaga hover_doc<CR>
@@ -90,9 +90,7 @@ nnoremap dr <Cmd>lua require'dapui'.toggle()<CR>
 
 " vgit Bindings
 nnoremap <C-g> <Cmd>VGit buffer_hunk_preview<CR>
-nnoremap <A-g> <Cmd>VGit buffer_blame_preview<CR>
-nnoremap <C-A-g> <Cmd>VGit buffer_gutter_blame_preview<CR>
-nnoremap <S-g> <Cmd>VGit toggle_diff_preference<CR>
+nnoremap <A-g> <Cmd>VGit buffer_gutter_blame_preview<CR>
 
 " Color Picker
 nnoremap <C-c> <Cmd>PickColor<CR>

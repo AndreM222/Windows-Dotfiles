@@ -74,6 +74,7 @@ Font Size: 9
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
 - [SQLite | MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
 - [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
+- [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop bucket add main`
 - [Oh-My-Posh](https://scoop.sh/#/apps?q=oh+my+posh&s=0&d=1&o=true) - `scoop install oh-my-posh`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
@@ -112,6 +113,7 @@ Font Size: 9
 
 ## Neovim Plugins 📲
 
+- [Packer](https://github.com/wbthomason/packer.nvim) - Nvim Plugin Installer
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
 - [nvim-Web-Devicons](https://github.com/kyazdani42/nvim-web-devicons) - Icons
 - [Nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) - Neovim Tree
@@ -167,11 +169,8 @@ Font Size: 9
 ```
 📂 $HOME/AppData/Local/Nvim
 |__📂after/plugin
-|__📂autoload
-|   |__📂plugged
-|   |__📄plug.vim
-|__📂vim-plug
-|   |__📄plugins.vim
+|__📂lua
+|   |__📄plugins.lua
 |__📄init.vim
 
 📂$HOME/.config/powershell
@@ -228,7 +227,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Shift - Right` - Move Line | Block Right
 
-`CTRL - f` - Format
+`Shift - f` - Format
 
 `CTRL - c` - Color Picker
 
@@ -274,9 +273,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - g` - Git Buffer Hunk Preview
 
-`Alt - g` - Git Buffer Blame Preview
-
-`CTRL - Alt - g` - Git Buffer Gutter Blame Preview
+`Alt - g` - Git Buffer Gutter Blame Preview
 
 `S - g` - Git Toggle Diff Preference
 
