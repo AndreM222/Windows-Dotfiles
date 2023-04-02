@@ -60,7 +60,7 @@ Font Size: 9
 
 ## Theme 🎭
 
-- [Dracula](https://draculatheme.com/) - Dracula Color Theme
+- [Dracula](https://github.com/Mofiqul/dracula.nvim) - Dracula Color Theme
 
 ## Terminal 📟
 
@@ -171,7 +171,8 @@ Font Size: 9
 |__📂after/plugin
 |__📂lua
 |   |__📄plugins.lua
-|__📄init.vim
+|   |__📄theme.lua
+|__📄init.lua
 
 📂$HOME/.config/powershell
 |__📄user_profile.ps1
@@ -313,8 +314,8 @@ Problem: `Icons are not showing completly`
 
 Fix:
 ```
-Some fonts do not work well with windows terminal and can cause that issue. 
-You have to try until you find the right one. Generaly fonts ending with mono work
+Some fonts do not work well with some color themes and can cause that issue or the terminal. 
+You have to try until you find the right font, switch the theme, terminal or make tweaks by yourself. Generaly fonts ending with mono work.
 ```
 problem: `Transparency Not Available`
 
@@ -322,9 +323,15 @@ Fix:
 ```
 Check you enabled transparency in the temrinal. If you still encounter
 problems then you probably have to enable it from your nvim configuration.
-Dracula theme does not come with transparency so some tweaks are requried.
+Dracula theme transparency is not sufficient so some tweaks are requried.
 For example:
-                let g:dracula_colorterm=0
+                colors = { bg = "NONE" },
+                transparent_bg = true,
+                show_end_of_buffer = true,
+                overrides = {
+                    EndOfBuffer = { fg = "#282A36" }
+                },
+
 This will disable the background from dracula so transparency can be seen.
 ```
 

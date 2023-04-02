@@ -28,7 +28,7 @@ startup.setup({
             {
                 desc = ' Dotfiles',
                 group = 'Number',
-                action = 'Telescope file_browser cwd=$HOME\\Appdata\\local\\nvim\\after\\plugin',
+                action = 'Telescope file_browser cwd=$HOME/Appdata/local/nvim',
                 key = 'd',
             },
             {

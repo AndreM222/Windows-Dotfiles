@@ -36,63 +36,61 @@ protocol.CompletionItemKind = {
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...)
-    -- Fix omnisharp tokens
-    if client.name == "omnisharp" then
-    client.server_capabilities.semanticTokensProvider = {
-    full = true,
-    legend = {
-       tokenModifiers = {
-          "declaration",
-          "definition",
-          "readonly",
-          "static",
-          "deprecated",
-          "abstract",
-          "async",
-          "modification",
-          "documentation",
-          "defaultLibrary",
-          "global",
-       },
-       tokenTypes = {
-          "namespace",
-          "type",
-          "class",
-          "enum",
-          "interface",
-          "struct",
-          "typeParameter",
-          "parameter",
-          "variable",
-          "property",
-          "enumMember",
-          "event",
-          "function",
-          "method",
-          "macro",
-          "keyword",
-          "modifier",
-          "comment",
-          "string",
-          "number",
-          "regexp",
-          "operator",
-          "decorator",
-       },
-    },
-     range = true,
-    }
-      end
+        -- Fix omnisharp tokens
+        if client.name == "omnisharp" then
+            client.server_capabilities.semanticTokensProvider = {
+                full = true,
+                legend = {
+                    tokenModifiers = {
+                        "declaration",
+                        "definition",
+                        "readonly",
+                        "static",
+                        "deprecated",
+                        "abstract",
+                        "async",
+                        "modification",
+                        "documentation",
+                        "defaultLibrary",
+                        "global",
+                    },
+                    tokenTypes = {
+                        "namespace",
+                        "type",
+                        "class",
+                        "enum",
+                        "interface",
+                        "struct",
+                        "typeParameter",
+                        "parameter",
+                        "variable",
+                        "property",
+                        "enumMember",
+                        "event",
+                        "function",
+                        "method",
+                        "macro",
+                        "keyword",
+                        "modifier",
+                        "comment",
+                        "string",
+                        "number",
+                        "regexp",
+                        "operator",
+                        "decorator",
+                    },
+                },
+                range = true,
+            }
+        end
     end
 
     -- Mappings.
-  local opts = { noremap = true, silent = true }
+    local opts = { noremap = true, silent = true }
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+
+    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())

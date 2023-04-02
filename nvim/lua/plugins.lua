@@ -14,14 +14,10 @@ packer.startup(function (use)
     use 'kyazdani42/nvim-web-devicons'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'rcarriga/nvim-notify'
-    use 'dracula/vim'
+    use 'Mofiqul/dracula.nvim'
     use 'rrethy/vim-illuminate'
     use {
         'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup()
-        end,
         requires = {'nvim-tree/nvim-web-devicons'}
     }
 
@@ -54,7 +50,10 @@ packer.startup(function (use)
     use 'ziontee113/color-picker.nvim'
 
     -- Preview
-    use ({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
     -- Debbuger
     use 'mfussenegger/nvim-dap'

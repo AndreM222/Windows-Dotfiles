@@ -8,8 +8,9 @@ if (not status3) then return end
 dapui.setup()
 daptext.setup({})
 
-vim.fn.sign_define('DapBreakpoint', {text='🔴'})
-vim.fn.sign_define('DapStopped', {text='🟢'})
+vim.fn.sign_define('DapBreakpoint', {text='', texthl='DapUIStop'})
+vim.fn.sign_define('DapStopped', {text='', texthl='DapUIThread'})
+
 
 dap.listeners.after.event_initialized["dapui_config"] = function ()
     dapui.open()
@@ -27,7 +28,7 @@ end
 dap.adapters.cppdbg = {
         id = 'cppdbg',
         type = 'executable',
-        command = vim.fn.stdpath("data") .. "\\mason\\packages\\cpptools\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe",
+        command = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7.cmd",
         options = {
         detached = false
     }
@@ -38,7 +39,7 @@ dap.adapters.codelldb = {
     port = "${port}",
     executable = {
         -- CHANGE THIS to your path!
-        command = vim.fn.stdpath("data") .. "\\mason\\packages\\codelldb\\extension\\adapter\\codelldb",
+        command = vim.fn.stdpath("data") .. "/mason/bin/codelldb.cmd",
         args = {"--port", "${port}"},
 
         -- On windows you may have to uncomment this:
@@ -55,17 +56,17 @@ dap.configurations.cpp = {
         type = "cppdbg",
         request = "launch",
         program = function()
-          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\', 'file')
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
         cwd = '${workspaceFolder}',
-        stopAtEntry = true
+        stopOnEntry = false
     },
     {
         name = "LLDB Debug",
         type = "codelldb",
         request = "launch",
         program = function()
-          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\', 'file')
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
         cwd = '${workspaceFolder}',
         stopOnEntry = false
