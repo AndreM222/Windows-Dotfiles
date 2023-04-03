@@ -35,6 +35,7 @@ packer.startup(function (use)
     use 'gorbit99/codewindow.nvim'
     use 'mg979/vim-visual-multi'
 
+
     -- Git
     use 'lewis6991/gitsigns.nvim'
     use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -51,9 +52,9 @@ packer.startup(function (use)
 
     -- Preview
     use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     -- Debbuger
     use 'mfussenegger/nvim-dap'

@@ -91,6 +91,7 @@ nnoremap dr <Cmd>lua require'dapui'.toggle()<CR>
 " vgit Bindings
 nnoremap <C-g> <Cmd>VGit buffer_hunk_preview<CR>
 nnoremap <A-g> <Cmd>VGit buffer_gutter_blame_preview<CR>
+nnoremap \g <Cmd>VGit project_diff_preview<CR>
 
 " Color Picker
 nnoremap <C-c> <Cmd>PickColor<CR>

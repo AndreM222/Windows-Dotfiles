@@ -272,9 +272,11 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `dr` - Debugger Toggle
 
-`CTRL - g` - Git Buffer Hunk Preview
+`CTRL - g` - Git Buffer Hunk Preview Current
 
-`Alt - g` - Git Buffer Gutter Blame Preview
+`Alt - g` - Git Buffer Gutter Blame Preview Current
+
+`\g` - Git Project Diff Preview
 
 `S - g` - Git Toggle Diff Preference
 
