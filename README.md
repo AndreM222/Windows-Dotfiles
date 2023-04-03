@@ -70,7 +70,7 @@ Font Size: 9
 ## Setup ⚒️
 
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
-- [Fira-Font](https://scoop.sh/#/apps?q=firacode&s=0&d=1&o=true)`scoop install FiraCode-NF-Mono`
+- [Fira-Font](https://scoop.sh/#/apps?q=firacode&s=0&d=1&o=true) - `scoop install FiraCode-NF-Mono`
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
 - [SQLite | MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
