@@ -2,7 +2,6 @@ local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
-
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
@@ -18,6 +17,7 @@ telescope.setup {
         }
     },
     extensions = {
+        ["ui-select"] = {require("telescope.themes").get_dropdown({})},
         file_browser = {
             theme = "dropdown",
             hijack_netrw = true,
@@ -40,6 +40,7 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+require("telescope").load_extension("ui-select")
 
 -- Bindings
 vim.api.nvim_create_user_command(

@@ -18,23 +18,21 @@ packer.startup(function (use)
     use 'rrethy/vim-illuminate'
     use {
         'glepnir/dashboard-nvim',
+        event = 'VimEnter',
         requires = {'nvim-tree/nvim-web-devicons'}
     }
 
     -- Tools
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
-    }
+    use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-ui-select.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
     use 'neovim/nvim-lspconfig'
     use 'glepnir/lspsaga.nvim'
     use 'akinsho/nvim-bufferline.lua'
     use 'gorbit99/codewindow.nvim'
     use 'mg979/vim-visual-multi'
-
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
@@ -77,6 +75,5 @@ packer.startup(function (use)
     use 'L3MON4D3/LuaSnip'
 
     -- Folding
-    use 'kevinhwang91/nvim-ufo'
-    use 'kevinhwang91/promise-async'
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end)

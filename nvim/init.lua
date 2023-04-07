@@ -1,19 +1,19 @@
-require('plugins')
-require('theme')
+require('andrem222.plugins')
+require('andrem222.theme')
 
 vim.cmd([[
 
-" Theme Setup
-colorscheme dracula 
+    " Theme Setup
+    colorscheme dracula 
 
-" Remove highlight on movement
-autocmd CursorMoved * set nohlsearch
-nnoremap n n:set hlsearch<cr>
+    " Remove highlight on movement
+    autocmd CursorMoved * set nohlsearch
+    nnoremap n n:set hlsearch<cr>
 
-" Preview PDF
-filetype plugin indent on
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+    " Preview PDF
+    filetype plugin indent on
+    let g:vimtex_view_general_viewer = 'okular'
+    let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 ]])
 

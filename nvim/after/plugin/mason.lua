@@ -44,5 +44,8 @@ lspconfig.setup({
 -- Setup dap on mason
 dap.setup({
     ensure_installed = { "codelldb", "cppdbg" },
-    automatic_installation = true
+    automatic_installation = true,
+    automatic_setup = true
 })
+
+dap.setup_handlers({})

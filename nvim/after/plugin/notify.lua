@@ -118,6 +118,3 @@ dap.listeners.before['event_progressEnd']['progress-notifications'] = function(s
     })
     notif_data.spinner = nil
 end
-
-local async = require("plenary.async")
-local notifysync = require("notify").async

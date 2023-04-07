@@ -6,7 +6,7 @@ picker.setup({
 		["<Left>"] = "<Plug>ColorPickerSlider1Decrease",
         ["<Right>"] = "<Plug>ColorPickerSlider1Increase",
         ["<S-Left>"] = "<Plug>ColorPickerSlider5Decrease",
-        ["<S-Right>"] = "<Plug>ColorPickerSlider5Increase",
+        ["<S-Right>"] = "<Plug>ColorPickerSlider5Increase"
     },
-    ["icons"] = { "", " " },
+    ["icons"] = { "", " " }
 })

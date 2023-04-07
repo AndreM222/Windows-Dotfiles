@@ -3,7 +3,8 @@
 <p align='center'>
 <img style='padding-bottom:10px' src="Terminal-Preview_1.png">
 <img style='padding-bottom:10px' src="Terminal-Preview_2.png">
-<img src="Terminal-Preview_3.png">
+<img style='padding-bottom:10px' src="Terminal-Preview_3.png">
+<img src="Terminal-Preview_4.png">
 </p>
 
 ## Windows Terminal 🖥️
@@ -60,11 +61,14 @@ Font Size: 9
 
 ## Theme 🎭
 
-- [Dracula](https://github.com/Mofiqul/dracula.nvim) - Dracula Color Theme
+- [Dracula](https://draculatheme.com/windows-terminal) - Dracula Color Theme
 
 ## Terminal 📟
 
-- Windows terminal - Terminal
+- [Windows terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) - Terminal
+
+## Shell 🛡️
+
 - [PowerShell](https://learn.microsoft.com/en-us/powershell/) - Shell
 
 ## Setup ⚒️
@@ -150,6 +154,7 @@ Font Size: 9
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
+- [Dashboard-Nvim](https://github.com/glepnir/dashboard-nvim) - Startup Screen
 
 ## Installations ⬇️
 
@@ -170,7 +175,7 @@ Font Size: 9
 ```
 📂 $HOME/AppData/Local/Nvim
 |__📂after/plugin
-|__📂lua
+|__📂lua/andrem222
 |   |__📄plugins.lua
 |   |__📄theme.lua
 |__📄init.lua
@@ -221,13 +226,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Alt - q` - Force Quit All
 
-`Shift - Up` - Move Line | Block up
+`Alt - Up` - Move Line | Block up
 
-`Shift - Down` - Move Line | Block Down
+`Alt - Down` - Move Line | Block Down
 
-`Shift - Left` - Move Line | Block Left
+`Alt - Left` - Move Line | Block Left
 
-`Shift - Right` - Move Line | Block Right
+`Alt - Right` - Move Line | Block Right
 
 `Shift - f` - Format
 
@@ -241,21 +246,21 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `g + r` - Lspsaga Rename
 
-`A - k` - Increase Pane Vertical
+`C - A - k` - Increase Pane Vertical
 
-`A - i` - Decrease Pane Vertical
+`C - A - i` - Decrease Pane Vertical
 
-`A - l` - Increase Pane Horizontal
+`C - A - l` - Increase Pane Horizontal
 
-`A - j` - Decrease Pane Horizontal
+`C - A - j` - Decrease Pane Horizontal
 
-`A - Up` - Pane Move Up
+`A - S - i` - Pane Move Up
 
-`A - Down` - Pane Move Down
+`A - S - k` - Pane Move Down
 
-`A - Left` - Pane Move Left
+`A - S - j` - Pane Move Left
 
-`A - Right` - Pane Move Right
+`A - S - l` - Pane Move Right
 
 `F9` - Debugger Continue
 

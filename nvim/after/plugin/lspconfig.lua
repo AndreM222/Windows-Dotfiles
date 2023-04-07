@@ -52,7 +52,7 @@ local on_attach = function(client, bufnr)
                         "modification",
                         "documentation",
                         "defaultLibrary",
-                        "global",
+                        "global"
                     },
                     tokenTypes = {
                         "namespace",
@@ -77,10 +77,10 @@ local on_attach = function(client, bufnr)
                         "number",
                         "regexp",
                         "operator",
-                        "decorator",
-                    },
+                        "decorator"
+                    }
                 },
-                range = true,
+                range = true
             }
         end
     end

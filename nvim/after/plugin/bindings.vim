@@ -32,19 +32,19 @@ inoremap <C-s> <Esc><Cmd>w<CR>==gi
 inoremap <C-A-s> <Esc><Cmd>wa<CR>==gi
 
 " Moving Selections
-nnoremap <silent> <S-Down> :m .+1<CR>==
-nnoremap <silent> <S-Up> :m .-2<CR>==
-inoremap <silent> <S-Down> <Esc>:m .+1<CR>==gi
-inoremap <silent> <S-Up> <Esc>:m .-2<CR>==gi
-vnoremap <silent> <S-Down> :m '>+1<CR>gv=gv
-vnoremap <silent> <S-Up> :m '<-2<CR>gv=gv
+nnoremap <silent> <A-Down> :m .+1<CR>==
+nnoremap <silent> <A-Up> :m .-2<CR>==
+inoremap <silent> <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <silent> <A-Up> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <A-Down> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-Up> :m '<-2<CR>gv=gv
 
-vnoremap <S-Left> <gv
-vnoremap <S-Right> >gv
-inoremap <S-Left> <Esc><<i
-inoremap <S-Right> <Esc>>>i
-nnoremap <S-Left> <<
-nnoremap <S-Right> >>
+vnoremap <A-Left> <gv
+vnoremap <A-Right> >gv
+inoremap <A-Left> <Esc><<i
+inoremap <A-Right> <Esc>>>i
+nnoremap <A-Left> <<
+nnoremap <A-Right> >>
 
 " Bufferline Bindings
 nnoremap <S-q> <Cmd>bdelete<CR>
@@ -67,16 +67,16 @@ nnoremap gp <Cmd>Lspsaga peek_definition<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 
 " Movement between panes
-nnoremap <A-Left> <Cmd>wincmd h<CR>
-nnoremap <A-Right> <Cmd>wincmd l<CR>
-nnoremap <A-Down>  <Cmd>wincmd j<CR>
-nnoremap <A-Up> <Cmd>wincmd k<CR>
+nnoremap <A-S-j> <Cmd>wincmd h<CR>
+nnoremap <A-S-l> <Cmd>wincmd l<CR>
+nnoremap <A-S-k>  <Cmd>wincmd j<CR>
+nnoremap <A-S-i> <Cmd>wincmd k<CR>
 
 " Resize panes
-nnoremap <A-j> <Cmd>vertical resize -5<CR>
-nnoremap <A-l> <Cmd>vertical resize +5<CR>
-nnoremap <A-k>  <Cmd>res +5<CR>
-nnoremap <A-i> <Cmd>res -5<CR>
+nnoremap <C-A-j> <Cmd>vertical resize -5<CR>
+nnoremap <C-A-l> <Cmd>vertical resize +5<CR>
+nnoremap <C-A-k>  <Cmd>res +5<CR>
+nnoremap <C-A-i> <Cmd>res -5<CR>
 
 " DAP Bindings
 nnoremap <F9> <Cmd>DapContinue<CR>
