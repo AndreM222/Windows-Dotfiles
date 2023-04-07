@@ -33,6 +33,7 @@ packer.startup(function (use)
     use 'akinsho/nvim-bufferline.lua'
     use 'gorbit99/codewindow.nvim'
     use 'mg979/vim-visual-multi'
+    use 'ThePrimeagen/harpoon'
 
     -- Git
     use 'lewis6991/gitsigns.nvim'

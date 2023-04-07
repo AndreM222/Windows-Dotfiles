@@ -5,9 +5,9 @@ nnoremap <silent> \f <Cmd>Telescope find_files<CR>
 nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
 nnoremap <silent> \\\ <Cmd>Telescope buffers<CR>
-nnoremap <silent> <F2> <Cmd>Telescope help_tags<CR>
-nnoremap <silent> <F3> <Cmd>Telescope keymaps<CR>
-nnoremap <silent> <F4> <Cmd>Telescope notify<CR>
+nnoremap <silent> <F3> <Cmd>Telescope help_tags<CR>
+nnoremap <silent> <F4> <Cmd>Telescope keymaps<CR>
+nnoremap <silent> <F5> <Cmd>Telescope notify<CR>
 
 " Minimap
 nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
@@ -16,8 +16,8 @@ nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
 nnoremap <silent> <Home> <Cmd>Mason<CR>
 
 " Status
-nnoremap <silent> <F5> <Cmd>LspInfo<CR>
-nnoremap <silent> <F6> <Cmd>NullLsInfo<CR>
+nnoremap <silent> <F6> <Cmd>LspInfo<CR>
+nnoremap <silent> <F7> <Cmd>NullLsInfo<CR>
 
 " Preview Bindings
 nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
@@ -32,12 +32,12 @@ inoremap <C-s> <Esc><Cmd>w<CR>==gi
 inoremap <C-A-s> <Esc><Cmd>wa<CR>==gi
 
 " Moving Selections
-nnoremap <silent> <A-Down> :m .+1<CR>==
-nnoremap <silent> <A-Up> :m .-2<CR>==
-inoremap <silent> <A-Down> <Esc>:m .+1<CR>==gi
-inoremap <silent> <A-Up> <Esc>:m .-2<CR>==gi
-vnoremap <silent> <A-Down> :m '>+1<CR>gv=gv
-vnoremap <silent> <A-Up> :m '<-2<CR>gv=gv
+nnoremap <silent> <A-Down> :m .+2<CR>==
+nnoremap <silent> <A-Up> :m .-1<CR>==
+inoremap <silent> <A-Down> <Esc>:m .+2<CR>==gi
+inoremap <silent> <A-Up> <Esc>:m .-1<CR>==gi
+vnoremap <silent> <A-Down> :m '>+2<CR>gv=gv
+vnoremap <silent> <A-Up> :m '<-1<CR>gv=gv
 
 vnoremap <A-Left> <gv
 vnoremap <A-Right> >gv
@@ -73,16 +73,16 @@ nnoremap <A-S-k>  <Cmd>wincmd j<CR>
 nnoremap <A-S-i> <Cmd>wincmd k<CR>
 
 " Resize panes
-nnoremap <C-A-j> <Cmd>vertical resize -5<CR>
-nnoremap <C-A-l> <Cmd>vertical resize +5<CR>
-nnoremap <C-A-k>  <Cmd>res +5<CR>
-nnoremap <C-A-i> <Cmd>res -5<CR>
+nnoremap <C-A-j> <Cmd>vertical resize -4<CR>
+nnoremap <C-A-l> <Cmd>vertical resize +6<CR>
+nnoremap <C-A-k>  <Cmd>res +6<CR>
+nnoremap <C-A-i> <Cmd>res -4<CR>
 
 " DAP Bindings
-nnoremap <F9> <Cmd>DapContinue<CR>
-nnoremap <F10> <Cmd>DapStepOver<CR>
-nnoremap <F11> <Cmd>DapStepInto<CR>
-nnoremap <F12> <Cmd>DapStepOut<CR> 
+nnoremap <F10> <Cmd>DapContinue<CR>
+nnoremap <F11> <Cmd>DapStepOver<CR>
+nnoremap <F12> <Cmd>DapStepInto<CR>
+nnoremap <F13> <Cmd>DapStepOut<CR> 
 nnoremap b <Cmd>DapToggleBreakpoint<CR>
 nnoremap B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))()<CR>
 nnoremap lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
@@ -123,3 +123,7 @@ inoremap <C-p> <Esc><Plug>(VM-Add-Cursor-At-Pos)
 " Select all
 nnoremap <C-a> ggVG
 inoremap <C-a> <Esc> ggVG
+
+" Harpoon
+nnoremap q <Cmd>lua require'harpoon.mark'.add_file()<CR>
+nnoremap <C-e> <Cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>

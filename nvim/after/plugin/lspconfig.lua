@@ -119,7 +119,7 @@ nvim_lsp.omnisharp.setup({
 nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    settings = {
+    --[[ settings = {
         Lua = {
             diagnostics = { globals = { 'vim' } },
             workspace = {
@@ -128,7 +128,7 @@ nvim_lsp.lua_ls.setup({
                 checkThirdParty = false
             }
         }
-    }
+    } ]]
 })
 
 -- LaTeX
