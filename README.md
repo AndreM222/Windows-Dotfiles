@@ -310,14 +310,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 <details>
 <summary>Debugging 🐞</summary>
 
-Problem:
-```
-The script autopep8.exe is installed in 'C:\Users\YOURNAME\AppData\Roaming\Python\Python311\Scripts' 
-which is not on PATH. Consider adding this directory to PATH or, if you prefer to suppress this warning,
-use --no-warn-script-location.
-```
-Fix: `Add environment variable to path: (C:\Users\YOURNAME\AppData\Roaming\Python\Python311\Scripts)`
-
 Problem: `Icons are not showing completly`
 
 Fix:
