@@ -7,6 +7,7 @@ local function telescope_buffer_dir()
 end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
+local themes = require("telescope.themes")
 
 telescope.setup {
     defaults = {
@@ -17,7 +18,7 @@ telescope.setup {
         }
     },
     extensions = {
-        ["ui-select"] = { require("telescope.themes").get_dropdown({}) },
+        ["ui-select"] = { themes.get_dropdown({}) },
         file_browser = {
             theme = "dropdown",
             hijack_netrw = true,
@@ -41,6 +42,7 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 telescope.load_extension("ui-select")
+telescope.load_extension('harpoon')
 
 -- Bindings
 vim.api.nvim_create_user_command(
@@ -64,6 +66,14 @@ vim.api.nvim_create_user_command(
             initial_mode = "normal",
             layout_config = { height = 40 }
         })
+    end,
+    { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+    "Harpoon",
+    function ()
+        telescope.extensions.harpoon.marks(themes.get_dropdown({previewer = false}))
     end,
     { nargs = 0 }
 )

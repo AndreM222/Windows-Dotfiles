@@ -34,6 +34,7 @@ packer.startup(function (use)
     use 'gorbit99/codewindow.nvim'
     use 'mg979/vim-visual-multi'
     use 'ThePrimeagen/harpoon'
+    use 'dharmx/track.nvim'
 
     -- Git
     use 'lewis6991/gitsigns.nvim'

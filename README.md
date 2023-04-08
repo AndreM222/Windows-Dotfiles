@@ -155,7 +155,7 @@ Font Size: 9
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 - [Dashboard-Nvim](https://github.com/glepnir/dashboard-nvim) - Startup Screen
-- [Harpoon](https://github.com/ThePrimeagen/harpoon) - Harpoon
+- [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
 
 ## Installations ⬇️
 
@@ -309,7 +309,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - e` - Open Harpoon UI
 
-`q` - Save harpoon
+`q` - Save Harpoon Mark
 </details>
 
 <details>

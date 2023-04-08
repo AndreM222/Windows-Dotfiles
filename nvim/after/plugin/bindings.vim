@@ -32,12 +32,12 @@ inoremap <C-s> <Esc><Cmd>w<CR>==gi
 inoremap <C-A-s> <Esc><Cmd>wa<CR>==gi
 
 " Moving Selections
-nnoremap <silent> <A-Down> :m .+2<CR>==
-nnoremap <silent> <A-Up> :m .-1<CR>==
-inoremap <silent> <A-Down> <Esc>:m .+2<CR>==gi
-inoremap <silent> <A-Up> <Esc>:m .-1<CR>==gi
-vnoremap <silent> <A-Down> :m '>+2<CR>gv=gv
-vnoremap <silent> <A-Up> :m '<-1<CR>gv=gv
+nnoremap <silent> <A-Down> :m .+1<CR>==
+nnoremap <silent> <A-Up> :m .-2<CR>==
+inoremap <silent> <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <silent> <A-Up> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <A-Down> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-Up> :m '<-2<CR>gv=gv
 
 vnoremap <A-Left> <gv
 vnoremap <A-Right> >gv
@@ -125,5 +125,5 @@ nnoremap <C-a> ggVG
 inoremap <C-a> <Esc> ggVG
 
 " Harpoon
-nnoremap q <Cmd>lua require'harpoon.mark'.add_file()<CR>
-nnoremap <C-e> <Cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>
+nnoremap q <Cmd>HarpoonMark<CR>
+nnoremap <C-e> <Cmd>Harpoon<CR>
