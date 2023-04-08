@@ -155,6 +155,7 @@ Font Size: 9
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 - [Dashboard-Nvim](https://github.com/glepnir/dashboard-nvim) - Startup Screen
+- [Harpoon](https://github.com/ThePrimeagen/harpoon) - Harpoon
 
 ## Installations ⬇️
 

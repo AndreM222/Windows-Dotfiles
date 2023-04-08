@@ -17,7 +17,7 @@ telescope.setup {
         }
     },
     extensions = {
-        ["ui-select"] = {require("telescope.themes").get_dropdown({})},
+        ["ui-select"] = { require("telescope.themes").get_dropdown({}) },
         file_browser = {
             theme = "dropdown",
             hijack_netrw = true,
@@ -40,7 +40,7 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
-require("telescope").load_extension("ui-select")
+telescope.load_extension("ui-select")
 
 -- Bindings
 vim.api.nvim_create_user_command(
