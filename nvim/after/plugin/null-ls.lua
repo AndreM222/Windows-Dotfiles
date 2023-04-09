@@ -19,8 +19,8 @@ null_ls.setup({
         end,
     }),
         null_ls.builtins.formatting.clang_format.with({
-        extra_args = { "--style=Microsoft" }
-    }),
+            extra_args = { "--style=Microsoft" }
+        }),
         null_ls.builtins.formatting.autopep8,
         null_ls.builtins.formatting.latexindent
     },
