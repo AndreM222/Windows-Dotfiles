@@ -45,7 +45,6 @@ lspconfig.setup({
 dap.setup({
     ensure_installed = { "codelldb", "cppdbg" },
     automatic_installation = true,
-    automatic_setup = true
+    automatic_setup = true,
+    handlers = nil
 })
-
-dap.setup_handlers({})
