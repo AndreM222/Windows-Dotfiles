@@ -16,7 +16,7 @@ startup.setup({
             {
                 desc = ' Files',
                 group = 'Label',
-                action = 'Telescope find_files',
+                action = 'BrowseFiles',
                 key = 'f',
             },
             {
