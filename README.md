@@ -104,7 +104,7 @@ Font Size: 9
 
 `LaTeX` scoop install texlab 
 
-`C-Sharp` At the installation of dotnet
+`C-Sharp` dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 
 ## Format Languages 📄
 
@@ -112,7 +112,7 @@ Font Size: 9
 
 `Typescript` npm install -g prettier
 
-`C Languages` scoop install astyle
+`C Languages` At the setup of clang
 
 `Latex` scoop install latexindent
 
@@ -343,5 +343,15 @@ This will disable the background from dracula so transparency can be seen.
 Problem: `C-Sharp not running`
 
 Fix: `You are required to create a project for it to work`
+
+Problem: `Customize format`
+
+Fix:
+```
+Look for the documentation to make the changes on the CLI.
+
+For clang-format: https://clang.llvm.org/docs/ClangFormat.html
+For prettier: https://prettier.io/docs/en/options.html#vue-files-script-and-style-tags-indentation
+```
 
 </details>

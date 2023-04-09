@@ -35,55 +35,7 @@ protocol.CompletionItemKind = {
 }
 
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...)
-        -- Fix omnisharp tokens
-        if client.name == "omnisharp" then
-            client.server_capabilities.semanticTokensProvider = {
-                full = true,
-                legend = {
-                    tokenModifiers = {
-                        "declaration",
-                        "definition",
-                        "readonly",
-                        "static",
-                        "deprecated",
-                        "abstract",
-                        "async",
-                        "modification",
-                        "documentation",
-                        "defaultLibrary",
-                        "global"
-                    },
-                    tokenTypes = {
-                        "namespace",
-                        "type",
-                        "class",
-                        "enum",
-                        "interface",
-                        "struct",
-                        "typeParameter",
-                        "parameter",
-                        "variable",
-                        "property",
-                        "enumMember",
-                        "event",
-                        "function",
-                        "method",
-                        "macro",
-                        "keyword",
-                        "modifier",
-                        "comment",
-                        "string",
-                        "number",
-                        "regexp",
-                        "operator",
-                        "decorator"
-                    }
-                },
-                range = true
-            }
-        end
-    end
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
     -- Mappings.
     local opts = { noremap = true, silent = true }
@@ -109,16 +61,16 @@ nvim_lsp.clangd.setup({
 })
 
 -- C#
-nvim_lsp.omnisharp.setup({
+nvim_lsp.csharp_ls.setup({
     on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "omnisharp" }
+    capabilities = capabilities
 })
 
 -- Lua
 nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    -- Uncomment for editing config files
     --[[ settings = {
         Lua = {
             diagnostics = { globals = { 'vim' } },
