@@ -11,6 +11,10 @@ null_ls.setup({
                 and {
                     "--tab-width",
                     params.options.tabSize,
+                    "--trailing-comma none",
+                    "--no-semi",
+                    "--arrow-parens avoid",
+                    "--single-quote"
                 }
         end,
     }),
