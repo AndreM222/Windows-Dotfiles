@@ -18,7 +18,6 @@ packer.startup(function (use)
     use 'rrethy/vim-illuminate'
     use {
         'glepnir/dashboard-nvim',
-        event = 'VimEnter',
         requires = {'nvim-tree/nvim-web-devicons'}
     }
 
@@ -70,9 +69,9 @@ packer.startup(function (use)
 
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'numToStr/Comment.nvim'
-    use 'jiangmiao/auto-pairs'
     use 'kylechui/nvim-surround'
-    use 'alvan/vim-closetag'
+    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-ts-autotag'
     use 'L3MON4D3/LuaSnip'
 
     -- Folding

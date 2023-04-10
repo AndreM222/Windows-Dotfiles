@@ -121,8 +121,8 @@ nnoremap <C-p> <Plug>(VM-Add-Cursor-At-Pos)
 inoremap <C-p> <Esc><Plug>(VM-Add-Cursor-At-Pos)
 
 " Select all
-nnoremap <C-a> ggVG
-inoremap <C-a> <Esc> ggVG
+nnoremap <C-A-a> ggVG
+inoremap <C-A-a> <Esc> ggVG
 
 " Harpoon
 nnoremap q <Cmd>HarpoonMark<CR>

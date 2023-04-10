@@ -138,7 +138,7 @@ Font Size: 9
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Highlight Functions
 - [Comment](https://github.com/numToStr/Comment.nvim) - Commenter For Languages
 - [Auto-Pair](https://github.com/jiangmiao/auto-pairs) - Auto Pair Characters
-- [Close-Tag](https://github.com/alvan/vim-closetag) - Close Tags
+- [Close-Tag](https://github.com/windwp/nvim-ts-autotag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
 - [Null-LS](https://github.com/jose-elias-alvarez/null-ls.nvim) - Formatting Languages
@@ -303,7 +303,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - Alt - /` - Comment BLock
 
-`CTRL - a` - Select All
+`CTRL - Shift - a` - Select All
 
 `CTRL - p` - Add Cursor At Current Position
 

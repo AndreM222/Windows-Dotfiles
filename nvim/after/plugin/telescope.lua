@@ -32,6 +32,7 @@ telescope.setup {
                     ["N"] = fb_actions.create,
                     ["h"] = fb_actions.goto_parent_dir,
                     ["X"] = fb_actions.remove,
+                    ["R"] = fb_actions.rename,
                     ["/"] = function()
                         vim.cmd('startinsert')
                     end
