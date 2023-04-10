@@ -307,7 +307,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - p` - Add Cursor At Current Position
 
-`CTRL - e` - Open Harpoon UI
+`CTRL - h` - Open Harpoon UI
 
 `q` - Save Harpoon Mark
 </details>

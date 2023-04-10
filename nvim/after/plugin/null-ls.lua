@@ -4,6 +4,7 @@ if (not status) then return end
 null_ls.setup({
     border = 'single',
     sources = {
+        -- Formatting
         null_ls.builtins.formatting.prettier.with({
         extra_args = function(params)
             return params.options
@@ -22,6 +23,11 @@ null_ls.setup({
             extra_args = { "--style=Microsoft" }
         }),
         null_ls.builtins.formatting.autopep8,
-        null_ls.builtins.formatting.latexindent
+        null_ls.builtins.formatting.latexindent,
+
+        -- Diagnostics
+        null_ls.builtins.diagnostics.eslint_d.with({
+            diagnostics_format = '[eslint] #{m}\n(#{c})'
+        }),
     },
 })

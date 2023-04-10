@@ -116,6 +116,7 @@ end
 
 -- Setup diagnostic symbol
 vim.diagnostic.config({
+    underline = true,
     virtual_text = { prefix = '󰣏' },
     update_in_insert = true,
     float = { source = "always" }
