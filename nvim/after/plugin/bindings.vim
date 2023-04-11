@@ -59,6 +59,7 @@ xnoremap <C-A-_> <Plug>(comment_toggle_blockwise_visual)
 
 " Format Bindings
 nnoremap <S-f> <Cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
+vnoremap <S-f> <Cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 
 " Lspsaga Setup
 nnoremap f <Cmd>Lspsaga hover_doc<CR>

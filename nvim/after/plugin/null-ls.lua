@@ -15,7 +15,7 @@ null_ls.setup({
                     "--trailing-comma none",
                     "--no-semi",
                     "--arrow-parens avoid",
-                    "--single-quote"
+                    "--single-quote",
                 }
         end,
     }),
