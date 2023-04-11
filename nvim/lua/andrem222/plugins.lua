@@ -70,7 +70,7 @@ packer.startup(function (use)
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
-    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
     use 'L3MON4D3/LuaSnip'
 
