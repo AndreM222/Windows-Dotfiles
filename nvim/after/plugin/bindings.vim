@@ -104,6 +104,11 @@ vnoremap <C-A-c> "+y
 nnoremap <C-A-v> pgvy
 vnoremap <C-A-v> pgvy
 
+nnoremap y "+
+vnoremap y "+y
+nnoremap p pgvy
+vnoremap p pgvy
+
 " Folds
 nnoremap = <Cmd>foldopen<CR>
 nnoremap - <Cmd>foldclose<CR>
