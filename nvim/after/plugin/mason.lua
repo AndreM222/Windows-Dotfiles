@@ -36,7 +36,9 @@ lspconfig.setup({
         "texlab",
         "tsserver",
         "vimls",
-        "omnisharp"
+        "csharp_ls",
+        "tailwindcss",
+        "cssls"
     },
     automatic_installation = true
 })

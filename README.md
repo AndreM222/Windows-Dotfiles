@@ -88,7 +88,9 @@ Font Size: 9
 - [NVM](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
 - [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
 - [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - `scoop install dotnet-sdk`
-- [Dotnet-Nuget](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source#examples)- `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
+- [Dotnet-Nuget](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source#examples) - `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
+- [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
+- [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 
 ## Servers 🗃️
 
