@@ -32,7 +32,7 @@ cmp.setup({
         format = lspkind.cmp_format({
             mode = 'symbol',
             maxwidth = 50,
-            ellipsis_char = '...'
+            ellipsis_char = '...',
         })
     }
 })

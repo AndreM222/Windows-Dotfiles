@@ -1,7 +1,7 @@
 " Telescope Bindings
 nnoremap <silent> \t <Cmd>BrowseFiles<CR>
 nnoremap <silent> \r <Cmd>ResumeSearch<CR>
-nnoremap <silent> \f <Cmd>Telescope find_files<CR>
+nnoremap <silent> \f <Cmd>FileParse<CR>
 nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
 nnoremap <silent> \\\ <Cmd>Telescope buffers<CR>
@@ -64,8 +64,8 @@ vnoremap <S-f> <Cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 " Lspsaga Setup
 nnoremap f <Cmd>Lspsaga hover_doc<CR>
 nnoremap gd <Cmd>Lspsaga lsp_finder<CR>
-nnoremap gp <Cmd>Lspsaga peek_definition<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
+nnoremap gp <Cmd>Lspsaga code_action<CR>
 
 " Movement between panes
 nnoremap <A-S-j> <Cmd>wincmd h<CR>
@@ -91,7 +91,6 @@ nnoremap dr <Cmd>lua require'dapui'.toggle()<CR>
 
 " vgit Bindings
 nnoremap <C-g> <Cmd>VGit buffer_hunk_preview<CR>
-nnoremap <A-g> <Cmd>VGit buffer_gutter_blame_preview<CR>
 nnoremap \g <Cmd>VGit project_diff_preview<CR>
 
 " Color Picker
@@ -131,5 +130,6 @@ nnoremap <C-A-a> ggVG
 inoremap <C-A-a> <Esc> ggVG
 
 " Harpoon
-nnoremap q <Cmd>HarpoonMark<CR>
+nnoremap K <Cmd>HarpoonMark<CR>
+
 nnoremap <C-h> <Cmd>Harpoon<CR>

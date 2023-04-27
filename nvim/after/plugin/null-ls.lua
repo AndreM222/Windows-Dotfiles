@@ -6,19 +6,19 @@ null_ls.setup({
     sources = {
         -- Formatting
         null_ls.builtins.formatting.prettier.with({
-        extra_args = function(params)
-            return params.options
-                and params.options.tabSize
-                and {
-                    "--tab-width",
-                    params.options.tabSize,
-                    "--trailing-comma none",
-                    "--no-semi",
-                    "--arrow-parens avoid",
-                    "--single-quote",
-                }
-        end,
-    }),
+            extra_args = function(params)
+                return params.options
+                    and params.options.tabSize
+                    and {
+                        "--tab-width",
+                        params.options.tabSize,
+                        "--trailing-comma none",
+                        "--no-semi",
+                        "--arrow-parens avoid",
+                        "--single-quote",
+                    }
+            end,
+        }),
         null_ls.builtins.formatting.clang_format.with({
             extra_args = { "--style=Microsoft" }
         }),
@@ -28,6 +28,6 @@ null_ls.setup({
         -- Diagnostics
         null_ls.builtins.diagnostics.eslint_d.with({
             diagnostics_format = '[eslint] #{m}\n(#{c})'
-        }),
-    },
+        })
+    }
 })

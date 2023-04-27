@@ -1,12 +1,12 @@
 local status, packer = pcall(require, 'packer')
 if (not status) then
-	print("Packer Is Not Installed")
-	return
+    print("Packer Is Not Installed")
+    return
 end
 
 vim.cmd [[packadd packer.nvim]]
 
-packer.startup(function (use)
+packer.startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Decorations
@@ -18,7 +18,7 @@ packer.startup(function (use)
     use 'rrethy/vim-illuminate'
     use {
         'glepnir/dashboard-nvim',
-        requires = {'nvim-tree/nvim-web-devicons'}
+        requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
     -- Tools
@@ -33,6 +33,7 @@ packer.startup(function (use)
     use 'gorbit99/codewindow.nvim'
     use 'mg979/vim-visual-multi'
     use 'ThePrimeagen/harpoon'
+    use 'lervag/vimtex'
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
@@ -45,7 +46,7 @@ packer.startup(function (use)
     use 'jay-babu/mason-nvim-dap.nvim'
 
     -- Color Editing
-    use ({ 'rrethy/vim-hexokinase', run = "make hexokinase" })
+    use({ 'rrethy/vim-hexokinase', run = "make hexokinase" })
     use 'ziontee113/color-picker.nvim'
 
     -- Preview
@@ -59,7 +60,7 @@ packer.startup(function (use)
     use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
     use { 'theHamsta/nvim-dap-virtual-text', requires = { 'mfussenegger/nvim-dap' } }
 
-    -- Autocompletion 
+    -- Autocompletion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -75,5 +76,5 @@ packer.startup(function (use)
     use 'L3MON4D3/LuaSnip'
 
     -- Folding
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)

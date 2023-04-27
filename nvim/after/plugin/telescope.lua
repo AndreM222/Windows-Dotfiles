@@ -3,7 +3,7 @@ if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 local function telescope_buffer_dir()
-  return vim.fn.expand('%:p:h')
+    return vim.fn.expand('%:p:h')
 end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
@@ -23,12 +23,12 @@ telescope.setup {
             theme = "dropdown",
             hijack_netrw = true,
             mappings = {
-            -- Insert
+                -- Insert
                 ["i"] = {
                     ["<C-w>"] = function() vim.cmd('normal vbd') end,
                 },
                 ["n"] = {
-                  -- Custom normal mode mappings
+                    -- Custom normal mode mappings
                     ["N"] = fb_actions.create,
                     ["h"] = fb_actions.goto_parent_dir,
                     ["X"] = fb_actions.remove,
@@ -47,6 +47,18 @@ telescope.load_extension("ui-select")
 telescope.load_extension('harpoon')
 
 -- Bindings
+vim.api.nvim_create_user_command(
+    "FileParse",
+    function()
+        builtin.find_files({
+            no_ignore = false,
+            hidden = true
+        })
+    end,
+    { nargs = 0 }
+)
+
+
 vim.api.nvim_create_user_command(
     "ResumeSearch",
     function()
@@ -74,8 +86,8 @@ vim.api.nvim_create_user_command(
 
 vim.api.nvim_create_user_command(
     "Harpoon",
-    function ()
-        telescope.extensions.harpoon.marks(themes.get_dropdown({previewer = false}))
+    function()
+        telescope.extensions.harpoon.marks(themes.get_dropdown({ previewer = false }))
     end,
     { nargs = 0 }
 )

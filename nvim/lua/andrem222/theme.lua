@@ -4,7 +4,6 @@ dracula.setup({
     colors = { bg = "NONE" },
 
     overrides = {
-
         EndOfBuffer = { fg = "#282A36" },
         DiagnosticWarn = { fg = dracula.colors().orange },
         WarningMsg = { fg = dracula.colors().orange },
@@ -52,6 +51,17 @@ dracula.setup({
         NullLsInfoBorder = { fg = dracula.colors().comment },
         LspInfoBorder = { fg = dracula.colors().comment },
         MasonHighlight = { fg = dracula.colors().green, default = true },
+        NotifyInfoIcon = { fg = dracula.colors().green },
+        NotifyInfoTitle = { fg = dracula.colors().green },
+        NotifyInfoBorder = { fg = "#2C453F" },
+        NotifyErrorIcon = { fg = dracula.colors().red },
+        NotifyErrorTitle = { fg = dracula.colors().red },
+        NotifyErrorBorder = { fg = "#DD6E6B" },
+        NotifyWarnIcon = { fg = dracula.colors().orange },
+        NotifyWarnTitle = { fg = dracula.colors().orange },
+        NotifyWarnBorder = { fg = "#785637" },
+        ErrorMsg = { bg = dracula.colors().red },
+        CodeActionNumber = { bg = 'none', fg = dracula.colors().cyan }
     },
 
     transparent_bg = true,

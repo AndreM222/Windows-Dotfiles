@@ -24,11 +24,11 @@ vim.opt.wildoptions = 'pum'
 vim.opt.pumblend = 10
 vim.opt.fillchars = { eob = '-' }
 
-
 vim.opt.encoding = 'utf-8'
 vim.scriptencoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
+vim.o.updatetime = 100
 vim.opt.mouse = 'a'
 vim.opt.number = true
 vim.opt.tabstop = 4
