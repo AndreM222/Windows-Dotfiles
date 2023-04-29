@@ -38,7 +38,8 @@ lspconfig.setup({
         "vimls",
         "csharp_ls",
         "tailwindcss",
-        "cssls"
+        "cssls",
+        "marksman"
     },
     automatic_installation = true
 })

@@ -54,6 +54,12 @@ nvim_lsp.tsserver.setup({
     capabilities = capabilities
 })
 
+-- Markdown
+nvim_lsp.marksman.setup({
+    on_attach = on_attach,
+    capabilities = capabilities
+})
+
 -- C, C++
 nvim_lsp.clangd.setup({
     on_attach = on_attach,

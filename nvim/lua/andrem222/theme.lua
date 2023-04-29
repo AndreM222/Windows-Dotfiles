@@ -60,10 +60,11 @@ dracula.setup({
         NotifyWarnIcon = { fg = dracula.colors().orange },
         NotifyWarnTitle = { fg = dracula.colors().orange },
         NotifyWarnBorder = { fg = "#785637" },
-        ErrorMsg = { bg = dracula.colors().red },
         CodeActionNumber = { bg = 'none', fg = dracula.colors().cyan }
     },
 
     transparent_bg = true,
     show_end_of_buffer = true
 })
+
+vim.g.VM_highlight_matches = 'hi VM_Mono guibg=#FF5555'

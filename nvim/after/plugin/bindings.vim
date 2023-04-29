@@ -26,7 +26,8 @@ nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
 nnoremap <silent> <C-s> <Cmd>w<CR>
 nnoremap <silent> <C-A-s> <Cmd>wa<CR>
 nnoremap <silent> <A-w> <Cmd>wqa<CR>
-nnoremap <silent> <A-q> <Cmd>qa!<CR>
+nnoremap <silent> <A-q> <Cmd>q!<CR>
+nnoremap <silent> <C-A-q> <Cmd>qa!<CR>
 
 inoremap <C-s> <Esc><Cmd>w<CR>==gi
 inoremap <C-A-s> <Esc><Cmd>wa<CR>==gi

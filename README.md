@@ -1,10 +1,10 @@
 # Windows Dotfiles
 
 <p align='center'>
-<img style='padding-bottom:10px' src="Terminal-Preview_1.png">
-<img style='padding-bottom:10px' src="Terminal-Preview_2.png">
-<img style='padding-bottom:10px' src="Terminal-Preview_3.png">
-<img src="Terminal-Preview_4.png">
+<img style='padding-bottom:10px' src="doc/Terminal-Preview_1.png">
+<img style='padding-bottom:10px' src="doc/Terminal-Preview_2.png">
+<img style='padding-bottom:10px' src="doc/Terminal-Preview_3.png">
+<img src="doc/Terminal-Preview_4.png">
 </p>
 
 ## Windows Terminal 🖥️
@@ -91,6 +91,7 @@ Font Size: 9
 - [Dotnet-Nuget](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source#examples) - `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
 - [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
+- [AltDrag](https://stefansundin.github.io/altdrag/) - `Center Window Shortcut`
 
 ## Servers 🗃️
 
@@ -227,7 +228,9 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Alt - w` - Save And Quit All
 
-`Alt - q` - Force Quit All
+`Alt - q` - Force Quit
+
+`Ctrl - Alt - q` - Force Quit All
 
 `Alt - Up` - Move Line | Block up
 
@@ -245,7 +248,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `g + d` - lspsaga Finder
 
-`g + p` - Lspsaga Peek Definition
+`g + p` - Lspsaga Code Actions
 
 `g + r` - Lspsaga Rename
 
@@ -311,7 +314,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `CTRL - h` - Open Harpoon UI
 
-`q` - Save Harpoon Mark
+`K` - Save Harpoon Mark
 </details>
 
 <details>
