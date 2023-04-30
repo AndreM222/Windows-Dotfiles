@@ -47,7 +47,7 @@ vim.opt.path:append {'**'}
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.scrolloff = 10
 vim.opt.ignorecase = true
-vim.opt.laststatus =3
+vim.opt.laststatus = 3
 vim.opt.incsearch = true
 
 -- Dashboard

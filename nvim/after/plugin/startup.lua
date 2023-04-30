@@ -1,6 +1,8 @@
 local status, startup = pcall( require ,'dashboard' )
 if (not status) then return end
 
+vim.g.indent_blankline_filetype_exclude = {'dashboard'}
+
 startup.setup({
     config = {
         header ={

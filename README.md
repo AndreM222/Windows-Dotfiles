@@ -359,4 +359,11 @@ For clang-format: https://clang.llvm.org/docs/ClangFormat.html
 For prettier: https://prettier.io/docs/en/options.html#vue-files-script-and-style-tags-indentation
 ```
 
+Problem: `Can't change current project diff selection`
+
+Fix:
+```
+VGit uses j and k not the arrows to go up and down for the selection.
+```
+
 </details>

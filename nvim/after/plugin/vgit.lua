@@ -53,6 +53,19 @@ git.setup({
                     commit_message
                 )
             end
+        },
+        git = {
+            cmd = 'git', -- optional setting, not really required
+            fallback_cwd = vim.fn.expand("$HOME"),
+            fallback_args = {
+                "--git-dir",
+                vim.fn.expand("$HOME/dots/yadm-repo"),
+                "--work-tree",
+                vim.fn.expand("$HOME")
+            }
+        },
+        hls = {
+            GitAppBar = { bg = nil },
         }
     }
 })
