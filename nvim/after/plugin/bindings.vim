@@ -4,7 +4,7 @@ nnoremap <silent> \r <Cmd>ResumeSearch<CR>
 nnoremap <silent> \f <Cmd>FileParse<CR>
 nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
-nnoremap <silent> \\\ <Cmd>Telescope buffers<CR>
+nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F3> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F4> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F5> <Cmd>Telescope notify<CR>
