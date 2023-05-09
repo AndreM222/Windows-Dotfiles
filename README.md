@@ -88,7 +88,6 @@ Font Size: 9
 - [NVM](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
 - [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
 - [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - `scoop install dotnet-sdk`
-- [Dotnet-Nuget](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source#examples) - `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org`
 - [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [AltDrag](https://stefansundin.github.io/altdrag/) - `Center Window Shortcut`
@@ -107,7 +106,16 @@ Font Size: 9
 
 `LaTeX` scoop install texlab 
 
-`C-Sharp` dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+`C-Sharp` 
+```
+Install:
+dotnet tool install --global csharp-ls
+
+Setup:
+dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+```
+
+`Marksman` scoop install marksman
 
 ## Format Languages 📄
 
@@ -364,6 +372,14 @@ Problem: `Can't change current project diff selection`
 Fix:
 ```
 VGit uses j and k not the arrows to go up and down for the selection.
+```
+
+Problem: `Commitizen opening editor instead of commit options`
+
+Fix:
+```
+Friendly setup for commitizen globally:
+npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
 </details>

@@ -22,7 +22,7 @@ mason.setup({
 
 -- Setuo Null-ls on mason
 null_ls.setup({
-    ensure_installed = {"latexindent", "prettierd", "clang-format"},
+    ensure_installed = {"latexindent", "prettierd", "clang-format", "eslint_d"},
     automatic_setup = true
 })
 
