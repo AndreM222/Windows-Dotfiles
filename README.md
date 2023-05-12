@@ -106,14 +106,7 @@ Font Size: 9
 
 `LaTeX` scoop install texlab 
 
-`C-Sharp` 
-```
-Install:
-dotnet tool install --global csharp-ls
-
-Setup:
-dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-```
+`C-Sharp` scoop install omnisharp
 
 `Marksman` scoop install marksman
 

@@ -35,9 +35,58 @@ protocol.CompletionItemKind = {
 }
 
 local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local function buf_set_keymap(...)
+        vim.api.nvim_buf_set_keymap(bufnr, ...)
+        -- Fix omnisharp tokens
+        if client.name == "omnisharp" then
+            client.server_capabilities.semanticTokensProvider = {
+                full = true,
+                legend = {
+                    tokenModifiers = {
+                        "declaration",
+                        "definition",
+                        "readonly",
+                        "static",
+                        "deprecated",
+                        "abstract",
+                        "async",
+                        "modification",
+                        "documentation",
+                        "defaultLibrary",
+                        "global"
+                    },
+                    tokenTypes = {
+                        "namespace",
+                        "type",
+                        "class",
+                        "enum",
+                        "interface",
+                        "struct",
+                        "typeParameter",
+                        "parameter",
+                        "variable",
+                        "property",
+                        "enumMember",
+                        "event",
+                        "function",
+                        "method",
+                        "macro",
+                        "keyword",
+                        "modifier",
+                        "comment",
+                        "string",
+                        "number",
+                        "regexp",
+                        "operator",
+                        "decorator"
+                    }
+                },
+                range = true
+            }
+        end
+    end
 
-    -- Mappings.
+    -- Mappings
     local opts = { noremap = true, silent = true }
 
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -46,7 +95,7 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.offsetEncoding = {"utf-16"}
+capabilities.offsetEncoding = { "utf-16" }
 
 -- TypeScript
 nvim_lsp.tsserver.setup({
@@ -67,7 +116,8 @@ nvim_lsp.clangd.setup({
 })
 
 -- C#
-nvim_lsp.csharp_ls.setup({
+nvim_lsp.omnisharp.setup({
+    cmd = { "omnisharp" },
     on_attach = on_attach,
     capabilities = capabilities
 })
