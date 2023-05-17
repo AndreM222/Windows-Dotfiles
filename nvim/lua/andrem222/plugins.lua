@@ -18,7 +18,7 @@ packer.startup(function(use)
     use 'rrethy/vim-illuminate'
     use {
         'glepnir/dashboard-nvim',
-        event = 'VimEnter',
+        event = 'VimEnter'
     }
 
     -- Tools
@@ -56,8 +56,8 @@ packer.startup(function(use)
 
     -- Debbuger
     use 'mfussenegger/nvim-dap'
-    use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
-    use { 'theHamsta/nvim-dap-virtual-text', requires = { 'mfussenegger/nvim-dap' } }
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
 
     -- Autocompletion
     use 'hrsh7th/cmp-nvim-lsp'
