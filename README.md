@@ -153,7 +153,6 @@ Font Size: 9
 - [DAP](https://github.com/mfussenegger/nvim-dap) - Debugger
 - [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
 - [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
-- [Minimap](https://github.com/gorbit99/codewindow.nvim) - Minimap Code Preview
 - [Nvim-UFO](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
