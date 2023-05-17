@@ -19,7 +19,6 @@ packer.startup(function(use)
     use {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
-        requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
     -- Tools
@@ -31,14 +30,13 @@ packer.startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'glepnir/lspsaga.nvim'
     use 'akinsho/nvim-bufferline.lua'
-    use 'gorbit99/codewindow.nvim'
     use 'mg979/vim-visual-multi'
     use 'ThePrimeagen/harpoon'
     use 'lervag/vimtex'
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
-    use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+    use 'tanvirtin/vgit.nvim'
 
     -- Mason
     use 'williamboman/mason.nvim'

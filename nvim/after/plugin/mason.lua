@@ -1,4 +1,3 @@
-
 local status1, mason = pcall(require, "mason")
 if (not status1) then return end
 local status2, lspconfig = pcall(require, "mason-lspconfig")
@@ -22,7 +21,7 @@ mason.setup({
 
 -- Setuo Null-ls on mason
 null_ls.setup({
-    ensure_installed = {"latexindent", "prettierd", "clang-format", "eslint_d"},
+    ensure_installed = { "latexindent", "prettierd", "clang-format", "eslint_d" },
     automatic_setup = true
 })
 
@@ -36,7 +35,7 @@ lspconfig.setup({
         "texlab",
         "tsserver",
         "vimls",
-        "csharp_ls",
+        "omnisharp",
         "tailwindcss",
         "cssls",
         "marksman"

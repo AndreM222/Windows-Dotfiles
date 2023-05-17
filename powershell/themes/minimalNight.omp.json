@@ -11,8 +11,8 @@
                     "leading_diamond": "\ue0b6",
                     "properties": {
                         "macos": "\uf179 ",
-                        "ubuntu": "\uf31b ",
-                        "windows": "\uf871 "
+                        "ubuntu": "\uebc6 ",
+                        "windows": "\uf009 "
                     },
                     "style": "diamond",
                     "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
@@ -33,7 +33,7 @@
                     "foreground": "#2e2e2e",
                     "leading_diamond": "\ue0b2",
                     "style": "diamond",
-                    "template": "\uf85a CPU: {{ round .PhysicalPercentUsed .Precision }}% | ",
+                    "template": "\uf4bc CPU: {{ round .PhysicalPercentUsed .Precision }}% | ",
                     "type": "sysinfo"
                 },
                 {
@@ -112,7 +112,7 @@
                         "time_format": "15:04"
                     },
                     "style": "plain",
-                    "template": " \u2665 {{ .CurrentDate | date .Format }} |",
+                    "template": " \uf004 {{ .CurrentDate | date .Format }} |",
                     "type": "time"
                 },
                 {
@@ -123,8 +123,8 @@
                 {
                     "properties": {
                         "folder_icon": "\uf07b ",
-                        "folder_separator_icon": " \uf554 ",
-                        "home_icon": "\uf7db "
+                        "folder_separator_icon": " \uf061 ",
+                        "home_icon": "\udb80\udedc "
                     },
                     "style": "plain",
                     "template": " {{ .Path }} ",

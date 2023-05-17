@@ -9,9 +9,6 @@ nnoremap <silent> <F3> <Cmd>Telescope help_tags<CR>
 nnoremap <silent> <F4> <Cmd>Telescope keymaps<CR>
 nnoremap <silent> <F5> <Cmd>Telescope notify<CR>
 
-" Minimap
-nnoremap <silent> \m <Cmd>ToggleMinimap<CR>
-
 " Installations
 nnoremap <silent> <Home> <Cmd>Mason<CR>
 
@@ -67,6 +64,9 @@ nnoremap f <Cmd>Lspsaga hover_doc<CR>
 nnoremap gd <Cmd>Lspsaga lsp_finder<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 nnoremap gp <Cmd>Lspsaga code_action<CR>
+nnoremap <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
+nnoremap <C-S-j> <Cmd>Lspsaga diagnostic_jump_prev<CR>
+nnoremap gl <Cmd>Lspsaga show_line_diagnostics<CR>
 
 " Movement between panes
 nnoremap <A-S-j> <Cmd>wincmd h<CR>

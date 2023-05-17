@@ -251,23 +251,29 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `g + p` - Lspsaga Code Actions
 
+`Ctrl - j` - Lspsaga Jump Diagnostic Forward
+
+`Ctrl - Shift- j` - Lspsaga Jump Diagnostic Reverse
+
+`g - l` - Lspsaga Line Diagnostic
+
 `g + r` - Lspsaga Rename
 
-`C - A - k` - Increase Pane Vertical
+`Ctrl - Alt - k` - Increase Pane Vertical
 
-`C - A - i` - Decrease Pane Vertical
+`Ctrl - Alt - i` - Decrease Pane Vertical
 
-`C - A - l` - Increase Pane Horizontal
+`Ctrl - Alt - l` - Increase Pane Horizontal
 
-`C - A - j` - Decrease Pane Horizontal
+`Ctrl - Alt - j` - Decrease Pane Horizontal
 
-`A - S - i` - Pane Move Up
+`Alt - Shift - i` - Pane Move Up
 
-`A - S - k` - Pane Move Down
+`Alt - Shift - k` - Pane Move Down
 
-`A - S - j` - Pane Move Left
+`Alt - Shift - j` - Pane Move Left
 
-`A - S - l` - Pane Move Right
+`Alt - Shift - l` - Pane Move Right
 
 `F9` - Debugger Continue
 
@@ -291,7 +297,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `\g` - Git Project Diff Preview
 
-`S - g` - Git Toggle Diff Preference
+`Shift - g` - Git Toggle Diff Preference
 
 `CTRL - Alt - c` - Copy
 

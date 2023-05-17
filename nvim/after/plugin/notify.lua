@@ -1,9 +1,10 @@
 local status, notify = pcall(require, 'notify')
 if (not status) then return end
-local status2, dap = pcall(require,"dap")
+local status2, dap = pcall(require, "dap")
 if (not status2) then return end
 
-notify.setup({background_colour = "#000000"})
+notify.setup({ background_colour = "#000000" })
+
 vim.notify = notify
 
 -- Notification update
@@ -47,26 +48,25 @@ end
 
 -- LSP integration
 vim.lsp.handlers["$/progress"] = function(_, result, ctx)
-    local client_id = ctx.client_id
-
     local val = result.value
+    local client_id = ctx.client_id
 
     if not val.kind then return end
 
     local notif_data = get_notif_data(client_id, result.token)
 
     if val.kind == "begin" then
-    local message = format_message(val.message, val.percentage)
+        local message = format_message(val.message, val.percentage)
 
-    notif_data.notification = vim.notify(message, "info", {
-        title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
-        icon = spinner_frames[1],
-        timeout = false,
-        hide_from_history = false,
-    })
+        notif_data.notification = vim.notify(message, "info", {
+            title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
+            icon = spinner_frames[1],
+            timeout = false,
+            hide_from_history = false,
+        })
 
-    notif_data.spinner = 1
-    update_spinner(client_id, result.token)
+        notif_data.spinner = 1
+        update_spinner(client_id, result.token)
     elseif val.kind == "report" and notif_data then
         notif_data.notification = vim.notify(format_message(val.message, val.percentage), "info", {
             replace = notif_data.notification,
@@ -98,7 +98,7 @@ dap.listeners.before['event_progressStart']['progress-notifications'] = function
     })
 
     notif_data.notification.spinner = 1,
-    update_spinner("dap", body.progressId)
+        update_spinner("dap", body.progressId)
 end
 
 dap.listeners.before['event_progressUpdate']['progress-notifications'] = function(session, body)
