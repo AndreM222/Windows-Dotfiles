@@ -7,28 +7,28 @@ require('lspconfig.ui.windows').default_options.border = 'single'
 local protocol = require('vim.lsp.protocol')
 
 protocol.CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
-    'ﰠ', -- Field
+    '󰉿', -- Text
+    '', -- Method
+    '󰊕', -- Function
+    '', -- Constructor
+    '󰜢', -- Field
     "", -- Variable
     '', -- Class
     '', -- Interface
-    '', -- Module
-    'ﰠ', -- Property
+    '', -- Module
+    '󰜢', -- Property
     '', -- Unit
     '', -- Value
     '', -- Enum
-    '', -- Keyword
+    '󰌋', -- Keyword
     '', -- Snippet
-    '', -- Color
-    '', -- File
-    '', -- Reference
-    '', -- Folder
+    '', -- Color
+    '󰈙', -- File
+    '󰈇', -- Reference
+    '󰉋', -- Folder
     '', -- EnumMember
     '', -- Constant
-    'פּ', -- Struct
+    '󰙅', -- Struct
     '', -- Event
     '', -- Operator
     '', -- TypeParameter
@@ -127,7 +127,7 @@ nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     -- Uncomment for editing config files
-    --[[ settings = {
+    settings = {
         Lua = {
             diagnostics = { globals = { 'vim' } },
             workspace = {
@@ -136,7 +136,7 @@ nvim_lsp.lua_ls.setup({
                 checkThirdParty = false
             }
         }
-    } ]]
+    }
 })
 
 -- LaTeX
@@ -178,7 +178,7 @@ nvim_lsp.tailwindcss.setup {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
-        virtual_text = { spacing = 4, prefix = '󰣏' },
+        virtual_text = { spacing = 4, prefix = '' },
         severity_sort = true
     }
 )
