@@ -12,7 +12,7 @@
                     "properties": {
                         "macos": "\uf179 ",
                         "ubuntu": "\uebc6 ",
-                        "windows": "\uf009 "
+                        "windows": "\udb80\udf72 "
                     },
                     "style": "diamond",
                     "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
@@ -33,7 +33,7 @@
                     "foreground": "#2e2e2e",
                     "leading_diamond": "\ue0b2",
                     "style": "diamond",
-                    "template": "\uf4bc CPU: {{ round .PhysicalPercentUsed .Precision }}% | ",
+                    "template": "\udb80\udf5b CPU: {{ round .PhysicalPercentUsed .Precision }}% \udb82\udd03 ",
                     "type": "sysinfo"
                 },
                 {

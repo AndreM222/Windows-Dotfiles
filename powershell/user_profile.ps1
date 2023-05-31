@@ -1,4 +1,4 @@
-
+#Prompt
 oh-my-posh init pwsh --config $HOME\.config\powershell\themes\minimalNight.omp.json | Invoke-Expression
 Import-Module Terminal-Icons
 
