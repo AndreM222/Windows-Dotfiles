@@ -45,6 +45,40 @@ local function format_message(message, percentage)
     return (percentage and percentage .. "%\t" or "") .. (message or "")
 end
 
+-- Lsp integration
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "LspProgressUpdate",
+    callback = function()
+        local lsp = vim.lsp.util.get_progress_messages()[1]
+
+        if not lsp then return end
+
+        -- Startup null-ls notification
+        if lsp.title == "diagnostics_on_open" and lsp.name == "null-ls" and lsp.message then
+            vim.notify("Complete: " .. lsp.message, "info", {
+                title = format_title(lsp.title, lsp.name),
+                icon = ""
+            })
+        end
+
+        -- Lsp progress notifications
+        if lsp.done and lsp.title ~= "diagnostics" then
+            if lsp.message then
+                vim.notify("Complete: " .. lsp.message, "info", {
+                    title = format_title(lsp.title, lsp.name),
+                    icon = ""
+                })
+            else
+                vim.notify("Complete", "info", {
+                    title = format_title(lsp.title, lsp.name),
+                    icon = ""
+                })
+            end
+        end
+    end
+})
+
 -- DAP integration
 
 dap.listeners.before['event_progressStart']['progress-notifications'] = function(session, body)
