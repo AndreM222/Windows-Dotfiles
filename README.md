@@ -91,6 +91,7 @@ Font Size: 9
 - [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [AltDrag](https://stefansundin.github.io/altdrag/) - `Center Window Shortcut`
+- [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 
 ## Servers 🗃️
 
