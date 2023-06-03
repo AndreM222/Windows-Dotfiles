@@ -14,7 +14,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory
 $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 
 # PSReadLine
-Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -EditMode Windows
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
