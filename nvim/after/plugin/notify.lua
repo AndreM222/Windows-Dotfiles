@@ -4,7 +4,6 @@ local status2, dap = pcall(require, "dap")
 if (not status2) then return end
 
 notify.setup({ background_colour = "#000000" })
-
 vim.notify = notify
 
 -- Notification update
@@ -45,39 +44,55 @@ local function format_message(message, percentage)
     return (percentage and percentage .. "%\t" or "") .. (message or "")
 end
 
--- Lsp integration
 
-vim.api.nvim_create_autocmd("User", {
-    pattern = "LspProgressUpdate",
-    callback = function()
-        local lsp = vim.lsp.util.get_progress_messages()[1]
+-- LSP integration
+vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+    local client_id = ctx.client_id
 
-        if not lsp then return end
+    local val = result.value
 
-        -- Startup null-ls notification
-        if lsp.title == "diagnostics_on_open" and lsp.name == "null-ls" and lsp.message then
-            vim.notify("Complete: " .. lsp.message, "info", {
-                title = format_title(lsp.title, lsp.name),
+    if not val.kind then return end
+
+    if client_id == 3 then
+        -- Null-ls Notifications
+        if val.kind == "begin" and val.title ~= "diagnostics" then
+            vim.notify("Complete", "info", {
+                title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
                 icon = ""
             })
         end
+    else
+        -- Lsp Notifications
+        local notif_data = get_notif_data(client_id, result.token)
+        if val.kind == "begin" then
+            local message = format_message(val.message, val.percentage)
 
-        -- Lsp progress notifications
-        if lsp.done and lsp.title ~= "diagnostics" then
-            if lsp.message then
-                vim.notify("Complete: " .. lsp.message, "info", {
-                    title = format_title(lsp.title, lsp.name),
-                    icon = ""
+            notif_data.notification = vim.notify(message, "info", {
+                title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
+                icon = spinner_frames[1],
+                timeout = false,
+                hide_from_history = false
+            })
+
+            notif_data.spinner = 1
+            update_spinner(client_id, result.token)
+        elseif val.kind == "report" and notif_data then
+            notif_data.notification = vim.notify(format_message(val.message, val.percentage), "info", {
+                replace = notif_data.notification,
+                hide_from_history = false
+            })
+        elseif val.kind == "end" and notif_data then
+            notif_data.notification =
+                vim.notify(val.message and format_message(val.message) or "Complete", "info", {
+                    icon = "",
+                    replace = notif_data.notification
                 })
-            else
-                vim.notify("Complete", "info", {
-                    title = format_title(lsp.title, lsp.name),
-                    icon = ""
-                })
-            end
+
+            notif_data.spinner = nil
         end
     end
-})
+end
+
 
 -- DAP integration
 
