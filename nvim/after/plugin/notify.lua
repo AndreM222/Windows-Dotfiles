@@ -44,55 +44,6 @@ local function format_message(message, percentage)
     return (percentage and percentage .. "%\t" or "") .. (message or "")
 end
 
--- LSP And Null-Ls Integration
-vim.lsp.handlers["$/progress"] = function(_, result, ctx)
-    local client_id = ctx.client_id
-
-    local val = result.value
-
-    if not val.kind then return end
-
-    if client_id > 1 then
-        -- Null-ls Integration
-        if val.title and val.title ~= "diagnostics" then
-            vim.notify(val.message or "Complete", "info", {
-                title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
-                icon = ""
-            })
-        end
-    else
-        -- Lsp Integration
-        local notif_data = get_notif_data(client_id, result.token)
-        if val.kind == "begin" then
-            local message = format_message(val.message, val.percentage)
-
-            notif_data.notification = vim.notify(message, "info", {
-                title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
-                icon = spinner_frames[1],
-                timeout = false,
-                hide_from_history = false
-            })
-
-            notif_data.spinner = 1
-            update_spinner(client_id, result.token)
-        elseif val.kind == "report" and notif_data then
-            notif_data.notification = vim.notify(format_message(val.message, val.percentage), "info", {
-                replace = notif_data.notification,
-                hide_from_history = false
-            })
-        elseif val.kind == "end" and notif_data then
-            notif_data.notification =
-                vim.notify(val.message and format_message(val.message) or "Complete", "info", {
-                    icon = "",
-                    replace = notif_data.notification,
-                    timeout = 3000
-                })
-
-            notif_data.spinner = nil
-        end
-    end
-end
-
 -- DAP Integration
 dap.listeners.before['event_progressStart']['progress-notifications'] = function(session, body)
     local notif_data = get_notif_data("dap", body.progressId)
