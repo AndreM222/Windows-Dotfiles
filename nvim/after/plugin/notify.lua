@@ -6,7 +6,7 @@ if (not status2) then return end
 notify.setup({ background_colour = "#000000" })
 vim.notify = notify
 
--- Notification update
+-- Notification Update
 local client_notifs = {}
 
 local function get_notif_data(client_id, token)
@@ -45,7 +45,7 @@ local function format_message(message, percentage)
 end
 
 
--- LSP integration
+-- LSP And Null-Ls Integration
 vim.lsp.handlers["$/progress"] = function(_, result, ctx)
     local client_id = ctx.client_id
 
@@ -53,7 +53,8 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 
     if not val.kind then return end
 
-    if client_id == 3 then
+    if client_id > 1 then
+        -- Null-ls Integration
         if val.title and val.title ~= "diagnostics" then
             vim.notify(val.message or "Complete", "info", {
                 title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
@@ -61,6 +62,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
             })
         end
     else
+        -- Lsp Integration
         local notif_data = get_notif_data(client_id, result.token)
         if val.kind == "begin" then
             local message = format_message(val.message, val.percentage)
@@ -93,7 +95,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
 end
 
 
--- DAP integration
+-- DAP Integration
 
 dap.listeners.before['event_progressStart']['progress-notifications'] = function(session, body)
     local notif_data = get_notif_data("dap", body.progressId)
