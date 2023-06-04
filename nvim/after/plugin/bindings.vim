@@ -132,5 +132,4 @@ inoremap <C-A-a> <Esc> ggVG
 
 " Harpoon
 nnoremap K <Cmd>HarpoonMark<CR>
-
 nnoremap <C-h> <Cmd>Harpoon<CR>

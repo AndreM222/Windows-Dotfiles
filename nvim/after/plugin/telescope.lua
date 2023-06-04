@@ -44,7 +44,7 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 telescope.load_extension("ui-select")
--- telescope.load_extension('harpoon')
+telescope.load_extension('harpoon')
 
 -- Bindings
 vim.api.nvim_create_user_command(
@@ -87,7 +87,7 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
     "Harpoon",
     function()
-        -- telescope.extensions.harpoon.marks(themes.get_dropdown({ previewer = false }))
+        telescope.extensions.harpoon.marks(themes.get_dropdown({ previewer = false }))
     end,
     { nargs = 0 }
 )
