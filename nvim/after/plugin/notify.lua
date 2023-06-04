@@ -54,15 +54,13 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
     if not val.kind then return end
 
     if client_id == 3 then
-        -- Null-ls Notifications
-        if val.kind == "begin" and val.title ~= "diagnostics" then
-            vim.notify("Complete", "info", {
+        if val.title and val.title ~= "diagnostics" then
+            vim.notify(val.message or "Complete", "info", {
                 title = format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
                 icon = ""
             })
         end
     else
-        -- Lsp Notifications
         local notif_data = get_notif_data(client_id, result.token)
         if val.kind == "begin" then
             local message = format_message(val.message, val.percentage)
@@ -85,7 +83,8 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
             notif_data.notification =
                 vim.notify(val.message and format_message(val.message) or "Complete", "info", {
                     icon = "",
-                    replace = notif_data.notification
+                    replace = notif_data.notification,
+                    timeout = 3000
                 })
 
             notif_data.spinner = nil
