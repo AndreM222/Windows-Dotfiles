@@ -44,7 +44,6 @@ local function format_message(message, percentage)
     return (percentage and percentage .. "%\t" or "") .. (message or "")
 end
 
-
 -- LSP And Null-Ls Integration
 vim.lsp.handlers["$/progress"] = function(_, result, ctx)
     local client_id = ctx.client_id
@@ -94,9 +93,7 @@ vim.lsp.handlers["$/progress"] = function(_, result, ctx)
     end
 end
 
-
 -- DAP Integration
-
 dap.listeners.before['event_progressStart']['progress-notifications'] = function(session, body)
     local notif_data = get_notif_data("dap", body.progressId)
 
