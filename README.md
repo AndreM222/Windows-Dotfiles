@@ -91,7 +91,6 @@ Font Size: 9
 - [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [AltDrag](https://stefansundin.github.io/altdrag/) - `Center Window Shortcut`
-- [Fzf](https://github.com/junegunn/fzf)- `scoop install fzf`
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 
@@ -220,8 +219,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `F5` - Lsp Status
 
 `F6` - Null-LS Status
-
-`\ + m` - Minimap Toggle
 
 `\ + P` - Markdown Preview Toggle
 
