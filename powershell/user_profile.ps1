@@ -41,10 +41,8 @@ function which ($command) {
         Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 } 
   
-function servers { netstat -ano }
-function server([string]$SERVERNAME) { netstat -ano | findstr "$SERVERNAME"}
+function server([string]$SERVERNAME) { 
+    if ($SERVERNAME) { netstat -ano | findstr "$SERVERNAME" }
+    else { netstat -ano }
+}
 function drives {gdr -PSProvider 'FileSystem'}
-  
-function vdot { cd $HOME/Appdata/Local/nvim }
-function vpdot { cd $HOME/Appdata/Local/nvim/after/plugin }
-function vldot { cd $HOME/Appdata/Local/nvim/lua/andrem222 }
