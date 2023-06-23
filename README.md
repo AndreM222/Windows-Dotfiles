@@ -1,4 +1,4 @@
-# Windows Dotfiles
+<h1>Windows Dotfiles</h1>
 
 <p align='center'>
 <img style='padding-bottom:10px' src="doc/Terminal-Preview_1.png">
@@ -7,7 +7,7 @@
 <img src="doc/Terminal-Preview_4.png">
 </p>
 
-## Windows Terminal 🖥️
+<h2>Windows Terminal 🖥️</h2>
 
 ```
 --- Split ---
@@ -55,23 +55,23 @@ Opacity Config: 80
 Font Size: 9
 ```
 
-## Font 🖌️
+<h2>Font 🖌️</h2>
 
 - [JetBrainsMonoNL NFM](https://www.nerdfonts.com/font-downloads) - Font
 
-## Theme 🎭
+<h2>Theme 🎭</h2>
 
 - [Dracula](https://draculatheme.com/windows-terminal) - Dracula Color Theme
 
-## Terminal 📟
+<h2>Terminal 📟</h2>
 
 - [Windows terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) - Terminal
 
-## Shell 🛡️
+<h2>Shell 🛡️</h2>
 
 - [PowerShell](https://learn.microsoft.com/en-us/powershell/) - Shell
 
-## Setup ⚒️
+<h2>Setup ⚒️</h2>
 
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
 - [Fira-Font](https://scoop.sh/#/apps?q=firacode&s=0&d=1&o=true) - `scoop install FiraCode-NF-Mono`
@@ -94,7 +94,7 @@ Font Size: 9
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 
-## Servers 🗃️
+<h2>Servers 🗃️</h2>
 
 `Live-Server` npm install -g live-server
 
@@ -106,13 +106,11 @@ Font Size: 9
 
 `Lua` scoop install lua-language-server
 
-`LaTeX` scoop install texlab 
-
 `C-Sharp` scoop install omnisharp
 
 `Marksman` scoop install marksman
 
-## Format Languages 📄
+<h2>Format Languages 📄</h2>
 
 `Python` pip install --upgrade autopep8
 
@@ -120,9 +118,7 @@ Font Size: 9
 
 `C Languages` At the setup of clang
 
-`Latex` scoop install latexindent
-
-## Neovim Plugins 📲
+<h2>Neovim Plugins 📲</h2>
 
 - [Packer](https://github.com/wbthomason/packer.nvim) - Nvim Plugin Installer
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
@@ -162,13 +158,7 @@ Font Size: 9
 - [Dashboard-Nvim](https://github.com/glepnir/dashboard-nvim) - Startup Screen
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
 
-## Installations ⬇️
-
-- [Miktek](https://miktex.org/) - LaTeX Compiler
-
-- [Strawberry Pearl](https://strawberryperl.com/) - Libraries
-
-## Compilers And Intrepeters ⚙️
+<h2>Compilers And Intrepeters ⚙️</h2>
 
 - [NodeJS](https://scoop.sh/#/apps?s=0&d=1&o=true&q=nodejs) - scoop install nodejs
 
@@ -176,7 +166,7 @@ Font Size: 9
 
 - [Python](https://www.python.org/downloads/) - Python Compiler
 
-## Directory Structure 🗂️
+<h2>Directory Structure 🗂️</h2>
 
 ```
 📂 $HOME/AppData/Local/Nvim
@@ -192,7 +182,7 @@ Font Size: 9
     |__📄minimalNight.omp.json
 ```
 
-## Info ℹ️
+<h2>Info ℹ️</h2>
 
 Read: `To visualize on vim the keybindings press F3. I also documented all my custom bindings.`
 

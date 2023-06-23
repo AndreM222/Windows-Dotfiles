@@ -32,7 +32,6 @@ packer.startup(function(use)
     use 'akinsho/nvim-bufferline.lua'
     use 'mg979/vim-visual-multi'
     use 'ThePrimeagen/harpoon'
-    use 'lervag/vimtex'
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
