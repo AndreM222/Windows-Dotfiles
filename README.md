@@ -288,10 +288,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Shift - g` - Git Toggle Diff Preference
 
-`CTRL - Alt - c` - Copy
-
-`CTRL - Alt - v` - Paste
-
 `=` - Open Fold
 
 `-` - Close Fold

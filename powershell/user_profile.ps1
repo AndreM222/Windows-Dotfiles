@@ -31,22 +31,22 @@ $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 # Alias
 Set-Alias -Name vi -Value nvim
 Set-Alias -Name vim -Value nvim
-  
+
 Set-Alias grep findstr
 Set-Alias touch New-Item
-  
+
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 Set-Alias ds drives
-  
+
 Set-Alias g git
-  
+
 function la {ls -force}
 function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
         Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 } 
-  
+
 function server([string]$SERVERNAME) { 
     if ($SERVERNAME) { netstat -ano | findstr "$SERVERNAME" }
     else { netstat -ano }

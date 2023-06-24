@@ -99,11 +99,6 @@ nnoremap <C-c> <Cmd>PickColor<CR>
 inoremap <C-c> <Cmd>PickColorInsert<CR>
 
 " Copy Paste Bindings
-nnoremap <C-A-c> "+
-vnoremap <C-A-c> "+y
-nnoremap <C-A-v> pgvy
-vnoremap <C-A-v> pgvy
-
 nnoremap y "+
 vnoremap y "+y
 nnoremap p pgvy
@@ -133,8 +128,3 @@ inoremap <C-A-a> <Esc> ggVG
 " Harpoon
 nnoremap K <Cmd>HarpoonMark<CR>
 nnoremap <C-h> <Cmd>Harpoon<CR>
-
-" Delete
-nnoremap  <C-d> dw
-inoremap <C-d> <esc>lcW
-inoremap <C-S-d> <esc>s
