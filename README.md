@@ -366,4 +366,12 @@ Friendly setup for commitizen globally:
 npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
+Problem: `Scoop buckets wont update`
+
+Fix:
+```
+scoop config SCOOP_BRANCH master
+scoop update
+```
+
 </details>
