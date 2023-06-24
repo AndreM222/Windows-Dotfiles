@@ -33,7 +33,7 @@
                     "foreground": "#2e2e2e",
                     "leading_diamond": "\ue0b2",
                     "style": "diamond",
-                    "template": "\udb80\udf5b CPU: {{ round .PhysicalPercentUsed .Precision }}% \udb82\udd03 ",
+                    "template": "\udb80\udf5b CPU: {{ round .PhysicalPercentUsed .Precision }}% | ",
                     "type": "sysinfo"
                 },
                 {
