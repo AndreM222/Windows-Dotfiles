@@ -16,10 +16,6 @@ packer.startup(function(use)
     use 'rcarriga/nvim-notify'
     use 'Mofiqul/dracula.nvim'
     use 'rrethy/vim-illuminate'
-    use {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter'
-    }
 
     -- Tools
     use 'nvim-treesitter/nvim-treesitter'

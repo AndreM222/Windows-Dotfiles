@@ -155,7 +155,6 @@ Font Size: 9
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
-- [Dashboard-Nvim](https://github.com/glepnir/dashboard-nvim) - Startup Screen
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
 
 <h2>Compilers And Intrepeters ⚙️</h2>
