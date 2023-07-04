@@ -127,7 +127,7 @@ nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     -- Uncomment for editing config files
-    settings = {
+    --[[ settings = {
         Lua = {
             diagnostics = { globals = { 'vim' } },
             workspace = {
@@ -136,13 +136,7 @@ nvim_lsp.lua_ls.setup({
                 checkThirdParty = false
             }
         }
-    }
-})
-
--- LaTeX
-nvim_lsp.texlab.setup({
-    on_attach = on_attach,
-    capabilities = capabilities
+    } ]]
 })
 
 -- html

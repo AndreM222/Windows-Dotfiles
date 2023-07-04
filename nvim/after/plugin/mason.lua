@@ -21,7 +21,7 @@ mason.setup({
 
 -- Setuo Null-ls on mason
 null_ls.setup({
-    ensure_installed = { "latexindent", "prettierd", "clang-format", "eslint_d" },
+    ensure_installed = { "prettierd", "clang-format", "eslint_d" },
     automatic_setup = true
 })
 
@@ -32,7 +32,6 @@ lspconfig.setup({
         "html",
         "lua_ls",
         "pyright",
-        "texlab",
         "tsserver",
         "vimls",
         "omnisharp",

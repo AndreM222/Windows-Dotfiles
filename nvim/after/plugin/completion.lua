@@ -29,6 +29,7 @@ cmp.setup({
         { name = 'buffer' },
     }),
     formatting = {
+        fields = { 'kind', 'abbr', 'menu' },
         format = lspkind.cmp_format({
             mode = 'symbol',
             maxwidth = 50,
