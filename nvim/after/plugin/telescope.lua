@@ -30,6 +30,7 @@ telescope.setup {
                 ["n"] = {
                     -- Custom normal mode mappings
                     ["N"] = fb_actions.create,
+                    ["C"] = fb_actions.copy,
                     ["h"] = fb_actions.goto_parent_dir,
                     ["<C-d>"] = fb_actions.remove,
                     ["R"] = fb_actions.rename,
