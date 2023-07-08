@@ -24,10 +24,6 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory
 
 $env:FZF_DEFAULT_OPTS="--color=fg:#f8f8f2,hl:#bd93f9,gutter:-1 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#8be9fd,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
 
-# Git
-Import-Module posh-git
-$env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
-
 # Alias
 Set-Alias -Name vi -Value nvim
 Set-Alias -Name vim -Value nvim
@@ -52,3 +48,7 @@ function server([string]$SERVERNAME) {
     else { netstat -ano }
 }
 function drives {gdr -PSProvider 'FileSystem'}
+
+# Git
+Import-Module posh-git
+$env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
