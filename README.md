@@ -77,7 +77,7 @@ Font Size: 9
 - [Fira-Font](https://scoop.sh/#/apps?q=firacode&s=0&d=1&o=true) - `scoop install FiraCode-NF-Mono`
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
-- [SQLite | MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
+- [SQLite & MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
 - [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 - [Oh-My-Posh](https://www.powershellgallery.com/packages/oh-my-posh) - `Install-Module oh-my-posh -Scope CurrentUser`
@@ -94,6 +94,7 @@ Font Size: 9
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 - [NTop](https://scoop.sh/#/apps?q=ntop) - `scoop install ntop`
+- [Zip & Unzip](https://scoop.sh/#/) - `scoop install zip unzip`
 
 <h2>Servers 🗃️</h2>
 
