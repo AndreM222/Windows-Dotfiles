@@ -362,6 +362,7 @@ Fix:
 ```
 scoop config SCOOP_BRANCH master
 scoop update
+scoop config SCOOP_BRANCH main
 ```
 
 </details>
