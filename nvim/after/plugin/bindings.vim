@@ -90,9 +90,8 @@ nnoremap B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint conditi
 nnoremap lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap dr <Cmd>lua require'dapui'.toggle()<CR>
 
-" vgit Bindings
-nnoremap <C-g> <Cmd>VGit buffer_hunk_preview<CR>
-nnoremap \g <Cmd>VGit project_diff_preview<CR>
+" Git Bindings
+nnoremap \g <Cmd>DiffviewToggle<CR>
 
 " Color Picker
 nnoremap <C-c> <Cmd>PickColor<CR>

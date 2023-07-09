@@ -31,7 +31,7 @@ packer.startup(function(use)
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
-    use 'tanvirtin/vgit.nvim'
+    use "sindrets/diffview.nvim"
 
     -- Mason
     use 'williamboman/mason.nvim'

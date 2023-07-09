@@ -148,7 +148,7 @@ Font Size: 9
 - [Indent-Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 - [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim) - LSP UI
-- [VGit](https://github.com/tanvirtin/vgit.nvim) - Visual Git
+- [DiffView](https://github.com/sindrets/diffview.nvim) - Visual Git
 - [DAP](https://github.com/mfussenegger/nvim-dap) - Debugger
 - [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
 - [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
@@ -280,11 +280,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `dr` - Debugger Toggle
 
-`CTRL - g` - Git Buffer Hunk Preview Current
-
-`Alt - g` - Git Buffer Gutter Blame Preview Current
-
-`\g` - Git Project Diff Preview
+`\g` - Git Diff Preview
 
 `Shift - g` - Git Toggle Diff Preference
 
@@ -349,13 +345,6 @@ Look for the documentation to make the changes on the CLI.
 
 For clang-format: https://clang.llvm.org/docs/ClangFormat.html
 For prettier: https://prettier.io/docs/en/options.html#vue-files-script-and-style-tags-indentation
-```
-
-Problem: `Can't change current project diff selection`
-
-Fix:
-```
-VGit uses j and k not the arrows to go up and down for the selection.
 ```
 
 Problem: `Commitizen opening editor instead of commit options`
