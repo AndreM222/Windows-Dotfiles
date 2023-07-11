@@ -46,22 +46,7 @@ dracula.setup({
         ['@variable'] = { fg = dracula.colors().purple, },
 
         -- Completion text
-        Pmenu = { fg = "white", bg = dracula.colors().menu },
-
-        -- Dab
-        debugPc = { bg = dracula.colors().selection },
-        DapUIThread = { fg = dracula.colors().green },
-        DapUIRestart = { fg = dracula.colors().green },
-        DapUIRestartNC = { fg = dracula.colors().green },
-        DapUIPlayPause = { fg = dracula.colors().green },
-        DapUIPlayPauseNC = { fg = dracula.colors().green },
-        DapUIBreakpointsInfo = { fg = dracula.colors().green },
-        DapUIWatchesValue = { fg = dracula.colors().green },
-        DapUIBreakpointsCurrentLine = { fg = dracula.colors().green },
-        DapUICurrentFrameName = { fg = dracula.colors().green },
-        DapUIStop = { fg = dracula.colors().red },
-        DapUIWatchesError = { fg = dracula.colors().red },
-        DapUIWatchesEmpty = { fg = dracula.colors().red },
+        Pmenu = { fg = dracula.colors().fg, bg = dracula.colors().menu },
 
         -- Saga Separator
         SagaWinbarSep = { fg = dracula.colors().comment },
@@ -85,7 +70,7 @@ dracula.setup({
         -- Lsp Saga
         CodeActionNumber = { bg = 'NONE', fg = dracula.colors().cyan },
 
-        -- Git Signs
+        -- Gitsigns
         GitSignsCurrentLineBlame = { fg = dracula.colors().selection },
 
         -- Git Diff
