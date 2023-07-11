@@ -93,7 +93,6 @@ Font Size: 9
 - [AltDrag](https://stefansundin.github.io/altdrag/) - `Center Window Shortcut`
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
-- [NTop](https://scoop.sh/#/apps?q=ntop) - `scoop install ntop`
 - [Zip & Unzip](https://scoop.sh/#/) - `scoop install zip unzip`
 
 <h2>Servers 🗃️</h2>
