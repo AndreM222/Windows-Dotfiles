@@ -56,20 +56,6 @@ dracula.setup({
         LspInfoBorder = { fg = dracula.colors().comment },
         MasonHighlight = { fg = dracula.colors().green, default = true },
 
-        -- Notify
-        NotifyInfoIcon = { fg = dracula.colors().green },
-        NotifyInfoTitle = { fg = dracula.colors().green },
-        NotifyInfoBorder = { fg = "#2C453F" },
-        NotifyErrorIcon = { fg = dracula.colors().red },
-        NotifyErrorTitle = { fg = dracula.colors().red },
-        NotifyErrorBorder = { fg = "#DD6E6B" },
-        NotifyWarnIcon = { fg = dracula.colors().orange },
-        NotifyWarnTitle = { fg = dracula.colors().orange },
-        NotifyWarnBorder = { fg = "#785637" },
-
-        -- Lsp Saga
-        CodeActionNumber = { bg = 'NONE', fg = dracula.colors().cyan },
-
         -- Gitsigns
         GitSignsCurrentLineBlame = { fg = dracula.colors().selection },
 
