@@ -95,6 +95,7 @@ Font Size: 9
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 - [Zip & Unzip](https://scoop.sh/#/) - `scoop install zip unzip`
 - [Bat](https://scoop.sh/#/apps?q=bat) - `scoop install bat`
+- [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 
 <h2>Servers 🗃️</h2>
 

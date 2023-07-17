@@ -27,6 +27,10 @@ $env:FZF_DEFAULT_OPTS="--color=fg:#f8f8f2,hl:#bd93f9,gutter:-1 --color=fg+:#f8f8
 # Bat
 $env:BAT_THEME="Dracula"
 
+# TheFuck
+$env:PYTHONIOENCODING="utf-8"
+iex "$(thefuck --alias)"
+
 # Alias
 Set-Alias -Name vi -Value nvim
 Set-Alias -Name vim -Value nvim
