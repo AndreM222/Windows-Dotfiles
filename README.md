@@ -90,6 +90,7 @@ Font Size: 9
 - [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - `scoop install dotnet-sdk`
 - [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
+- [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 - [AltDrag](https://stefansundin.github.io/altdrag/) - `Center Window Shortcut`
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
