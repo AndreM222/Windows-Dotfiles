@@ -23,7 +23,6 @@ null_ls.setup({
             extra_args = { "--style=Microsoft" }
         }),
         null_ls.builtins.formatting.autopep8,
-        null_ls.builtins.formatting.latexindent,
 
         -- Diagnostics
         null_ls.builtins.diagnostics.eslint_d.with({

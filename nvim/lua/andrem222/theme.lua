@@ -60,11 +60,12 @@ dracula.setup({
         GitSignsCurrentLineBlame = { fg = dracula.colors().selection },
 
         -- Git Diff
-        GitSignsAddLn = { bg = "#2C453F" },
-        DiffViewDiffAdd = { bg = "#377165" },
-        DiffText = { bg = "#957251" },
-        DiffViewDiffDelete = { bg = "#6D393F", fg = "#6D393F" },
-        GitWordDelete = { bg = "#a16262" },
+        DiffAdd = { bg = "#2C453F" },
+        DiffAddText = { bg = "#377165" },
+        DiffviewDiffDelete = { fg = dracula.colors().selection },
+        DiffAddAsDelete = { bg = "#533238" },
+        DiffDelete = { bg = "#6D393F" },
+        DiffDeleteText = { bg = "#a16262" },
     },
 
     transparent_bg = true,
