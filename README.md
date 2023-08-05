@@ -212,7 +212,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `F6` - Null-LS Status
 
-`\ + P` - Markdown Preview Toggle
+`\ + p + w` - Markdown Preview Toggle
 
 `Ctrl - s` - Save
 
@@ -234,7 +234,7 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Shift - f` - Format
 
-`CTRL - c` - Color Picker
+`\ + p + c` - Color Picker
 
 `f` - Lspsaga Hover Doc
 
@@ -278,11 +278,11 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `B` - Debugger Breakpoint With Conditions
 
-`lp` - Debugger Breakpoint With Log Message
+`l + p` - Debugger Breakpoint With Log Message
 
-`dr` - Debugger Toggle
+`d + r` - Debugger Toggle
 
-`\g` - Git Diff Preview
+`\ + g` - Git Diff Preview
 
 `Shift - g` - Git Toggle Diff Preference
 

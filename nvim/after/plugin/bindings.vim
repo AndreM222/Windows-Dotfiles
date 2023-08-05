@@ -17,7 +17,7 @@ nnoremap <silent> <F6> <Cmd>LspInfo<CR>
 nnoremap <silent> <F7> <Cmd>NullLsInfo<CR>
 
 " Preview Bindings
-nnoremap <silent> \p <Cmd>MarkdownPreviewToggle<CR>
+nnoremap <silent> \pw <Cmd>MarkdownPreviewToggle<CR>
 
 " Saving Bindings
 nnoremap <silent> <C-s> <Cmd>w<CR>
@@ -61,7 +61,7 @@ vnoremap <S-f> <Cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 
 " Lspsaga Setup
 nnoremap f <Cmd>Lspsaga hover_doc<CR>
-nnoremap gd <Cmd>Lspsaga lsp_finder<CR>
+nnoremap gd <Cmd>Lspsaga finder<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 nnoremap gp <Cmd>Lspsaga code_action<CR>
 nnoremap <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
@@ -94,8 +94,7 @@ nnoremap dr <Cmd>lua require'dapui'.toggle()<CR>
 nnoremap \g <Cmd>DiffviewToggle<CR>
 
 " Color Picker
-nnoremap <C-c> <Cmd>PickColor<CR>
-inoremap <C-c> <Cmd>PickColorInsert<CR>
+nnoremap \pc <Cmd>PickColor<CR>
 
 " Copy Paste Bindings
 nnoremap y "+
