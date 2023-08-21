@@ -78,9 +78,11 @@ Font Size: 9
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
 - [SQLite & MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
+- [Rust](https://scoop.sh/#/apps?q=rust) - `scoop install rust`
+- [Gen-License](https://github.com/nexxeln/license-generatorhttps://github.com/nexxeln/license-generator) - `cargo install gen-license`
 - [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
-- [Oh-My-Posh](https://www.powershellgallery.com/packages/oh-my-posh) - `Install-Module oh-my-posh -Scope CurrentUser`
+- [Oh-My-Posh](https://ohmyposh.dev/docs/installation/windows) - `winget install JanDeDobbeleer.OhMyPosh -s wingetinget install JanDeDobbeleer.OhMyPosh -s winget`
 - [Posh-Git](https://www.powershellgallery.com/packages/posh-git) - `Install-Module posh-git -Scope CurrentUser`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
