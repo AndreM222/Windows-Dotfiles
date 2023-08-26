@@ -98,6 +98,7 @@ Font Size: 9
 - [Zip & Unzip](https://scoop.sh/#/) - `scoop install zip unzip`
 - [Bat](https://scoop.sh/#/apps?q=bat) - `scoop install bat`
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
+- [LazyDocker](https://scoop.sh/#/apps?q=lazydocker) - `scoop install lazydocker`
 
 <h2>Servers 🗃️</h2>
 
