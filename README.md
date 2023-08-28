@@ -99,6 +99,7 @@ Font Size: 9
 - [Bat](https://scoop.sh/#/apps?q=bat) - `scoop install bat`
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 - [LazyDocker](https://scoop.sh/#/apps?q=lazydocker) - `scoop install lazydocker`
+- [NTop](https://scoop.sh/#/apps?q=ntop) - `scoop install ntop`
 
 <h2>Servers 🗃️</h2>
 
