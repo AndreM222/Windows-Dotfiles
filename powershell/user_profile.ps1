@@ -2,10 +2,10 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 # Prompt
+Import-Module -Name Terminal-Icons
+
 $omp_file = Join-Path $PSScriptRoot "./themes/minimalNight.omp.json"
 oh-my-posh init pwsh --config $omp_file | Invoke-Expression
-
-Import-Module -Name Terminal-Icons
 
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs
@@ -44,7 +44,12 @@ Set-Alias ds drives
 
 Set-Alias g git
 
-function la {ls -force}
+function ll {eza -l --git --icons --header --group-directories-first -g --time-style=long-iso @args}
+
+function lla {ll --all @args}
+
+function la {ls -force @args}
+
 function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
         Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
