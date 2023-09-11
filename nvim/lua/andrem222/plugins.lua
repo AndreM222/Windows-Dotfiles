@@ -15,6 +15,11 @@ packer.startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
     use 'rcarriga/nvim-notify'
     use 'Mofiqul/dracula.nvim'
+    use {
+        'glepnir/dashboard-nvim',
+        -- event = 'VimEnter',
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
     use 'rrethy/vim-illuminate'
 
     -- Tools

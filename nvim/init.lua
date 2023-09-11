@@ -48,3 +48,5 @@ vim.opt.scrolloff = 10
 vim.opt.ignorecase = true
 vim.opt.laststatus = 3
 vim.opt.incsearch = true
+
+vim.g.indent_blankline_filetype_exclude = {'dashboard'}

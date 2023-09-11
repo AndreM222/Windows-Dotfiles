@@ -100,6 +100,7 @@ Font Size: 9
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 - [LazyDocker](https://scoop.sh/#/apps?q=lazydocker) - `scoop install lazydocker`
 - [NTop](https://scoop.sh/#/apps?q=ntop) - `scoop install ntop`
+- [LazyGit](https://scoop.sh/#/apps?q=lazygit) - `scoop install extras/lazygit`
 
 <h2>Servers 🗃️</h2>
 
@@ -108,6 +109,8 @@ Font Size: 9
 `Python` npm install -g pyright
 
 `Typescript` npm install -g typescript-language-server
+
+`Tailwind CSS` npm install -g tailwindcss-language-server
 
 `C++` scoop install clangd
 
@@ -163,10 +166,11 @@ Font Size: 9
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
+- [Dashboard-Nvim](https://github.com/nvimdev/dashboard-nvim) - Startup Screen
 
 <h2>Compilers And Intrepeters ⚙️</h2>
 
-- [NodeJS](https://scoop.sh/#/apps?s=0&d=1&o=true&q=nodejs) - scoop install nodejs
+- [NodeJS](https://github.com/nvm-sh/nvm) - nvm install lts
 
 - [CPP - CLANG](https://scoop.sh/#/apps?q=llvm&s=0&d=1&o=true) - scoop install mingw-winlibs-llvm
 
