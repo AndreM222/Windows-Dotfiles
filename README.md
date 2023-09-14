@@ -99,7 +99,7 @@ Font Size: 9
 - [LazyDocker](https://scoop.sh/#/apps?q=lazydocker) - `scoop install lazydocker`
 - [NTop](https://scoop.sh/#/apps?q=ntop) - `scoop install ntop`
 - [LazyGit](https://scoop.sh/#/apps?q=lazygit) - `scoop install extras/lazygit`
-- [Eza](https://github.com/eza-community/eza) = `cargo install eza`
+- [Eza](https://github.com/eza-community/eza) - `cargo install eza`
 
 <h2>Servers 🗃️</h2>
 
