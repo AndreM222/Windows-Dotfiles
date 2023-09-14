@@ -78,7 +78,6 @@ Font Size: 9
 - [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
 - [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
 - [SQLite & MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
-- [Rust](https://scoop.sh/#/apps?q=rust) - `scoop install rust`
 - [Gen-License](https://github.com/nexxeln/license-generatorhttps://github.com/nexxeln/license-generator) - `cargo install gen-license`
 - [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
@@ -89,7 +88,6 @@ Font Size: 9
 - [Yarn](https://scoop.sh/#/) - `scoop install yarn`
 - [NVM | NodeJS](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
 - [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
-- [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - `scoop install dotnet-sdk`
 - [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
@@ -175,7 +173,11 @@ Font Size: 9
 
 - [CPP - CLANG](https://scoop.sh/#/apps?q=llvm&s=0&d=1&o=true) - scoop install mingw-winlibs-llvm
 
-- [Python](https://www.python.org/downloads/) - Python Compiler
+- [Python](https://scoop.sh/#/apps?q=python) - scoop install python
+
+- [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - scoop install dotnet-sdk
+
+- [Rust](https://scoop.sh/#/apps?q=rust) - scoop install rust
 
 <h2>Directory Structure 🗂️</h2>
 
