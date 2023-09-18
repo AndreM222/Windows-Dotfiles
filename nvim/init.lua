@@ -38,6 +38,7 @@ vim.opt.cursorlineopt = 'number'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.autoindent = true
 vim.opt.smarttab = true
+vim.opt.signcolumn = "yes:1"
 vim.opt.breakindent = true
 vim.opt.ai = true
 vim.opt.si = true

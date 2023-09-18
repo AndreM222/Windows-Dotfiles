@@ -70,10 +70,38 @@
                     "style": "diamond",
                     "powerline_symbol": "\uE0B0",
                     "leading_diamond": "\ue0b2",
-                    "trailing_diamond": "<transparent,#ff9900>\ue0b2</>",
-                    "foreground": "#2e2e2e",
-                    "background": "#ff9900",
+                    "trailing_diamond": "<transparent,#111111>\ue0b2</>",
+                    "foreground": "#88BD5B",
+                    "background": "#111111",
                     "template": " \uE718{{ .Full }} ",
+                    "properties": {
+                        "prefix": " \uE718 ",
+                        "fetch_version": false
+                    }
+                },
+                {
+                    "type": "aws",
+                    "style": "diamond",
+                    "powerline_symbol": "\uE0B0",
+                    "leading_diamond": "\ue0b2",
+                    "trailing_diamond": "<transparent,#111111>\ue0b2</>",
+                    "foreground": "#FA9904",
+                    "background": "#111111",
+                    "template": " \udb83\ude0f{{.Profile}}{{if .Region}}@{{.Region}}{{end}} ",
+                    "properties": {
+                        "prefix": " \uE718 ",
+                        "fetch_version": false
+                    }
+                },
+                {
+                    "type": "docker",
+                    "style": "diamond",
+                    "powerline_symbol": "\uE0B0",
+                    "leading_diamond": "\ue0b2",
+                    "trailing_diamond": "<transparent,#111111>\ue0b2</>",
+                    "foreground": "#35B5EB",
+                    "background": "#111111",
+                    "template": " \ue650{{ .Context }} ",
                     "properties": {
                         "prefix": " \uE718 ",
                         "fetch_version": false
