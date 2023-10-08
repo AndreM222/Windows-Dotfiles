@@ -59,6 +59,7 @@ function server([string]$SERVERNAME) {
     if ($SERVERNAME) { netstat -ano | findstr "$SERVERNAME" }
     else { netstat -ano }
 }
+
 function drives {gdr -PSProvider 'FileSystem'}
 
 # Git

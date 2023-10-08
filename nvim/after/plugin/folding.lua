@@ -1,7 +1,8 @@
-require("indent_blankline").setup { show_current_context = true }
+local status1, ibl = pcall(require, "ibl")
+if (not status1) then return end
 
-local status, ufo = pcall(require, "ufo")
-if (not status) then return end
+local status2, ufo = pcall(require, "ufo")
+if (not status2) then return end
 
 ufo.setup()
 
@@ -39,3 +40,11 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.foldcolumn = "1"
 vim.o.statuscolumn = '%s%=%l %{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " } '
+
+ibl.setup({
+    exclude = {
+        filetypes = {
+            "dashboard"
+        }
+    }
+});
