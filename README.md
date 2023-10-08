@@ -93,7 +93,6 @@ Font Size: 9
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
-- [Zip & Unzip](https://scoop.sh/#/) - `scoop install zip unzip`
 - [Bat](https://github.com/sharkdp/bat) - `winget install sharkdp.bat`
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 - [LazyDocker](https://github.com/jesseduffield/lazydocker) - `winget install lazydocker`

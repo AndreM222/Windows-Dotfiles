@@ -42,6 +42,9 @@ Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 Set-Alias ds drives
 
+Set-Alias zip Compress-Archive
+Set-Alias unzip Expand-Archive
+
 Set-Alias g git
 
 function ll {eza -l --git --icons --header --group-directories-first -g --time-style=long-iso @args}
