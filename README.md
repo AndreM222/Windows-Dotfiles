@@ -74,31 +74,32 @@ Font Size: 9
 <h2>Setup ⚒️</h2>
 
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
-- [Fira-Font](https://scoop.sh/#/apps?q=firacode&s=0&d=1&o=true) - `scoop install FiraCode-NF-Mono`
-- [Git](https://git-scm.com/download/win) - `winget install --id Git.Git`
-- [Sudo & Curl](https://scoop.sh/#/) - `scoop install curl sudo jq`
-- [SQLite & MySQL](https://scoop.sh/#/apps?q=SQLITE&s=0&d=1&o=true) - `scoop install sqlite`
+- [Fira-Font](https://github.com/ryanoasis/nerd-fonts) - `scoop install FiraCode-NF-Mono`
+- [Git](https://git-scm.com/download/win) - `winget install Git.Git`
+- [Sudo, Curl, & Jq](https://winget.run/) - `winget install gsudo curl.curl jqlang.jq`
+- [SQLite & MySQL](https://sqlite.org/index.html) - `winget install SQLite.SQLite`
 - [Gen-License](https://github.com/nexxeln/license-generatorhttps://github.com/nexxeln/license-generator) - `cargo install gen-license`
-- [Neovim](https://scoop.sh/#/apps?q=neovim&s=0&d=1&o=true) - `scoop install neovim`
+- [Neovim](https://winget.run/search?query=neovim) - `winget install Neovim`
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 - [Oh-My-Posh](https://ohmyposh.dev/docs/installation/windows) - `winget install JanDeDobbeleer.OhMyPosh -s winget`
 - [Posh-Git](https://www.powershellgallery.com/packages/posh-git) - `Install-Module posh-git -Scope CurrentUser`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
-- [Yarn](https://scoop.sh/#/) - `scoop install yarn`
-- [NVM | NodeJS](https://scoop.sh/#/apps?q=nvm&s=0&d=1&o=true) - `scoop install nvm`
-- [Make](https://scoop.sh/#/apps?q=make&s=0&d=1&o=true) - `scoop install make`
-- [ghq](https://scoop.sh/#/apps?s=0&d=1&o=true&q=ghq) - `scoop install ghq`
+- [Yarn](https://yarnpkg.com/) - `winget install Yarn.Yarn`
+- [NVM | NodeJS](https://github.com/coreybutler/nvm-windows) - `winget install CoreyButler.NVMforWindows`
+- [Make](https://www.gnu.org/software/make/) - `winget install GnuWin32.Make`
+- [ghq](https://github.com/x-motemen/ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 - [Zip & Unzip](https://scoop.sh/#/) - `scoop install zip unzip`
-- [Bat](https://scoop.sh/#/apps?q=bat) - `scoop install bat`
+- [Bat](https://github.com/sharkdp/bat) - `winget install sharkdp.bat`
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
-- [LazyDocker](https://scoop.sh/#/apps?q=lazydocker) - `scoop install lazydocker`
-- [NTop](https://scoop.sh/#/apps?q=ntop) - `scoop install ntop`
-- [LazyGit](https://scoop.sh/#/apps?q=lazygit) - `scoop install extras/lazygit`
+- [LazyDocker](https://github.com/jesseduffield/lazydocker) - `winget install lazydocker`
+- [NTop](https://github.com/gsass1/NTop) - `winget install ntop`
+- [RipGrep](https://github.com/BurntSushi/ripgrep) - `$ winget install BurntSushi.ripgrep.MSVC`
+- [LazyGit](https://github.com/jesseduffield/lazygit) - `winget install lazygit`
 - [Eza](https://github.com/eza-community/eza) - `cargo install eza`
 
 <h2>Servers 🗃️</h2>
@@ -171,13 +172,11 @@ Font Size: 9
 
 - [NodeJS](https://github.com/nvm-sh/nvm) - nvm install lts
 
-- [CPP - CLANG](https://scoop.sh/#/apps?q=llvm&s=0&d=1&o=true) - scoop install mingw-winlibs-llvm
+- [CPP - CLANG](https://winlibs.com/) - scoop install mingw-winlibs-llvm
 
-- [Python](https://scoop.sh/#/apps?q=python) - scoop install python
+- [Python](https://www.python.org/) - winget install python
 
-- [Dotnet](https://scoop.sh/#/apps?s=0&d=1&o=true&q=dotnet) - scoop install dotnet-sdk
-
-- [Rust](https://scoop.sh/#/apps?q=rust) - scoop install rust
+- [Rust](https://www.rust-lang.org/) - winget install Rustlang.Rust.GNU
 
 <h2>Directory Structure 🗂️</h2>
 
