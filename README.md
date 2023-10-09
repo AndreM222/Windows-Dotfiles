@@ -76,7 +76,7 @@ Font Size: 9
 - [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
 - [Fira-Font](https://github.com/ryanoasis/nerd-fonts) - `scoop install FiraCode-NF-Mono`
 - [Git](https://git-scm.com/download/win) - `winget install Git.Git`
-- [Sudo, Curl, & Jq](https://winget.run/) - `winget install gsudo curl.curl jqlang.jq`
+- [Sudo & Jq](https://winget.run/) - `winget install gsudo jqlang.jq`
 - [SQLite & MySQL](https://sqlite.org/index.html) - `winget install SQLite.SQLite`
 - [Gen-License](https://github.com/nexxeln/license-generatorhttps://github.com/nexxeln/license-generator) - `cargo install gen-license`
 - [Neovim](https://winget.run/search?query=neovim) - `winget install Neovim`
@@ -91,6 +91,7 @@ Font Size: 9
 - [ghq](https://github.com/x-motemen/ghq) - `scoop install ghq`
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
+- [Fzf](https://github.com/junegunn/fzf) - `winget install fzf`
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 - [Bat](https://github.com/sharkdp/bat) - `winget install sharkdp.bat`

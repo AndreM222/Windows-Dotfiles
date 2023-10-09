@@ -42,6 +42,8 @@ Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 Set-Alias ds drives
 
+Set-Alias wget Invoke-WebRequest
+
 Set-Alias zip Compress-Archive
 Set-Alias unzip Expand-Archive
 
