@@ -21,7 +21,7 @@ end
 
 vim.api.nvim_create_user_command(
     "OpenAllFolds",
-    function ()
+    function()
         ufo.openAllFolds()
     end,
     { nargs = 0 }
@@ -29,7 +29,7 @@ vim.api.nvim_create_user_command(
 
 vim.api.nvim_create_user_command(
     "CloseAllFolds",
-    function ()
+    function()
         ufo.closeAllFolds()
     end,
     { nargs = 0 }
@@ -42,6 +42,10 @@ vim.o.foldcolumn = "1"
 vim.o.statuscolumn = '%s%=%l %{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " } '
 
 ibl.setup({
+    scope = {
+        show_start = false,
+        show_end = false
+    },
     exclude = {
         filetypes = {
             "dashboard"
