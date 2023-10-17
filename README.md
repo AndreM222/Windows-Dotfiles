@@ -153,7 +153,7 @@ Font Size: 9
 - [Close-Tag](https://github.com/windwp/nvim-ts-autotag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
-- [Null-LS](https://github.com/jose-elias-alvarez/null-ls.nvim) - Formatting Languages
+- [None-LS](https://github.com/nvimtools/none-ls.nvim) - Formatting Languages And Linter
 - [Indent-Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 - [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim) - LSP UI

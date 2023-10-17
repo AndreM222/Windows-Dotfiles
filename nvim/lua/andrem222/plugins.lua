@@ -17,7 +17,6 @@ packer.startup(function(use)
     use 'Mofiqul/dracula.nvim'
     use {
         'glepnir/dashboard-nvim',
-        -- event = 'VimEnter',
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
     use 'rrethy/vim-illuminate'
@@ -67,7 +66,7 @@ packer.startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'onsails/lspkind-nvim'
 
-    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'nvimtools/none-ls.nvim'
     use 'numToStr/Comment.nvim'
     use 'kylechui/nvim-surround'
     use 'windwp/nvim-autopairs'
