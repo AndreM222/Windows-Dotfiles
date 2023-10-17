@@ -98,7 +98,7 @@ Font Size: 9
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 - [LazyDocker](https://github.com/jesseduffield/lazydocker) - `winget install lazydocker`
 - [NTop](https://github.com/gsass1/NTop) - `winget install ntop`
-- [RipGrep](https://github.com/BurntSushi/ripgrep) - `$ winget install BurntSushi.ripgrep.MSVC`
+- [RipGrep](https://github.com/BurntSushi/ripgrep) - `winget install BurntSushi.ripgrep.MSVC`
 - [LazyGit](https://github.com/jesseduffield/lazygit) - `winget install lazygit`
 - [Eza](https://github.com/eza-community/eza) - `cargo install eza`
 
