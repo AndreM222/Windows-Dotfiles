@@ -69,38 +69,38 @@ Font Size: 9
 
 <h2>Shell 🛡️</h2>
 
-- [PowerShell](https://learn.microsoft.com/en-us/powershell/) - Shell
+- [PowerShell](https://apps.microsoft.com/detail/powershell/9MZ1SNWT0N5D?hl=en-us&gl=US) - Shell
 
 <h2>Setup ⚒️</h2>
 
-- [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
-- [Fira-Font](https://github.com/ryanoasis/nerd-fonts) - `scoop install FiraCode-NF-Mono`
 - [Git](https://git-scm.com/download/win) - `winget install Git.Git`
 - [Sudo & Jq](https://winget.run/) - `winget install gsudo jqlang.jq`
 - [SQLite & MySQL](https://sqlite.org/index.html) - `winget install SQLite.SQLite`
-- [Gen-License](https://github.com/nexxeln/license-generatorhttps://github.com/nexxeln/license-generator) - `cargo install gen-license`
 - [Neovim](https://winget.run/search?query=neovim) - `winget install Neovim`
-- [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 - [Oh-My-Posh](https://ohmyposh.dev/docs/installation/windows) - `winget install JanDeDobbeleer.OhMyPosh -s winget`
-- [Posh-Git](https://www.powershellgallery.com/packages/posh-git) - `Install-Module posh-git -Scope CurrentUser`
-- [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
-- [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
 - [Yarn](https://yarnpkg.com/) - `winget install Yarn.Yarn`
 - [NVM | NodeJS](https://github.com/coreybutler/nvm-windows) - `winget install CoreyButler.NVMforWindows`
 - [Make](https://www.gnu.org/software/make/) - `winget install GnuWin32.Make`
-- [ghq](https://github.com/x-motemen/ghq) - `scoop install ghq`
-- [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
-- [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 - [Fzf](https://github.com/junegunn/fzf) - `winget install fzf`
-- [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
-- [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 - [Bat](https://github.com/sharkdp/bat) - `winget install sharkdp.bat`
-- [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 - [LazyDocker](https://github.com/jesseduffield/lazydocker) - `winget install lazydocker`
 - [NTop](https://github.com/gsass1/NTop) - `winget install ntop`
 - [RipGrep](https://github.com/BurntSushi/ripgrep) - `winget install BurntSushi.ripgrep.MSVC`
 - [LazyGit](https://github.com/jesseduffield/lazygit) - `winget install lazygit`
-- [Eza](https://github.com/eza-community/eza) - `cargo install eza`
+- [Eza](https://github.com/eza-community/eza) - `winget install eza`
+- [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
+- [Fira-Font](https://github.com/ryanoasis/nerd-fonts) - `scoop install FiraCode-NF-Mono`
+- [ghq](https://github.com/x-motemen/ghq) - `scoop install ghq`
+- [Gen-License](https://github.com/nexxeln/license-generator) - `cargo install gen-license`
+- [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
+- [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
+- [Posh-Git](https://www.powershellgallery.com/packages/posh-git) - `Install-Module posh-git -Scope CurrentUser`
+- [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
+- [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
+- [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
+- [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
+- [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
+- [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
 <h2>Servers 🗃️</h2>
 
@@ -170,13 +170,13 @@ Font Size: 9
 
 <h2>Compilers And Intrepeters ⚙️</h2>
 
-- [NodeJS](https://github.com/nvm-sh/nvm) - nvm install lts
-
-- [CPP - CLANG](https://winlibs.com/) - scoop install mingw-winlibs-llvm
-
 - [Python](https://www.python.org/) - winget install python
 
 - [Rust](https://www.rust-lang.org/) - winget install Rustlang.Rust.GNU
+
+- [NodeJS](https://github.com/nvm-sh/nvm) - nvm install lts
+
+- [CPP - CLANG](https://winlibs.com/) - scoop install mingw-winlibs-llvm
 
 <h2>Directory Structure 🗂️</h2>
 
