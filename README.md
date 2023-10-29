@@ -73,13 +73,28 @@ Font Size: 9
 
 <h2>Setup ⚒️</h2>
 
+<h4>Package Managers 📦</h4>
+
+- [Python](https://www.python.org/) - `winget install python` - <span style="opacity:30%">pip</span>
+
+- [Rust](https://www.rust-lang.org/) - `winget install Rustlang.Rust.GNU` - <span style="opacity:30%">cargo</span>
+
+- [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex` - <span style="opacity:30%">scoop</span>
+
+- [NVM | NodeJS](https://github.com/coreybutler/nvm-windows) - <span style="opacity:30%">npm</span>
+```
+winget install CoreyButler.NVMforWindows
+nvm install lts
+```
+
+<h4>Winget - Windows Installed</h4>
+
 - [Git](https://git-scm.com/download/win) - `winget install Git.Git`
 - [Sudo & Jq](https://winget.run/) - `winget install gsudo jqlang.jq`
 - [SQLite & MySQL](https://sqlite.org/index.html) - `winget install SQLite.SQLite`
 - [Neovim](https://winget.run/search?query=neovim) - `winget install Neovim`
 - [Oh-My-Posh](https://ohmyposh.dev/docs/installation/windows) - `winget install JanDeDobbeleer.OhMyPosh -s winget`
 - [Yarn](https://yarnpkg.com/) - `winget install Yarn.Yarn`
-- [NVM | NodeJS](https://github.com/coreybutler/nvm-windows) - `winget install CoreyButler.NVMforWindows`
 - [Make](https://www.gnu.org/software/make/) - `winget install GnuWin32.Make`
 - [Fzf](https://github.com/junegunn/fzf) - `winget install fzf`
 - [Bat](https://github.com/sharkdp/bat) - `winget install sharkdp.bat`
@@ -88,21 +103,37 @@ Font Size: 9
 - [RipGrep](https://github.com/BurntSushi/ripgrep) - `winget install BurntSushi.ripgrep.MSVC`
 - [LazyGit](https://github.com/jesseduffield/lazygit) - `winget install lazygit`
 - [Eza](https://github.com/eza-community/eza) - `winget install eza`
-- [Scoop](https://scoop.sh/) - `irm get.scoop.sh | iex`
+
+<h4>Scoop - Needs Installation</h4>
+
 - [Fira-Font](https://github.com/ryanoasis/nerd-fonts) - `scoop install FiraCode-NF-Mono`
 - [ghq](https://github.com/x-motemen/ghq) - `scoop install ghq`
+
+<h4>Cargo - Needs Installation</h4>
+
 - [Gen-License](https://github.com/nexxeln/license-generator) - `cargo install gen-license`
+
+<h4>Pip - Needs Installation</h4>
+
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
+
+<h4>Powershell - Powershell Installed</h4>
+
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Posh-Git](https://www.powershellgallery.com/packages/posh-git) - `Install-Module posh-git -Scope CurrentUser`
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) - `Install-Module -Name Terminal-Icons -Repository PSGallery -Force`
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
+
+<h4>NodeJS - Needs Installation</h4>
+
 - [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
 <h2>Servers 🗃️</h2>
+
+<h4>NodeJS - Needs Installation</h4>
 
 `Live-Server` npm install -g live-server
 
@@ -111,6 +142,8 @@ Font Size: 9
 `Typescript` npm install -g typescript-language-server
 
 `Tailwind CSS` npm install -g tailwindcss-language-server
+
+<h4>Scoop - Needs Installation</h4>
 
 `C++` scoop install clangd
 
@@ -122,11 +155,15 @@ Font Size: 9
 
 <h2>Format Languages 📄</h2>
 
+`C Languages` At the setup of clang
+
+<h4>Pip - Needs Installation</h4>
+
 `Python` pip install --upgrade autopep8
 
-`Typescript` npm install -g prettier
+<h4>NodeJS - Needs Installation</h4>
 
-`C Languages` At the setup of clang
+`Typescript` npm install -g prettier
 
 <h2>Neovim Plugins 📲</h2>
 
@@ -170,11 +207,17 @@ Font Size: 9
 
 <h2>Compilers And Intrepeters ⚙️</h2>
 
-- [Python](https://www.python.org/) - winget install python
+<h4>Winget - Windows Installed</h4>
 
-- [Rust](https://www.rust-lang.org/) - winget install Rustlang.Rust.GNU
+- [Python](https://www.python.org/) - At the installation of Python Package Manager
 
-- [NodeJS](https://github.com/nvm-sh/nvm) - nvm install lts
+- [Rust](https://www.rust-lang.org/) - At the installation of Rust Package Manager
+
+<h4>NodeJS - Needs Installation</h4>
+
+- [NodeJS](https://github.com/nvm-sh/nvm) - At the installation of NodeJS Package Manager
+
+<h4>Scoop - Needs Installation</h4>
 
 - [CPP - CLANG](https://winlibs.com/) - scoop install mingw-winlibs-llvm
 
