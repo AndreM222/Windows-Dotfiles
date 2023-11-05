@@ -85,6 +85,7 @@ Font Size: 9
 ```
 winget install CoreyButler.NVMforWindows
 nvm install lts
+nvm use lts
 ```
 
 <h4>Winget - Windows Installed</h4>
