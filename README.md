@@ -127,11 +127,28 @@ nvm install lts
 
 <h4>NodeJS - Needs Installation</h4>
 
-- [Comitizen](https://github.com/streamich/git-cz) - `npm install -g commitizen`
+- [Comitizen](https://github.com/streamich/git-cz) -
+```
+npm install -g commitizen
+npm install -g cz-conventional-changelog
+
+In Your Home Folder:
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+```
+
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
+
+<h4>Git - Needs Installation</h4>
+
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
 <h2>Servers 🗃️</h2>
+
+<h4>Winget - Windows Installed</h4>
+
+`C++` winget install clangd
+
+`Lua` winget install lua-language-server
 
 <h4>NodeJS - Needs Installation</h4>
 
@@ -145,17 +162,13 @@ nvm install lts
 
 <h4>Scoop - Needs Installation</h4>
 
-`C++` scoop install clangd
-
-`Lua` scoop install lua-language-server
-
 `C-Sharp` scoop install omnisharp
 
 `Marksman` scoop install marksman
 
 <h2>Format Languages 📄</h2>
 
-`C Languages` At the setup of clang
+`C++` at the setup of llvm
 
 <h4>Pip - Needs Installation</h4>
 
@@ -213,25 +226,24 @@ nvm install lts
 
 - [Rust](https://www.rust-lang.org/) - At the installation of Rust Package Manager
 
+- [C++](https://winlibs.com/) - winget install -i LLVM.LLVM
+
 <h4>NodeJS - Needs Installation</h4>
 
 - [NodeJS](https://github.com/nvm-sh/nvm) - At the installation of NodeJS Package Manager
-
-<h4>Scoop - Needs Installation</h4>
-
-- [CPP - CLANG](https://winlibs.com/) - scoop install mingw-winlibs-llvm
 
 <h2>Directory Structure 🗂️</h2>
 
 ```
 📂 $HOME/AppData/Local/Nvim
 |__📂after/plugin
+|   |__📑All Pugin Files
 |__📂lua/andrem222
 |   |__📄plugins.lua
 |   |__📄theme.lua
 |__📄init.lua
 
-📂$HOME/.config/powershell
+📂$HOME/Documents/PowerShell
 |__📄user_profile.ps1
 |__📂themes
     |__📄minimalNight.omp.json
@@ -417,5 +429,14 @@ Fix:
 scoop config SCOOP_BRANCH master
 scoop update
 ```
+
+Problem: `C++ compiler not working`
+
+Fix:
+```
+When installing LLVM choose add to path.
+Also be use to be using clang if you are using LLVM
+```
+
 
 </details>
