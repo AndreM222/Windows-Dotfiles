@@ -128,7 +128,7 @@ nvm use lts
 
 <h4>NodeJS - Needs Installation</h4>
 
-- [Comitizen](https://github.com/streamich/git-cz) -
+- [Comitizen](https://github.com/streamich/git-cz)
 ```
 npm install -g commitizen
 npm install -g cz-conventional-changelog
