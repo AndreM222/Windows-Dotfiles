@@ -99,8 +99,8 @@ nnoremap \pc <Cmd>PickColor<CR>
 " Copy Paste Bindings
 nnoremap y "+
 vnoremap y "+y
-nnoremap p pgvy
-vnoremap p pgvy
+nnoremap p "_dP
+vnoremap p "_dP
 
 " Folds
 nnoremap = <Cmd>foldopen<CR>

@@ -1,9 +1,9 @@
-local status, startup = pcall( require ,'dashboard' )
+local status, startup = pcall(require, 'dashboard')
 if (not status) then return end
 
 startup.setup({
     config = {
-        header ={
+        header = {
             ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
             ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
             ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
