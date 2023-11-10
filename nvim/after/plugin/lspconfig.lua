@@ -127,16 +127,16 @@ nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     -- Uncomment for editing config files
-    -- settings = {
-    --     Lua = {
-    --         diagnostics = { globals = { 'vim' } },
-    --         workspace = {
-    --             -- Make the server aware of Neovim runtime files for dev
-    --             library = vim.api.nvim_get_runtime_file("", true),
-    --             checkThirdParty = false
-    --         }
-    --     }
-    -- }
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } },
+            workspace = {
+                -- Make the server aware of Neovim runtime files for dev
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false
+            }
+        }
+    }
 })
 
 -- html

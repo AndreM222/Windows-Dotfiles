@@ -66,6 +66,9 @@ dracula.setup({
         DiffAddAsDelete = { bg = "#533238" },
         DiffDelete = { bg = "#6D393F" },
         DiffDeleteText = { bg = "#a16262" },
+
+        DashboardHeader = { fg = "#ffffff" },
+        DashboardFooter = { fg = "#ffffff" },
     },
 
     transparent_bg = true,
@@ -74,3 +77,4 @@ dracula.setup({
 
 -- For vim muli cursor
 vim.g.VM_highlight_matches = 'hi VM_Mono guibg=#FF5555'
+

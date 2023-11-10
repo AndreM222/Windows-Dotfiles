@@ -2,7 +2,7 @@
 nnoremap <silent> \t <Cmd>BrowseFiles<CR>
 nnoremap <silent> \r <Cmd>ResumeSearch<CR>
 nnoremap <silent> \f <Cmd>FileParse<CR>
-nnoremap <silent> \l <Cmd>Telescope live_grep<CR>
+nnoremap <silent> \l <cmd>Telescope live_grep<cr>
 nnoremap <silent> \w <Cmd>Telescope diagnostics<CR> 
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> <F3> <Cmd>Telescope help_tags<CR>
@@ -61,6 +61,8 @@ vnoremap <S-f> <Cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 
 " Lspsaga Setup
 nnoremap f <Cmd>Lspsaga hover_doc<CR>
+nnoremap F <Cmd>Lspsaga peek_definition<CR>
+nnoremap <C-f> <Cmd>Lspsaga goto_definition<CR>
 nnoremap gd <Cmd>Lspsaga finder<CR>
 nnoremap gr <Cmd>Lspsaga rename<CR>
 nnoremap gp <Cmd>Lspsaga code_action<CR>
@@ -99,7 +101,8 @@ nnoremap \pc <Cmd>PickColor<CR>
 " Copy Paste Bindings
 nnoremap y "+
 vnoremap y "+y
-nnoremap p "_dP
+
+xnoremap p "_dP
 vnoremap p "_dP
 
 " Folds

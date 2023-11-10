@@ -304,6 +304,10 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `f` - Lspsaga Hover Doc
 
+`F` - Lspsaga Peek Definition
+
+`C - f` - Lspsaga Go To Definition
+
 `g + d` - lspsaga Finder
 
 `g + p` - Lspsaga Code Actions
