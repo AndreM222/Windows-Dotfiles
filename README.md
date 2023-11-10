@@ -73,7 +73,7 @@ Font Size: 9
 
 <h2>Setup ⚒️</h2>
 
-<h4>Package Managers 📦</h4>
+<h5>Package Managers 📦</h5>
 
 - [Python](https://www.python.org/) - `winget install python` - <span style="opacity:30%">pip</span>
 
@@ -88,7 +88,7 @@ nvm install lts
 nvm use lts
 ```
 
-<h4>Winget - Windows Installed</h4>
+<h5>Winget - Windows Installed</h5>
 
 - [Git](https://git-scm.com/download/win) - `winget install Git.Git`
 - [Sudo & Jq](https://winget.run/) - `winget install gsudo jqlang.jq`
@@ -105,20 +105,19 @@ nvm use lts
 - [LazyGit](https://github.com/jesseduffield/lazygit) - `winget install lazygit`
 - [Eza](https://github.com/eza-community/eza) - `winget install eza`
 
-<h4>Scoop - Needs Installation</h4>
+<h5>Scoop - Needs Installation</h5>
 
 - [Fira-Font](https://github.com/ryanoasis/nerd-fonts) - `scoop install FiraCode-NF-Mono`
-- [ghq](https://github.com/x-motemen/ghq) - `scoop install ghq`
 
-<h4>Cargo - Needs Installation</h4>
+<h5>Cargo - Needs Installation</h5>
 
 - [Gen-License](https://github.com/nexxeln/license-generator) - `cargo install gen-license`
 
-<h4>Pip - Needs Installation</h4>
+<h5>Pip - Needs Installation</h5>
 
 - [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
 
-<h4>Powershell - Powershell Installed</h4>
+<h5>Powershell - Powershell Installed</h5>
 
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
 - [Posh-Git](https://www.powershellgallery.com/packages/posh-git) - `Install-Module posh-git -Scope CurrentUser`
@@ -126,7 +125,7 @@ nvm use lts
 - [PSReadLine](https://github.com/PowerShell/PSReadLine) - `Install-Module PSReadLine -AllowPrerelease -Force`
 - [Z Directory](https://www.powershellgallery.com/packages/z/1.1.13) - `Install-Module -Name z`
 
-<h4>NodeJS - Needs Installation</h4>
+<h5>NodeJS - Needs Installation</h5>
 
 - [Comitizen](https://github.com/streamich/git-cz)
 ```
@@ -139,45 +138,9 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 
-<h4>Git - Needs Installation</h4>
+<h5>Git - Needs Installation</h5>
 
 - [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
-
-<h2>Servers 🗃️</h2>
-
-<h4>Winget - Windows Installed</h4>
-
-`C++` winget install clangd
-
-`Lua` winget install lua-language-server
-
-<h4>NodeJS - Needs Installation</h4>
-
-`Live-Server` npm install -g live-server
-
-`Python` npm install -g pyright
-
-`Typescript` npm install -g typescript-language-server
-
-`Tailwind CSS` npm install -g tailwindcss-language-server
-
-<h4>Scoop - Needs Installation</h4>
-
-`C-Sharp` scoop install omnisharp
-
-`Marksman` scoop install marksman
-
-<h2>Format Languages 📄</h2>
-
-`C++` at the setup of llvm
-
-<h4>Pip - Needs Installation</h4>
-
-`Python` pip install --upgrade autopep8
-
-<h4>NodeJS - Needs Installation</h4>
-
-`Typescript` npm install -g prettier
 
 <h2>Neovim Plugins 📲</h2>
 
@@ -219,20 +182,6 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
 - [Dashboard-Nvim](https://github.com/nvimdev/dashboard-nvim) - Startup Screen
 
-<h2>Compilers And Intrepeters ⚙️</h2>
-
-<h4>Winget - Windows Installed</h4>
-
-- [Python](https://www.python.org/) - At the installation of Python Package Manager
-
-- [Rust](https://www.rust-lang.org/) - At the installation of Rust Package Manager
-
-- [C++](https://winlibs.com/) - winget install -i LLVM.LLVM
-
-<h4>NodeJS - Needs Installation</h4>
-
-- [NodeJS](https://github.com/nvm-sh/nvm) - At the installation of NodeJS Package Manager
-
 <h2>Directory Structure 🗂️</h2>
 
 ```
@@ -247,8 +196,62 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 📂$HOME/Documents/PowerShell
 |__📄user_profile.ps1
 |__📂themes
-    |__📄minimalNight.omp.json
+|__📄minimalNight.omp.json
 ```
+
+<h2>Languages 🗣️</h2>
+<details>
+<summary>Completion, Format, Compiler, and Linter</summary>
+<h3>Servers 🗃️ <hr style="margin-top: 0"></h3>
+
+<h5>Winget - Windows Installed</h5>
+
+`C++` winget install clangd
+
+`Lua` winget install lua-language-server
+
+<h5>NodeJS - Needs Installation</h5>
+
+`Live-Server` npm install -g live-server
+
+`Python` npm install -g pyright
+
+`Typescript` npm install -g typescript-language-server
+
+`Tailwind CSS` npm install -g tailwindcss-language-server
+
+<h5>Dotnet - Windows Installed</h5>
+
+`C-Sharp` dotnet tool install --global csharp-ls 
+
+<h3>Format Languages 📄 <hr style="margin-top: 0"></h3>
+
+`C++` at the setup of llvm
+
+<h5>Pip - Needs Installation</h5>
+
+`Python` pip install --upgrade autopep8
+
+<h5>NodeJS - Needs Installation</h5>
+
+`Marksman` npm install -g marksman
+
+`Typescript` npm install -g prettier
+
+<h3>Compilers And Intrepeters ⚙️ <hr style="margin-top: 0"></h3>
+
+<h5>Winget - Windows Installed</h5>
+
+- [Python](https://www.python.org/) - At the installation of Python Package Manager
+
+- [Rust](https://www.rust-lang.org/) - At the installation of Rust Package Manager
+
+- [C++](https://winlibs.com/) - winget install -i LLVM.LLVM
+
+<h5>NodeJS - Needs Installation</h5>
+
+- [NodeJS](https://github.com/nvm-sh/nvm) - At the installation of NodeJS Package Manager
+</details>
 
 <h2>Info ℹ️</h2>
 

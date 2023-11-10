@@ -103,12 +103,6 @@ nvim_lsp.tsserver.setup({
     capabilities = capabilities
 })
 
--- Markdown
-nvim_lsp.marksman.setup({
-    on_attach = on_attach,
-    capabilities = capabilities
-})
-
 -- C, C++
 nvim_lsp.clangd.setup({
     on_attach = on_attach,
@@ -116,8 +110,8 @@ nvim_lsp.clangd.setup({
 })
 
 -- C#
-nvim_lsp.omnisharp.setup({
-    cmd = { "omnisharp" },
+nvim_lsp.csharp_ls.setup({
+    cmd = { "csharp-ls" },
     on_attach = on_attach,
     capabilities = capabilities
 })
@@ -190,3 +184,4 @@ vim.diagnostic.config({
     update_in_insert = true,
     float = { source = "always" }
 })
+
