@@ -216,7 +216,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 `Python` npm install -g pyright
 
-`Typescript` npm install -g typescript-language-server
+`Typescript` npm install -g typescript typescript-language-server
 
 `Tailwind CSS` npm install -g tailwindcss-language-server
 

@@ -37,53 +37,6 @@ protocol.CompletionItemKind = {
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
-        -- Fix omnisharp tokens
-        if client.name == "omnisharp" then
-            client.server_capabilities.semanticTokensProvider = {
-                full = true,
-                legend = {
-                    tokenModifiers = {
-                        "declaration",
-                        "definition",
-                        "readonly",
-                        "static",
-                        "deprecated",
-                        "abstract",
-                        "async",
-                        "modification",
-                        "documentation",
-                        "defaultLibrary",
-                        "global"
-                    },
-                    tokenTypes = {
-                        "namespace",
-                        "type",
-                        "class",
-                        "enum",
-                        "interface",
-                        "struct",
-                        "typeParameter",
-                        "parameter",
-                        "variable",
-                        "property",
-                        "enumMember",
-                        "event",
-                        "function",
-                        "method",
-                        "macro",
-                        "keyword",
-                        "modifier",
-                        "comment",
-                        "string",
-                        "number",
-                        "regexp",
-                        "operator",
-                        "decorator"
-                    }
-                },
-                range = true
-            }
-        end
     end
 
     -- Mappings
@@ -98,11 +51,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 capabilities.offsetEncoding = { "utf-16" }
 
 -- TypeScript
-nvim_lsp.tsserver.setup({
-    on_attach = on_attach,
-    capabilities = capabilities
-})
-
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 -- C, C++
 nvim_lsp.clangd.setup({
     on_attach = on_attach,
@@ -121,16 +73,16 @@ nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     -- Uncomment for editing config files
-    settings = {
-        Lua = {
-            diagnostics = { globals = { 'vim' } },
-            workspace = {
-                -- Make the server aware of Neovim runtime files for dev
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
-            }
-        }
-    }
+    -- settings = {
+    --     Lua = {
+    --         diagnostics = { globals = { 'vim' } },
+    --         workspace = {
+    --             -- Make the server aware of Neovim runtime files for dev
+    --             library = vim.api.nvim_get_runtime_file("", true),
+    --             checkThirdParty = false
+    --         }
+    --     }
+    -- }
 })
 
 -- html
