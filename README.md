@@ -113,10 +113,6 @@ nvm use lts
 
 - [Gen-License](https://github.com/nexxeln/license-generator) - `cargo install gen-license`
 
-<h5>Pip - Needs Installation</h5>
-
-- [TheFuck](https://github.com/nvbn/thefuck#installation) - `pip install thefuck`
-
 <h5>Powershell - Powershell Installed</h5>
 
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - `Install-Module -Name PSFzf`
@@ -194,7 +190,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 |__📄init.lua
 
 📂$HOME/Documents/PowerShell
-|__📄user_profile.ps1
+|__📄Microsoft.PowerShell_profile.ps1
 |__📂themes
 |__📄minimalNight.omp.json
 ```
