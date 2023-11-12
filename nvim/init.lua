@@ -1,5 +1,6 @@
 require('andrem222.plugins')
 require('andrem222.theme')
+require('andrem222.bindings')
 
 vim.cmd([[
 
@@ -13,7 +14,6 @@ vim.cmd([[
     " Visual Multi Cursor Remap And Enable Mouse
     let g:VM_mouse_mappings = 1
     let g:VM_leader = {'default':'m', 'visual':'m', 'buffer':'m'}
-    let g:dracula_<style-name> = 0
 
 ]])
 

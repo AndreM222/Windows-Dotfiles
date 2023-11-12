@@ -77,4 +77,3 @@ dracula.setup({
 
 -- For vim muli cursor
 vim.g.VM_highlight_matches = 'hi VM_Mono guibg=#FF5555'
-

@@ -163,6 +163,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [Close-Tag](https://github.com/windwp/nvim-ts-autotag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
+- [Color-Picker](https://github.com/ziontee113/color-picker.nvim) - Color picker
 - [None-LS](https://github.com/nvimtools/none-ls.nvim) - Formatting Languages And Linter
 - [Indent-Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 - [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
@@ -277,8 +278,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `F6` - Null-LS Status
 
-`\ + p + w` - Markdown Preview Toggle
-
 `Ctrl - s` - Save
 
 `Ctrl - Alt - s` Save All
@@ -298,8 +297,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `Alt - Right` - Move Line | Block Right
 
 `Shift - f` - Format
-
-`\ + p + c` - Color Picker
 
 `f` - Lspsaga Hover Doc
 

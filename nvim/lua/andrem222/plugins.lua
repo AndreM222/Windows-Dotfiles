@@ -50,7 +50,7 @@ packer.startup(function(use)
     -- Preview
     use({
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        run = function() vim.fn["mkdp#util#install"]() end
     })
 
     -- Debbuger
