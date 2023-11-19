@@ -34,10 +34,9 @@ lspconfig.setup({
         "pyright",
         "tsserver",
         "vimls",
-        "omnisharp",
+        "csharp_ls",
         "tailwindcss",
-        "cssls",
-        "marksman"
+        "cssls"
     },
     automatic_installation = true
 })

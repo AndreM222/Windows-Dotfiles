@@ -12,7 +12,8 @@ keymap.set('n', '<F4>', '<Cmd>Telescope keymap<CR>')
 keymap.set('n', '<F5>', '<Cmd>Telescope notify<CR>')
 
 -- Installations
-keymap.set('n', '<Home>', '<Cmd>Mason<CR>')
+keymap.set('n', '<S-Home>', '<Cmd>Mason<CR>')
+keymap.set('n', '<Home>', '<Cmd>Lazy<CR>')
 
 -- Status
 keymap.set('n', '<F6>', '<Cmd>LspInfo<CR>')

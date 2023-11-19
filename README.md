@@ -134,13 +134,8 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 - [Npm-Check-Updates](https://www.npmjs.com/package/npm-check-updates) - `npm install -g npm-check-updates`
 
-<h5>Git - Needs Installation</h5>
-
-- [Packer](https://github.com/wbthomason/packer.nvim) - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
-
 <h2>Neovim Plugins 📲</h2>
 
-- [Packer](https://github.com/wbthomason/packer.nvim) - Nvim Plugin Installer
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - Neovim Bar
 - [nvim-Web-Devicons](https://github.com/kyazdani42/nvim-web-devicons) - Icons
 - [Nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) - Neovim Tree
@@ -163,7 +158,6 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [Close-Tag](https://github.com/windwp/nvim-ts-autotag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
 - [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
-- [Color-Picker](https://github.com/ziontee113/color-picker.nvim) - Color picker
 - [None-LS](https://github.com/nvimtools/none-ls.nvim) - Formatting Languages And Linter
 - [Indent-Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 - [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
@@ -184,9 +178,14 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 📂 $HOME/AppData/Local/Nvim
 |__📂after/plugin
-|   |__📑All Pugin Files
+|   |__📑All Plugin Setup Files
 |__📂lua/andrem222
-|   |__📄plugins.lua
+|   |__📂 plugins
+|       |__📑 All Plugin Installation Filed
+|   |__📄bindings.lua
+|   |__📄config.lua
+|   |__📄debug.lua
+|   |__📄lazy.lua
 |   |__📄theme.lua
 |__📄init.lua
 
