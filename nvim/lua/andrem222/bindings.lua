@@ -31,7 +31,7 @@ keymap.set('i', '<C-A-s>', '<Esc><Cmd>w<CR>==gi')
 
 -- Moving Selections
 keymap.set('n', '<A-Down>', ':m .+1<CR>==')
-keymap.set('n', '<A-Up>', ':m .-2<CR>=')
+keymap.set('n', '<A-Up>', ':m .-2<CR>==')
 keymap.set('i', '<A-Down>', '<Esc>:m .+1<CR>==gi')
 keymap.set('i', '<A-Up>', '<Esc>:m .-2<CR>==gi')
 keymap.set('v', '<A-Down>', [[:m '>+1<CR>gv=gv]])
