@@ -10,15 +10,6 @@
 <h2>Windows Terminal 🖥️</h2>
 
 ```
---- Split ---
-
-(ctrl + alt + down) - Split Down
-(ctrl + alt + up) - Split Up
-(ctrl + alt + right) - Split Right
-(ctrl + alt + left) - Split Left
-```
-
-```
 --- Resize ---
 
 (alt + shift + down) - Resize Down
@@ -139,16 +130,11 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [nvim-Web-Devicons](https://github.com/kyazdani42/nvim-web-devicons) - Icons
 - [Nvim-Tree](https://github.com/kyazdani42/nvim-tree.lua) - Neovim Tree
 - [LSPConfig](https://github.com/neovim/nvim-lspconfig) - Keys Configuration
-- [Plenary](https://github.com/nvim-lua/plenary.nvim) - Plenary
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Telescope
-- [Telescope Browser](https://github.com/nvim-telescope/telescope-file-browser.nvim) - Telescope File Browser
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim) - Live Markdown Preview
 - [Nvim-CMP](https://github.com/hrsh7th/nvim-cmp) - Auto Complete Setup
 - [Lspkind-Nvim](https://github.com/onsails/lspkind.nvim) - Icons for Nvim LSP
-- [Mason-nvim](https://github.com/williamboman/mason.nvim) - Language server installer
-- [Mason-Null-LS](https://github.com/jay-babu/mason-null-ls.nvim) - Integrate Null-LS with Mason
-- [Mason-LspConfig](https://github.com/williamboman/mason-lspconfig.nvim) - Integrate LspConfig with mason 
-- [Mason-Dap](https://github.com/jay-babu/mason-nvim-dap.nvim) - Integrate Dap With Mason
+- [Mason-nvim](https://github.com/williamboman/mason.nvim) - Package manager for neovim
 - [Buffer-Line](https://github.com/akinsho/bufferline.nvim) - File Tabs
 - [Git-Signs](https://github.com/lewis6991/gitsigns.nvim) - Git Changes Sign Bar
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Highlight Functions
@@ -163,14 +149,18 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [Lspsaga](https://github.com/glepnir/lspsaga.nvim) - LSP UI
 - [DiffView](https://github.com/sindrets/diffview.nvim) - Visual Git
 - [DAP](https://github.com/mfussenegger/nvim-dap) - Debugger
-- [DAP-UI](https://github.com/rcarriga/nvim-dap-ui) - Debugger UI
-- [DAP-Virtual-Text](https://github.com/theHamsta/nvim-dap-virtual-text) - Debugger Text Highlight
 - [Nvim-UFO](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
 - [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
 - [Dashboard-Nvim](https://github.com/nvimdev/dashboard-nvim) - Startup Screen
+- [copilot](https://github.com/zbirenbaum/copilot.lua) - Copilot
+- [Dial](https://github.com/monaqa/dial.nvim) - Improved Increment And Decrement
+- [Vim-Matchip](https://github.com/andymass/vim-matchup) - Improved Navigation Key
+- [Mini.Animate](https://github.com/echasnovski/mini.animate) - Scroll Animation
+- [Incline](https://github.com/b0o/incline.nvim) - Floating statusline
+- [Noice](https://github.com/folke/noice.nvim) - UI For Messages, CMDLine, and Popmenu
 
 <h2>Directory Structure 🗂️</h2>
 
@@ -322,13 +312,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Ctrl - Alt - j` - Decrease Pane Horizontal
 
-`Alt - Shift - i` - Pane Move Up
+`Ctrl - Alt - Up` - Pane Move Up
 
-`Alt - Shift - k` - Pane Move Down
+`Ctrl - Alt - Down` - Pane Move Down
 
-`Alt - Shift - j` - Pane Move Left
+`Ctrl - Alt - Left` - Pane Move Left
 
-`Alt - Shift - l` - Pane Move Right
+`Ctrl - Alt - Right` - Pane Move Right
 
 `F9` - Debugger Continue
 
@@ -369,6 +359,8 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `CTRL - h` - Open Harpoon UI
 
 `K` - Save Harpoon Mark
+
+`Esc` - Clear hlsearch
 </details>
 
 <details>
