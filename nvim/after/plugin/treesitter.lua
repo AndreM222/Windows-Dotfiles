@@ -17,7 +17,8 @@ treesitter.setup({
         "c",
         "c_sharp",
         "python",
-        "javascript"
+        "javascript",
+        "vimdoc"
     },
     highlight = {
         enable = true,
