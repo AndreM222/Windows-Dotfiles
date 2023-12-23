@@ -17,7 +17,7 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C->'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
@@ -27,13 +27,19 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
+        { name = 'luasnip' },
+        {
+            name = "copilot",
+            group_index = 1,
+            priority = 100
+        }
     }),
     formatting = {
         fields = { 'kind', 'abbr', 'menu' },
         format = lspkind.cmp_format({
             mode = 'symbol',
             maxwidth = 50,
-            ellipsis_char = '...',
+            ellipsis_char = '...'
         })
     }
 })
@@ -44,22 +50,6 @@ cmp.setup.filetype('gitcommit', {
         { name = 'cmp_git' },
     }, {
         { name = 'buffer' },
-    })
-})
-
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = { { name = 'buffer' } }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
     })
 })
 

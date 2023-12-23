@@ -7,31 +7,31 @@ require('lspconfig.ui.windows').default_options.border = 'single'
 local protocol = require('vim.lsp.protocol')
 
 protocol.CompletionItemKind = {
-    '󰉿', -- Text
-    '', -- Method
-    '󰊕', -- Function
-    '', -- Constructor
-    '󰜢', -- Field
-    "", -- Variable
-    '', -- Class
-    '', -- Interface
-    '', -- Module
-    '󰜢', -- Property
-    '', -- Unit
-    '', -- Value
-    '', -- Enum
-    '󰌋', -- Keyword
-    '', -- Snippet
-    '', -- Color
-    '󰈙', -- File
-    '󰈇', -- Reference
-    '󰉋', -- Folder
-    '', -- EnumMember
-    '', -- Constant
-    '󰙅', -- Struct
-    '', -- Event
-    '', -- Operator
-    '', -- TypeParameter
+    "", -- Text
+    "", -- Method
+    "", -- Function
+    "", -- Constructor
+    "", -- Field
+    "", -- Variable
+    "", -- Class
+    "", -- Interface
+    "", -- Module
+    "", -- Property
+    "", -- Unit
+    "", -- Value
+    "", -- Enum
+    "", -- Keyword
+    "", -- Snippet
+    "", -- Color
+    "", -- File
+    "", -- Reference
+    "", -- Folder
+    "", -- EnumMember
+    "", -- Constant
+    "", -- Struct
+    "", -- Event
+    "", -- Operator
+    "", -- TypeParameter
 }
 
 local on_attach = function(client, bufnr)
@@ -52,8 +52,8 @@ capabilities.offsetEncoding = { "utf-16" }
 
 -- TypeScript
 nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
+    on_attach = on_attach,
+    capabilities = capabilities
 }
 -- C, C++
 nvim_lsp.clangd.setup({
@@ -73,16 +73,16 @@ nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     -- Uncomment for editing config files
-    -- settings = {
-    --     Lua = {
-    --         diagnostics = { globals = { 'vim' } },
-    --         workspace = {
-    --             -- Make the server aware of Neovim runtime files for dev
-    --             library = vim.api.nvim_get_runtime_file("", true),
-    --             checkThirdParty = false
-    --         }
-    --     }
-    -- }
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } },
+            workspace = {
+                -- Make the server aware of Neovim runtime files for dev
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false
+            }
+        }
+    }
 })
 
 -- html
@@ -136,4 +136,3 @@ vim.diagnostic.config({
     update_in_insert = true,
     float = { source = "always" }
 })
-

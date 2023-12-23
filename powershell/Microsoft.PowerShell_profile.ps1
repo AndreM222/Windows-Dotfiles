@@ -45,10 +45,6 @@ Set-Alias unzip Expand-Archive
 
 Set-Alias g git
 
-function ll {eza -l --git --icons --header --group-directories-first -g --time-style=long-iso @args}
-
-function lla {ll --all @args}
-
 function la {ls -force @args}
 
 function which ($command) {

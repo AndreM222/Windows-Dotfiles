@@ -16,6 +16,9 @@ require("lazy").setup({
     },
 
     {
+        dev = {
+            path="A:/dev-plugins"
+        },
         checker = { enable = true },
         install = { colorscheme = { "dracula" } },
         ui = { border = "single" },

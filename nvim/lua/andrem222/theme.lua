@@ -22,13 +22,14 @@ dracula.setup({
         -- Borders
         FloatBorder = { fg = dracula.colors().comment },
         VertSplit = { fg = dracula.colors().comment },
+        WinSeparator = { fg = dracula.colors().comment },
 
         Label = { fg = dracula.colors().pink },
         Identifier = { fg = dracula.colors().fg },
         MatchParen = { fg = dracula.colors().green, underline = true },
 
         -- Missing fg color and extra setup
-        IndentBlanklineContextChar = { fg = dracula.colors().comment, nocombine = true },
+        IblScope = { fg = dracula.colors().comment, nocombine = true },
 
         -- Search
         IncSearch = { bg = "#957251" },
@@ -67,8 +68,22 @@ dracula.setup({
         DiffDelete = { bg = "#6D393F" },
         DiffDeleteText = { bg = "#a16262" },
 
+        -- Dashboard
         DashboardHeader = { fg = "#ffffff" },
         DashboardFooter = { fg = "#ffffff" },
+
+        Special = { fg = dracula.colors().green },
+
+        -- DAP
+        DapUIConditionOutline = { fg = dracula.colors().orange},
+        DapLogPoint = { fg = dracula.colors().cyan },
+        NoiceFormatProgressDone = { bg = dracula.colors().orange },
+
+        -- Copilot
+        CmpItemKindCopilot = { fg = dracula.colors().red },
+
+        -- Bufferline
+        BufferLineSeparator = { fg = dracula.colors().bg }
     },
 
     transparent_bg = true,

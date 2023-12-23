@@ -6,26 +6,26 @@
         {
             "command": 
             {
-                "action": "resizePane",
+                "action": "moveFocus",
                 "direction": "up"
             },
-            "keys": "ctrl+shift+up"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "keys": "alt+shift+up"
         },
         {
             "command": "duplicateTab",
             "keys": "ctrl+shift+t"
         },
         {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
             "command": 
             {
-                "action": "moveFocus",
+                "action": "resizePane",
                 "direction": "up"
             },
-            "keys": "alt+shift+up"
+            "keys": "ctrl+shift+up"
         },
         {
             "command": "unbound",
@@ -97,15 +97,6 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "right",
-                "splitMode": "duplicate"
-            },
-            "keys": "ctrl+alt+right"
-        },
-        {
-            "command": 
-            {
                 "action": "resizePane",
                 "direction": "right"
             },
@@ -130,17 +121,16 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "up",
-                "splitMode": "duplicate"
-            },
-            "keys": "ctrl+alt+up"
+                "action": "scrollDown"
+            }
         },
         {
             "command": 
             {
-                "action": "scrollDown"
-            }
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
+            },
         },
         {
             "command": 
@@ -149,7 +139,14 @@
                 "split": "left",
                 "splitMode": "duplicate"
             },
-            "keys": "ctrl+alt+left"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "up",
+                "splitMode": "duplicate"
+            },
         },
         {
             "command": 
@@ -158,7 +155,6 @@
                 "split": "down",
                 "splitMode": "duplicate"
             },
-            "keys": "ctrl+alt+down"
         },
         {
             "command": 
@@ -275,9 +271,9 @@
         "list": 
         [
             {
+                "commandline": "pwsh -nologo",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "commandline": "pwsh -nologo",
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
             },

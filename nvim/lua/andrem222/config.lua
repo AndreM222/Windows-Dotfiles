@@ -17,6 +17,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
+vim.opt.shell = "pwsh"
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.autoindent = true
 vim.opt.smarttab = true

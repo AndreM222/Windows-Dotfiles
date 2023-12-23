@@ -103,7 +103,6 @@ nvm use lts
 - [NTop](https://github.com/gsass1/NTop) - `winget install ntop`
 - [RipGrep](https://github.com/BurntSushi/ripgrep) - `winget install BurntSushi.ripgrep.MSVC`
 - [LazyGit](https://github.com/jesseduffield/lazygit) - `winget install lazygit`
-- [Eza](https://github.com/eza-community/eza) - `winget install eza`
 
 <h5>Scoop - Needs Installation</h5>
 
