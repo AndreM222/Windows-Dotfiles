@@ -9,9 +9,11 @@ vim.opt.encoding = 'utf-8'
 vim.scriptencoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 vim.opt.updatetime = 100
 vim.opt.mouse = 'a'
-vim.opt.number = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -26,12 +28,16 @@ vim.opt.breakindent = true
 vim.opt.ai = true
 vim.opt.si = true
 vim.opt.backspace = { 'start','eol','indent' }
-vim.opt.path:append {'**'}
-vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.path:append({ "**" })
+vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.scrolloff = 10
 vim.opt.ignorecase = true
 vim.opt.laststatus = 3
 vim.opt.incsearch = true
+
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current
+vim.opt.splitkeep = "cursor"
 
 -- Remove indent line in dashboard
 vim.g.indent_blankline_filetype_exclude = {'dashboard'}
