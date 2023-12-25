@@ -45,3 +45,10 @@ vim.g.indent_blankline_filetype_exclude = {'dashboard'}
 -- Visual Multi Cursor Remap And Enable Mouse
 vim.g.VM_mouse_mappings = 1
 vim.g.VM_leader = { default = 'm', visual = 'm', buffer = 'm' }
+
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.foldcolumn = "1"
+
+vim.o.statuscolumn = '%s%=%{v:relnum?v:relnum:v:lnum} %{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " } '
