@@ -10,6 +10,14 @@
 <h2>Windows Terminal 🖥️</h2>
 
 ```
+--- Split ---
+(ctrl + alt + down) - Split Down
+(ctrl + alt + up) - Split Up
+(ctrl + alt + right) - Split Right
+(ctrl + alt + left) - Split Left
+```
+
+```
 --- Resize ---
 
 (alt + shift + down) - Resize Down
@@ -304,6 +312,10 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `g + r` - Lspsaga Rename
 
+`s + s` - Horizontal Split
+
+`s + v` - Vertical Split
+
 `Ctrl - Alt - k` - Increase Pane Vertical
 
 `Ctrl - Alt - i` - Decrease Pane Vertical
@@ -312,13 +324,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Ctrl - Alt - j` - Decrease Pane Horizontal
 
-`Ctrl - Alt - Up` - Pane Move Up
+`s + k` - Pane Move Up
 
-`Ctrl - Alt - Down` - Pane Move Down
+`s + j` - Pane Move Down
 
-`Ctrl - Alt - Left` - Pane Move Left
+`s + h` - Pane Move Left
 
-`Ctrl - Alt - Right` - Pane Move Right
+`s + l` - Pane Move Right
 
 `F9` - Debugger Continue
 

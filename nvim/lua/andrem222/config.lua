@@ -23,6 +23,7 @@ vim.opt.shell = "pwsh"
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.autoindent = true
 vim.opt.smarttab = true
+vim.opt.smartindent = true
 vim.opt.signcolumn = "yes:1"
 vim.opt.breakindent = true
 vim.opt.ai = true

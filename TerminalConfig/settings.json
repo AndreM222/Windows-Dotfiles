@@ -131,6 +131,7 @@
                 "split": "right",
                 "splitMode": "duplicate"
             },
+            "keys": "ctrl+alt+right"
         },
         {
             "command": 
@@ -139,6 +140,7 @@
                 "split": "left",
                 "splitMode": "duplicate"
             },
+            "keys": "ctrl+alt+left"
         },
         {
             "command": 
@@ -147,6 +149,7 @@
                 "split": "up",
                 "splitMode": "duplicate"
             },
+            "keys": "ctrl+alt+up"
         },
         {
             "command": 
@@ -155,6 +158,7 @@
                 "split": "down",
                 "splitMode": "duplicate"
             },
+            "keys": "ctrl+alt+down"
         },
         {
             "command": 
@@ -236,6 +240,7 @@
             }
         }
     ],
+    "alwaysShowNotificationIcon": false,
     "alwaysShowTabs": true,
     "centerOnLaunch": true,
     "copyFormatting": "none",
@@ -295,11 +300,6 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "font": 
-                {
-                    "face": "DejaVuSansMono Nerd Font",
-                    "size": 9.0
-                },
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
                 "name": "Ubuntu",
@@ -580,5 +580,6 @@
     "tabWidthMode": "equal",
     "theme": "dark",
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": true,
+    "windowingBehavior": "useNew"
 }
