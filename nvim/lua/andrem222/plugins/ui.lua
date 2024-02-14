@@ -18,7 +18,6 @@ return {
     },
     {
         'glepnir/dashboard-nvim', -- Menu Screen
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
     },
     { 'rrethy/vim-illuminate' }, -- Highlight
     {
