@@ -7,6 +7,24 @@
 <img src="doc/Terminal-Preview_4.png">
 </p>
 
+<h2>Dependencies 📃</h2>
+
+- Neovim >= 0.9.0 (needs to be built with LuaJIT)
+
+- Git >= 2.19.0 (for partial clones support)
+
+- Nerd Fonts >= 3.0
+
+<h2>Contents 📦</h2>
+
+- Neovim Configuration
+
+- Powershell Configuration
+
+- Git Configuration
+
+- Windows Terminal Configuration
+
 <h2>Windows Terminal 🖥️</h2>
 
 ```
