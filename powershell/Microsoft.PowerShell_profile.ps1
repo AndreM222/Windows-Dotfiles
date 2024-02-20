@@ -45,7 +45,9 @@ Set-Alias unzip Expand-Archive
 
 Set-Alias g git
 
-function la {ls -force @args}
+function rmf ($path){ rm -force $path }
+
+function la { ls -force @args }
 
 function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
@@ -57,7 +59,7 @@ function server([string]$SERVERNAME) {
     else { netstat -ano }
 }
 
-function drives {gdr -PSProvider 'FileSystem'}
+function drives { gdr -PSProvider 'FileSystem' }
 
 # Git
 Import-Module posh-git

@@ -150,7 +150,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [Auto-Pair](https://github.com/jiangmiao/auto-pairs) - Auto Pair Characters
 - [Close-Tag](https://github.com/windwp/nvim-ts-autotag) - Close Tags
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippets
-- [Hexokinase](https://github.com/RRethy/vim-hexokinase) - Color Preview
+- [NVim-Colorizer](https://github.com/NvChad/nvim-colorizer.lua) - Color Preview
 - [None-LS](https://github.com/nvimtools/none-ls.nvim) - Formatting Languages And Linter
 - [Indent-Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent Lines
 - [Nvim-Notify](https://github.com/rcarriga/nvim-notify) - Animated Notifications
@@ -160,7 +160,6 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 - [Nvim-UFO](https://github.com/kevinhwang91/nvim-ufo) - Folding Design
 - [Vim-Illuminate](https://github.com/RRethy/vim-illuminate) - Highlight
 - [Nvim-Surround](https://github.com/kylechui/nvim-surround) - Sorround Selection With Desired Character
-- [Vim-Visual-Multi](https://github.com/mg979/vim-visual-multi) - Multiple Cursors Like Submlime
 - [Harpoon](https://github.com/ThePrimeagen/harpoon) - Bookmark
 - [Dashboard-Nvim](https://github.com/nvimdev/dashboard-nvim) - Startup Screen
 - [copilot](https://github.com/zbirenbaum/copilot.lua) - Copilot
@@ -365,8 +364,6 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `CTRL - Alt - /` - Comment BLock
 
 `CTRL - Shift - a` - Select All
-
-`CTRL - p` - Add Cursor At Current Position
 
 `CTRL - h` - Open Harpoon UI
 

@@ -19,16 +19,20 @@ return {
     {
         'glepnir/dashboard-nvim', -- Menu Screen
     },
-    { 'rrethy/vim-illuminate' }, -- Highlight
+    { 'rrethy/vim-illuminate' },  -- Highlight
     {
-        "kevinhwang91/nvim-ufo", -- Aesthetic Folding
+        "kevinhwang91/nvim-ufo",  -- Aesthetic Folding
         dependencies = { "kevinhwang91/promise-async" },
         event = "BufRead"
     },
     { 'nvim-treesitter/nvim-treesitter' }, -- Highlight Colors
     {
-        'rrethy/vim-hexokinase',           -- Color Preview
-        build = "make hexokinase"
+        'NvChad/nvim-colorizer.lua', -- Color Highlight
+        config = function()
+            require('colorizer').setup({
+                user_default_options = { css = true, mode = "virtualtext", virtualtext = "󱓻", }
+            })
+        end,
     },
     {
         "echasnovski/mini.animate",

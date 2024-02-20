@@ -114,11 +114,6 @@ keymap.set('n', '_', '<Cmd>CloseAllFolds<CR>', { desc = "Close All Folds" })
 keymap.set({ 'n', 'v' }, '<C-Right>', 'E')
 keymap.set('i', '<C-Right>', '<C-o>E<Right>')
 
--- Multi Cursor
-keymap.set('i', '<C-Up>', '<Esc><Right><Plug>(VM-Add-Cursor-Up)', { desc = "Add Cursor Up" })
-keymap.set('i', '<C-Down>', '<Esc><Right><Plug>(VM-Add-Cursor-Down)', { desc = "Add Cursor Down" })
-keymap.set({ "i", "n" }, '<C-p>', '<Esc><Plug>(VM-Add-Cursor-At-Pos)', { desc = "Add Cursor At Position" })
-
 -- Select all
 keymap.set({ 'i', 'v', 'n' }, '<C-A-a>', '<Esc> ggVG', { desc = "Select All" })
 

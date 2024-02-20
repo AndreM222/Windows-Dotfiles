@@ -10,7 +10,6 @@ return {
     },
     { 'glepnir/lspsaga.nvim' },        -- Tools
     { 'akinsho/nvim-bufferline.lua' }, -- Buffer Tabs
-    { 'mg979/vim-visual-multi' },      -- Multi Cursor
     { 'ThePrimeagen/harpoon' },        -- Bookmarking
     { 'kylechui/nvim-surround' },      -- Sorround
     { 'nvimtools/none-ls.nvim' },      -- Linter and Formatting
@@ -41,14 +40,13 @@ return {
         }
     },
     {
-        "andymass/vim-matchup",
+        "andymass/vim-matchup", -- Improve Match
         config = function()
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
         end,
     },
     {
-        "monaqa/dial.nvim",
-        -- stylua: ignore
+        "monaqa/dial.nvim", -- Improve Increment and Decrement
         keys = {
             { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
             { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
