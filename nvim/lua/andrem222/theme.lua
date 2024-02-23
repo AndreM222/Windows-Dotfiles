@@ -89,6 +89,3 @@ dracula.setup({
     transparent_bg = true,
     show_end_of_buffer = true -- Enable for setup of true transparency
 })
-
--- For vim muli cursor
-vim.g.VM_highlight_matches = 'hi VM_Mono guibg=#FF5555'

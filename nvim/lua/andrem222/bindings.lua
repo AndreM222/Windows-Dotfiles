@@ -97,9 +97,6 @@ keymap.set('n', 'lp', [[<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.in
     { desc = "Toggle Log Point Breakpoint" })
 keymap.set('n', 'dr', [[<Cmd>lua require'dapui'.toggle()<CR>]], { desc = "Toggle Debug UI" })
 
--- Git Bindings
-keymap.set('n', '\\g', '<Cmd>DiffviewToggle<CR>', { desc = "Toggle Git Diff View" })
-
 -- Copy Paste Bindings
 keymap.set('n', 'y', '"+')
 keymap.set('v', 'y', '"+y')
