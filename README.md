@@ -246,6 +246,9 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 <h2>Directory Structure 🗂️</h2>
 
 ```
+📂$HOME
+|__📄.gitconfig
+
 📂 $HOME/AppData/Local/Nvim
 |__📂lua/andrem222
 |   |__📂 plugins
