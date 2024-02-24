@@ -17,7 +17,7 @@ require("lazy").setup({
 
     {
         dev = {
-            path="A:/dev-plugins"
+            path = "A:/dev-plugins"
         },
         checker = { enable = true },
         install = { colorscheme = { "dracula" } },
@@ -28,7 +28,6 @@ require("lazy").setup({
                 -- disable some rtp plugins
                 disabled_plugins = {
                     "gzip",
-                    "netrwPlugin",
                     "rplugin",
                     "tarPlugin",
                     "tohtml",

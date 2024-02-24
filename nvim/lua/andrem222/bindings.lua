@@ -98,8 +98,8 @@ keymap.set('n', 'lp', [[<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.in
 keymap.set('n', 'dr', [[<Cmd>lua require'dapui'.toggle()<CR>]], { desc = "Toggle Debug UI" })
 
 -- Copy Paste Bindings
-keymap.set('n', 'y', '"+')
-keymap.set('v', 'y', '"+y')
+keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Folds
 keymap.set('n', '=', '<Cmd>foldopen<CR>', { desc = "Open Fold" })

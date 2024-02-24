@@ -60,14 +60,6 @@ dracula.setup({
         -- Gitsigns
         GitSignsCurrentLineBlame = { fg = dracula.colors().selection },
 
-        -- Git Diff
-        DiffAdd = { bg = "#2C453F" },
-        DiffAddText = { bg = "#377165" },
-        DiffviewDiffDelete = { fg = dracula.colors().selection },
-        DiffAddAsDelete = { bg = "#533238" },
-        DiffDelete = { bg = "#6D393F" },
-        DiffDeleteText = { bg = "#a16262" },
-
         -- Dashboard
         DashboardHeader = { fg = "#ffffff" },
         DashboardFooter = { fg = "#ffffff" },
