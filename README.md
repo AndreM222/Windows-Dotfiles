@@ -368,11 +368,11 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `Shift - f` - Format
 
-`f` - Lspsaga Hover Doc
+`K` - Lspsaga Hover Doc
 
-`F` - Lspsaga Peek Definition
+`Alt - k` - Lspsaga Peek Definition
 
-`C - f` - Lspsaga Go To Definition
+`Ctrl - k` - Lspsaga Go To Definition
 
 `g + d` - lspsaga Finder
 
@@ -422,9 +422,9 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `d + r` - Debugger Toggle
 
-`=` - Open Fold
+`Alt - =` - Open Fold
 
-`-` - Close Fold
+`Alt - -` - Close Fold
 
 `+` - Open All Folds
 
@@ -441,6 +441,10 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 `K` - Save Harpoon Mark
 
 `Esc` - Clear hlsearch
+
+`\p` - Paste Without Deleting
+
+`\d` - Delete Without Deleting
 </details>
 
 <details>

@@ -59,9 +59,9 @@ keymap.set('x', '<C-A-_>', '<Plug>(comment_toggle_blockwise_visual)', { desc = "
 keymap.set({ 'v', 'n', 'i' }, '<S-A-f>', '<Cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>', { desc = "Format" })
 
 -- Lspsaga Setup
-keymap.set('n', 'f', '<Cmd>Lspsaga hover_doc<CR>', { desc = "Show Hover" })
-keymap.set('n', 'F', '<Cmd>Lspsaga peek_definition<CR>', { desc = "Peek Definition" })
-keymap.set('n', '<C-f>', '<Cmd>Lspsaga goto_definition<CR>', { desc = "Go to Definition" })
+keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', { desc = "Show Hover" })
+keymap.set('n', '<A-k>', '<Cmd>Lspsaga peek_definition<CR>', { desc = "Peek Definition" })
+keymap.set('n', '<C-k>', '<Cmd>Lspsaga goto_definition<CR>', { desc = "Go to Definition" })
 keymap.set('n', 'gd', '<Cmd>Lspsaga finder<CR>', { desc = "Find References and Implementations" })
 keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', { desc = "Rename" })
 keymap.set('n', 'gp', '<Cmd>Lspsaga code_action<CR>', { desc = "Code Action" })
@@ -97,19 +97,20 @@ keymap.set('n', 'lp', [[<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.in
     { desc = "Toggle Log Point Breakpoint" })
 keymap.set('n', 'dr', [[<Cmd>lua require'dapui'.toggle()<CR>]], { desc = "Toggle Debug UI" })
 
--- Copy Paste Bindings
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
-keymap.set("n", "<leader>Y", [["+Y]])
+-- Copy and Delete Bindings
+keymap.set("x", "\\p", [["_dP]], { desc = "Paste Without Copying" })
+
+keymap.set({"n", "v"}, "\\d", [["_d]], { desc = "Delete Without Copying" })
 
 -- Folds
-keymap.set('n', '=', '<Cmd>foldopen<CR>', { desc = "Open Fold" })
-keymap.set('n', '-', '<Cmd>foldclose<CR>', { desc = "Close Fold" })
+keymap.set('n', '<A-=>', '<Cmd>foldopen<CR>', { desc = "Open Fold" })
+keymap.set('n', '<A-->', '<Cmd>foldclose<CR>', { desc = "Close Fold" })
 keymap.set('n', '+', '<Cmd>OpenAllFolds<CR>', { desc = "Open All Folds" })
 keymap.set('n', '_', '<Cmd>CloseAllFolds<CR>', { desc = "Close All Folds" })
 
 -- Ctrl Movement
-keymap.set({ 'n', 'v' }, '<C-Right>', 'E')
-keymap.set('i', '<C-Right>', '<C-o>E<Right>')
+keymap.set({ 'n', 'v' }, '<C-Right>', 'E', { desc = "Move to End of Word" })
+keymap.set('i', '<C-Right>', '<C-o>E<Right>', { desc = "Move to End of Word" })
 
 -- Select all
 keymap.set({ 'i', 'v', 'n' }, '<C-A-a>', '<Esc> ggVG', { desc = "Select All" })
@@ -118,4 +119,5 @@ keymap.set({ 'i', 'v', 'n' }, '<C-A-a>', '<Esc> ggVG', { desc = "Select All" })
 keymap.set('n', '\\bs', '<Cmd>HarpoonMark<CR>', { desc = "Set bookmark" })
 keymap.set('n', '\\bl', '<Cmd>Harpoon<CR>', { desc = "Open bookmarks" })
 
+-- Deselect
 keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
