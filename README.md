@@ -261,9 +261,10 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 |__📄init.lua
 
 📂$HOME/Documents/PowerShell
-|__📄Microsoft.PowerShell_profile.ps1
 |__📂themes
-|__📄minimalNight.omp.json
+|   |__📄minimalNight.omp.json
+|__📄Microsoft.PowerShell_profile.ps1
+|__📄powershell.config.json
 ```
 
 <h2>Languages 🗣️</h2>
