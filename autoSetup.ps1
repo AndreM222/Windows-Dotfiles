@@ -1,3 +1,5 @@
+if($env:OS -notlike "*Windows*") { exit }
+
 # Package Managers - Winget
 $packManagers = @(
     # (Name, executable, Path)
