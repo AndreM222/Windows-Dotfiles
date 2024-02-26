@@ -423,13 +423,13 @@ Read: `To visualize on vim the keybindings press F3. I also documented all my cu
 
 `d + r` - Debugger Toggle
 
-`Alt - =` - Open Fold
+`Alt - =` - Open Fold All
 
-`Alt - -` - Close Fold
+`Alt - -` - Close Fold All
 
-`+` - Open All Folds
+`+` - Open Folds Selected
 
-`_` - Close All Folds
+`_` - Close Folds Selected
 
 `CTRL - /` - Comment Line In Line
 
