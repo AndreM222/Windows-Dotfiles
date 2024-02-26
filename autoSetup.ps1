@@ -1,16 +1,15 @@
 if($env:OS -notlike "*Windows*") { exit }
 
 # Package Managers - Winget
-$packManagers = @(
-    # (Name, executable, Path)
+$packManagers = @( # (Name, executable, Path)
     @("PowerShell Core", "pwsh", "Microsoft.Powershell"),
     @("Git", "git", "Git.Git"),
-    @("Python", "py", "Python")
+    @("Python", "py", "Python3")
 )
 
-# Winget Installations
-$winTools = @(
-    # Path
+# Tools Installations
+$winList = @( # Path
+    # Tools
     "gsudo jqlang.jq",
     "SQLite.SQLite",
     "Neovim",
@@ -22,20 +21,39 @@ $winTools = @(
     "lazydocker",
     "ntop",
     "BurntSushi.ripgrep.MSVC",
-    "lazygit"
+    "lazygit",
+    # Server
+    "clangd",
+    "lua-language-server"
 )
 
-$scoopTools = @(
-    # (Bucket, Path)
+$scoopList = @( # (Bucket, Path)
     @("nerd-fonts", "FiraCode-NF-Mono")
 )
 
-$npmTools = @(
-    # Path
+$npmList = @( # Path
+    # Tools
     "commitizen",
     "cz-conventional-changelog",
     "generate generate-license",
-    "npm-check-updates"
+    "npm-check-updates",
+    # Server
+    "live-server",
+    "pyright",
+    "typescript typescript-language-server",
+    "tailwindcss-language-server",
+    # Formatter
+    "prettier"
+)
+
+$dotnetList = @( # Path
+    # Server
+    "csharp-ls"
+)
+
+$pipList = @(
+    # Formatter
+    "autopep8"
 )
 
 
@@ -92,26 +110,39 @@ while($true)
 
 
 
-#region Setup Tools
+#region Setup Installations
 # -- Winget
-foreach($curr in $winTools)
+foreach($curr in $winList)
 {
     winget install $curr
 }
+winget install -i LLVM.LLVM # Custom Installation For Path
 
 # -- Scoop
-foreach($curr in $scoopTools)
+foreach($curr in $scoopList)
 {
     scoop bucket add $curr[0]
     scoop install $curr[1]
 }
 
 # -- NPM
-foreach($curr in $npmTools)
+foreach($curr in $npmlist)
 {
     npm install -g  $curr
 }
-Write-Output '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+Write-Output '{ "path": "cz-conventional-changelog" }' > ~/.czrc # Set Commitizen Path
+
+# -- Dotnet
+foreach($curr in $dotnetlist)
+{
+    dotnet tool install -g $curr
+}
+
+# -- PIP
+foreach($curr in $pipList)
+{
+    pip install --upgrade $curr
+}
 #endregion Setup Tools
 
 
