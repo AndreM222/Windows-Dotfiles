@@ -1,183 +1,216 @@
-if($env:OS -notlike "*Windows*") { exit }
+if($env:OS -notlike "*Windows*")
+{ 
+    exit 
+}
+
+# -- Exe Installations --
 
 # Package Managers - Winget
 $packManagers = @( # (Name, executable, Path)
     @("PowerShell Core", "pwsh", "Microsoft.Powershell"),
     @("Git", "git", "Git.Git"),
+    @("NVM", "nvm", "CoreyButler.NVMforWindows"),
     @("Python", "py", "Python3")
 )
 
 # Tools Installations
-$winList = @( # Path
+$winList = @( # (Name, executable, Path) 
     # Tools
-    "gsudo jqlang.jq",
-    "SQLite.SQLite",
-    "Neovim",
-    "JanDeDobbeleer.OhMyPosh -s winget",
-    "Yarn.Yarn",
-    "GnuWin32.Make",
-    "fzf",
-    "sharkdp.bat",
-    "lazydocker",
-    "ntop",
-    "BurntSushi.ripgrep.MSVC",
-    "lazygit",
+    @("SQLite", "sqlite3", "SQLite.SQLite"),
+    @("Neovim", "nvim", "Neovim"),
+    @("Oh My Posh", "oh-my-posh", "JanDeDobbeleer.OhMyPosh -s winget"),
+    @("Yarn", "yarn", "Yarn.Yarn"),
+    @("Fuzzy Finder", "fzf", "fzf"),
+    @("Bat", "bat", "sharkdp.bat"),
+    @("LazyDocker", "lazydocker", "lazydocker"),
+    @("NTop", "ntop", "ntop"),
+    @("RipGrep", "rg", "BurntSushi.ripgrep.MSVC"),
+    @("LazyGit", "lazygit", "lazygit"),
     # Server
-    "clangd",
-    "lua-language-server"
+    @("Clangd", "clangd", "clangd"),
+    @("Lua Language Server", "lua-language-server", "lua-language-server")
+    @("LLVM", "llvm", "-i LLVM.LLVM")
 )
 
-$scoopList = @( # (Bucket, Path)
-    @("nerd-fonts", "FiraCode-NF-Mono")
-)
-
-$npmList = @( # Path
+$npmList = @( # (Name, executable, Path)
     # Tools
-    "commitizen",
-    "cz-conventional-changelog",
-    "generate generate-license",
-    "npm-check-updates",
+    @("Commitizen", "commitizen", "commitizen cz-conventional-changelog"),
+    @("Generate-License", "generate", "generate generate-license"),
+    @("Npm-Check-Updates", "npm-check-updates", "npm-check-updates"),
     # Server
-    "live-server",
-    "pyright",
-    "typescript typescript-language-server",
-    "tailwindcss-language-server",
+    @("Live-server", "live-server", "live-server"),
+    @("Pyright", "pyright", "pyright"),
+    @("Typescript-Language-Server", "typescript-language-server", "typescript typescript-language-server"),
+    @("Tailwindcss-Language-Server", "tailwindcss-language-server", "tailwindcss-language-server"),
     # Formatter
-    "prettier"
+    @("prettier", "prettier", "prettier")
 )
 
-$dotnetList = @( # Path
+$dotnetList = @( # (Name, executable, Path)
     # Server
-    "csharp-ls"
+    @("CSharp-LS", "csharp-ls", "csharp-ls")
 )
 
-$pipList = @(
+$pipList = @( # (Name, executable, Path)
     # Formatter
-    "autopep8"
+    @("Autopep8", "autopep8", "autopep8")
 )
 
+# -- List Installations --
 
+# Tools Installations
+$scoopBucketList = @( # (Name, Path)
+    @("Nerd Fonts", "nerd-fonts")
+)
 
-#region Package Manager Setup
-foreach ($curr in $packManagers)
+$scoopPathList = @( # (Name, Path)
+    @("Fira Code Font", "FiraCode-NF-Mono")
+)
+
+$powerList = @(
+    @("PS Fzf", "PSFzf"),
+    @("Posh Git", "posh-git -Scope CurrentUser"),
+    @("Terminal Icons", "Terminal-Icons -Repository PSGallery"),
+    @("PS Readline", "PSReadLine -AllowPrerelease"),
+    @("Z", "z")
+)
+
+#region Functions
+function installerExe # Check with exe
 {
-    while($true)
+    param ($manager, $list)
+
+    foreach ($curr in $list)
     {
-        try
+        while($true)
         {
-            $curr[1] | Out-Null
-            Write-Host "$curr[0] Is Installed [✓]" -ForegroundColor Green
-            break
-        } catch [System.Management.Automation.CommandNotFoundException]
-        {
-            Write-Host "$curr[0] Is Installed [X]" -ForegroundColor Red
-            Write-Host "Installing $curr[0] ..."
-            winget install $curr[2] 
+            try
+            {
+                $curr[1] | Out-Null
+                Write-Host "$curr[0] Is Installed [✓]" -ForegroundColor Green
+                break
+            } catch [System.Management.Automation.CommandNotFoundException]
+            {
+                Write-Host "$curr[0] Is Installed [X]"
+                Write-Host "Installing $curr[0] ..."
+                Invoke-Expression "$manager $curr[2]"
+            }
         }
     }
 }
-while($true)
+
+function installerList # Check with list
 {
-    try
+    param ($finder, $manager, $list)
+
+    foreach ($curr in $list)
     {
-        scoop | Out-Null 
-        Write-Host "Scoop Is Installed [✓]" -ForegroundColor Green 
-        break
-    } catch [System.Management.Automation.CommandNotFoundException]
-    {
-        Write-host "Scoop Is Installed [X]" -ForegroundColor Red 
-        Write-Host "Installing Scoop ..."
-        Invoke-RestMethod get.scoop.sh | Invoke-Expression 
+        while($true)
+        {
+            if(Invoke-Expression "$finder $curr[1]")
+            {
+                Write-Host "$curr[0] Is Installed [✓]" -ForegroundColor Green
+                break
+            } else
+            {
+                Write-Host "$curr[0] Is Installed [X]"
+                Write-Host "Installing $curr[0] ..."
+                Invoke-Expression "$manager $curr[1]"
+            }
+        }
     }
 }
-while($true)
+
+function gitRepoSetup
 {
-    try
+    param ($repo, $path, $title)
+    $curr = Get-Location
+    Set-Location '$path$title'
+
+    $currPath = git config --get remote.origin.url
+
+    if($currPath -ne $repo)
     {
-        npm | Out-Null
-        Write-Host "NodeJS Is Installed [✓]" -ForegroundColor Green
-        break
-    } catch [System.Management.Automation.CommandNotFoundException]
+        Write-Host "Setup Completed [X]"
+        Write-Host "Replacing Setup ..."
+        Remove-Item -r -force $path
+        git clone $repo $path
+    }
+
+    Set-Location $curr
+    Write-Host "Setup Completed [✓]" -ForegroundColor Green
+}
+
+function fileChange
+{
+    param($path, $file)
+
+    if(Test-Path -Path '$path$file')
     {
-        Write-Host "NodeJS Is Installed [X]" -ForegroundColor Red
-        Write-Host "Installing NodeJS ..."
-        winget install CoreyButler.NVMforWindows
-        nvm install lts
-        nvm use lts
+        Write-Host "File Exists [✓]" -ForegroundColor Green
+    } else
+    {
+        Write-Host "File Exists [X]"
+        Write-Host "Creating File ..."
+        Copy-Item -force '.\$file' $path
     }
 }
+#endregion Functions
+
+#region Package Manager Setup
+installerExe("winget install", $packManagers)
+installerExe("Invoke-RestMethod", @("Scoop", "scoop", "get.scoop.sh"))
+installerExe("nvm", @("NPM", "npm", " install lts; nvm use lts"))
 #endregion Package Manager Setup
 
 
 
 #region Setup Installations
 # -- Winget
-foreach($curr in $winList)
-{
-    winget install $curr
-}
-winget install -i LLVM.LLVM # Custom Installation For Path
+installerExe("winget install", $winList)
 
 # -- Scoop
-foreach($curr in $scoopList)
-{
-    scoop bucket add $curr[0]
-    scoop install $curr[1]
-}
+installerList("scoop list", "scoop install", $scoopPathList)
+installerList("scoop search", "scoop bucket add", $scoopBucketList)
 
 # -- NPM
-foreach($curr in $npmlist)
-{
-    npm install -g  $curr
-}
+installerExe("npm install -g", $npmList)
 Write-Output '{ "path": "cz-conventional-changelog" }' > ~/.czrc # Set Commitizen Path
 
 # -- Dotnet
-foreach($curr in $dotnetlist)
-{
-    dotnet tool install -g $curr
-}
+installerExe("dotnet tool install -g", $dotnetList)
 
 # -- PIP
-foreach($curr in $pipList)
-{
-    pip install --upgrade $curr
-}
+installerExe("pip install --upgrade", $pipList)
+
 #endregion Setup Tools
 
 
 
 #region PowerShell Config And Modules Setup
 # Setup PowerShell file in its respective place
-git clone https://github.com/AndreM222/PowerShell.git
-
 if(Test-Path -Path $HOME\OneDrive\Documents)
 {
-    Move-Item -r -force .\PowerShell $HOME\Documents\
+    gitRepoSetup('https://github.com/AndreM222/PowerShell.git', '$HOME\OneDrive\Documents\', 'PowerShell')
 } else
 {
-    Move-Item -r -force .\PowerShell $HOME\OneDrive\Documents\
+    gitRepoSetup('https://github.com/AndreM222/PowerShell.git', '$HOME\Documents\', 'PowerShell')
 }
 
-# Tools
-Install-Module -Name PSFzf
-Install-Module posh-git -Scope CurrentUser
-Install-Module -Name Terminal-Icons -Repository PSGallery -Force
-Install-Module PSReadLine -AllowPrerelease -Force
-Install-Module -Name z
+# -- PowerShell Tools
+installerList("Get-Module -ListAvailable", "Install-Module -Force", $powerList)
 #endregion PowerShell Config And Modules Setup
 
 
 
 #region NVIM Config Setup
-git clone https://github.com/AndreM222/nvim.git
-Move-Item -r -force nvim $HOME\AppData\Local\
+gitRepoSetup('https://github.com/AndreM222/nvim.git', '$HOME\AppData\Local\', 'nvim')
 #endregion NVIM Setup
 
 #region Terminal Config Setup
-Move-Item -force .\TerminalConfig\settings.json $HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\
+fileChange('$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\', 'settings.json')
 #endregion Terminal Config Setup
 
 #region .gitconfig Setup
-Move-Item -force .\.gitconfig $HOME
+fileChange($HOME, '.gitconfig')
 #endregion .gitconfig Setup
