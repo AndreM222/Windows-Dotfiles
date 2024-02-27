@@ -125,7 +125,7 @@ function gitRepoSetup
 {
     param ($repo, $path, $title)
     $curr = Get-Location
-    Set-Location '$path$title'
+    Set-Location "$path$title"
 
     $currPath = git config --get remote.origin.url
 
@@ -145,14 +145,14 @@ function fileChange
 {
     param($path, $file)
 
-    if(Test-Path -Path '$path$file')
+    if(Test-Path -Path "$path$file")
     {
         Write-Host "File Exists [✓]" -ForegroundColor Green
     } else
     {
         Write-Host "File Exists [X]"
         Write-Host "Creating File ..."
-        Copy-Item -force '.\$file' $path
+        Copy-Item -force ".\$file" $path
     }
 }
 #endregion Functions
@@ -191,10 +191,10 @@ installerExe("pip install --upgrade", $pipList)
 # Setup PowerShell file in its respective place
 if(Test-Path -Path $HOME\OneDrive\Documents)
 {
-    gitRepoSetup('https://github.com/AndreM222/PowerShell.git', '$HOME\OneDrive\Documents\', 'PowerShell')
+    gitRepoSetup("https://github.com/AndreM222/PowerShell.git", "$HOME\OneDrive\Documents\", "PowerShell")
 } else
 {
-    gitRepoSetup('https://github.com/AndreM222/PowerShell.git', '$HOME\Documents\', 'PowerShell')
+    gitRepoSetup("https://github.com/AndreM222/PowerShell.git", "$HOME\Documents\", "PowerShell")
 }
 
 # -- PowerShell Tools
@@ -204,13 +204,13 @@ installerList("Get-Module -ListAvailable", "Install-Module -Force", $powerList)
 
 
 #region NVIM Config Setup
-gitRepoSetup('https://github.com/AndreM222/nvim.git', '$HOME\AppData\Local\', 'nvim')
+gitRepoSetup("https://github.com/AndreM222/nvim.git", "$HOME\AppData\Local\", "nvim")
 #endregion NVIM Setup
 
 #region Terminal Config Setup
-fileChange('$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\', 'settings.json')
+fileChange("$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\", "settings.json")
 #endregion Terminal Config Setup
 
 #region .gitconfig Setup
-fileChange($HOME, '.gitconfig')
+fileChange($HOME, ".gitconfig")
 #endregion .gitconfig Setup
