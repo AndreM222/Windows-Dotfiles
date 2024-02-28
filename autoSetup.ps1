@@ -13,12 +13,8 @@ $packManagers = @( # (Name, executable, Path)
     @("Python", "py", "Python3")
 )
 
-$packScoop = @( # (Name, executable, Path)
-    @("Scoop", "scoop", "get.scoop.sh")
-)
-
 $npmVersions = @( # (Name, executable, Path)
-    @("NPM", "nvm use lts", "lts")
+    ,@("NPM LTS", "nvm use lts", "lts")
 )
 
 # Tools Installations
@@ -36,7 +32,7 @@ $winList = @( # (Name, executable, Path)
     @("LazyGit", "lazygit", "lazygit"),
     # Server
     @("Clangd", "clangd", "clangd"),
-    @("Lua Language Server", "lua-language-server", "lua-language-server")
+    @("Lua Language Server", "lua-language-server", "lua-language-server"),
     @("LLVM", "llvm", "-i LLVM.LLVM")
 )
 
@@ -56,31 +52,34 @@ $npmList = @( # (Name, executable, Path)
 
 $dotnetList = @( # (Name, executable, Path)
     # Server
-    @("CSharp-LS", "csharp-ls", "csharp-ls")
+    ,@("CSharp-LS", "csharp-ls", "csharp-ls")
 )
 
 $pipList = @( # (Name, executable, Path)
     # Formatter
-    @("Autopep8", "autopep8", "autopep8")
+    ,@("Autopep8", "autopep8", "autopep8")
 )
 
 # -- List Installations --
 
 # Tools Installations
-$scoopBucketList = @( # (Name, Path)
-    @("Nerd Fonts", "nerd-fonts")
+
+$scoopPathList = @( # (Name, Id, Path)
+    @("Fira Code Font", "FiraCode-NF-Mono", "nerd-fonts/FiraCode-NF-Mono"),
+    @("GCC", "gcc", "gcc")
 )
 
-$scoopPathList = @( # (Name, Path)
-    @("Fira Code Font", "FiraCode-NF-Mono")
+$powerList = @( # (Name, Id, Path)
+    @("PSFzf", "PSFzf", "PSFzf"),
+    @("Posh-Git", "posh-git", "posh-git"),
+    @("Terminal-Icons", "Terminal-Icons", "Terminal-Icons"),
+    @("PSReadline", "PSReadLine", "PSReadLine"),
+    @("Z", "z", "z")
 )
 
-$powerList = @(
-    @("PS Fzf", "PSFzf"),
-    @("Posh Git", "posh-git -Scope CurrentUser"),
-    @("Terminal Icons", "Terminal-Icons -Repository PSGallery"),
-    @("PS Readline", "PSReadLine -AllowPrerelease"),
-    @("Z", "z")
+$gitDotfileList = @( # (Name, Repo, Path)
+    @("PowerShell", "https://github.com/AndreM222/PowerShell.git", "Documents"),
+    @("nvim", "https://github.com/AndreM222/nvim.git", "AppData\Local")
 )
 
 #region Functions
@@ -89,8 +88,9 @@ function warnMSG($title)
     Write-Host "Setup Completed [X]"; 
 
     Write-Host "[WARNING!: This might replace any setup you had] " -NoNewline -InformationAction $InformationPreference -ForegroundColor Yellow
-    Write-Host "Are you sure you want to use my $title setup?" -NoNewLine 
-    Write-Host "[Y] Yes [N] No (Default is Y): "
+    Write-Host "Are you sure you want to use my " -NoNewLine
+    Write-Host "$title" -NoNewLine  -ForegroundColor Cyan
+    Write-Host " setup? [Y] Yes [N] No (Default is Y): " -NoNewline
 
     $answer = ""
 
@@ -101,7 +101,7 @@ function warnMSG($title)
     
     if($answer[0] -eq "N") 
     {
-        Write-Host "Setup Canceled [X]" -ForegroundColor red
+        Write-Host "৹ Setup Canceled [X]" -ForegroundColor red
         return $false
     }
     Write-Host "Setting Up $title ..."
@@ -117,7 +117,7 @@ function installerExe($manager, $list) # Check with exe
             try
             {
                 $curr[1] | Out-Null
-                Write-Host "$($curr[0]) Is Installed [✓]" -ForegroundColor Green
+                Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green
                 break
             } catch [System.Management.Automation.CommandNotFoundException]
             {
@@ -129,7 +129,7 @@ function installerExe($manager, $list) # Check with exe
     }
 }
 
-function installerList($finder, $manager, $list) # Check with list
+function installerSearch($finder, $manager, $list) # Check with list
 {
     foreach ($curr in $list)
     {
@@ -137,44 +137,57 @@ function installerList($finder, $manager, $list) # Check with list
         {
             if(Invoke-Expression "$finder $($curr[1])")
             {
-                Write-Host "$($curr[0]) Is Installed [✓]" -ForegroundColor Green
+                Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green
                 break
             } else
             {
                 Write-Host "$($curr[0]) Is Installed [X]"
                 Write-Host "Installing $($curr[0]) ..."
-                Invoke-Expression "$manager $($curr[1])"
+                Invoke-Expression "$manager $($curr[2])"
             }
         }
     }
 }
 
-function gitRepoSetup($repo, $path, $directory) # Setup From Git Repos
+function gitRepoSetup($list) # Setup From Git Repos
 {
-    $curr = Get-Location
-    Set-Location "$path$directory"
-
-    $currPath = git config --get remote.origin.url
-    $userResponse = $true
-
-    if($currPath -ne $repo)
+    $pos = Get-Location
+    foreach($curr in $list)
     {
-        $userResponse = warnMSG "$directory"
+        if(Test-Path -Path "$HOME\OneDrive\$($curr[2])\") # Check if in OneDrive
+        {
+            $curr[2] = "$HOME\OneDrive\$($curr[2])" # Change path to onedrive
+        } else
+        {
+            $curr[2] = "$HOME\$($curr[2])" # Set normal path
+        }
+
+        Set-Location "$($curr[2])\$($curr[0])\"
+
+        $gitCheck = git config --get remote.origin.url
+        $userResponse = $true
+
+        Set-Location $pos
+
+
+        if($gitCheck -ne $curr[1])
+        {
+            $userResponse = warnMSG "$($curr[0])"
+
+            if($userResponse)
+            {
+                git clone $curr[1] $tmpGitDotfile
+                Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])"
+                Remove-Item -r -force tmpGitDotfile
+            }
+        }
 
         if($userResponse)
         {
-            git clone $repo $tmpGitDotfile
-            Move-Item -r -force tmpGitDotfile/* "$path$directory"
-            Remove-Item -r -force tmpGitDotfile
+            Write-Host "৹ Setup $($curr[0]) Completed [✓]" -ForegroundColor Green
         }
     }
 
-    if($userResponse)
-    {
-        Write-Host "Setup Completed [✓]" -ForegroundColor Green
-    }
-
-    Set-Location $curr
 }
 
 function fileChange($path, $file)
@@ -182,12 +195,12 @@ function fileChange($path, $file)
     $userResponse = warnMSG $file
     if($userResponse)
     {
-        Copy-Item -force ".\$file" $path
+        Copy-Item -force ".\$file" "$HOME\$path"
     }
 
     if($userResponse)
     {
-        Write-Host "Setup Completed [✓]" -ForegroundColor Green
+        Write-Host "৹ Setup Completed [✓]" -ForegroundColor Green
     }
 }
 #endregion Functions
@@ -195,7 +208,7 @@ function fileChange($path, $file)
 #region Package Manager Setup
 installerExe "winget install" $packManagers
 
-installerExe "Invoke-RestMethod" $packScoop
+installerExe "Invoke-RestMethod" @(,@("Scoop", "scoop", "get.scoop.sh"))
 
 installerExe "nvm install" $npmVersions
 #endregion Package Manager Setup
@@ -207,8 +220,7 @@ installerExe "nvm install" $npmVersions
 installerExe "winget install" $winList
 
 # -- Scoop
-installerList "scoop list" "scoop install" $scoopPathList
-installerList "scoop search" "scoop bucket add" $scoopBucketList
+installerSearch "scoop list" "scoop install" $scoopPathList
 
 # -- NPM
 installerExe "npm install -g" $npmList
@@ -220,35 +232,22 @@ installerExe "dotnet tool install -g" $dotnetList
 # -- PIP
 installerExe "pip install --upgrade" $pipList
 
+# -- PowerShell
+installerSearch "Get-Module -ListAvailable" "Install-Module -Force" $powerList
 #endregion Setup Tools
 
 
 
-#region PowerShell Config And Modules Setup
-# Setup PowerShell file in its respective place
-if(Test-Path -Path $HOME\OneDrive\Documents)
-{
-    gitRepoSetup "https://github.com/AndreM222/PowerShell.git" "$HOME\OneDrive\Documents\" "PowerShell"
-
-} else
-{
-    gitRepoSetup "https://github.com/AndreM222/PowerShell.git" "$HOME\Documents\" "PowerShell"
-}
-
-# -- PowerShell Tools
-installerList "Get-Module -ListAvailable" "Install-Module -Force" $powerList
-#endregion PowerShell Config And Modules Setup
+#region Git Setups
+gitRepoSetup $gitDotfileList
+#endregion Git Setups
 
 
-
-#region NVIM Config Setup
-gitRepoSetup "https://github.com/AndreM222/nvim.git" "$HOME\AppData\Local\" "nvim"
-#endregion NVIM Setup
 
 #region Terminal Config Setup
-fileChange "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" "settings.json"
+fileChange "AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" "settings.json"
 #endregion Terminal Config Setup
 
 #region .gitconfig Setup
-fileChange $HOME ".gitconfig"
+fileChange "." ".gitconfig"
 #endregion .gitconfig Setup
