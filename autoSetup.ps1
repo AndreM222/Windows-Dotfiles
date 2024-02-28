@@ -76,11 +76,33 @@ $powerList = @(
 )
 
 #region Functions
-function installerExe # Check with exe
+function warnMSG($title)
 {
-    param ($manager, $list)
+    Write-Host "Setup Completed [X]"; 
 
-    foreach ($curr in $list)
+    Write-Host "[WARNING!: This might replace any setup you had] " -NoNewline -InformationAction $InformationPreference -ForegroundColor Yellow
+    Write-Host "Are you sure you want to use my $title setup?" -NoNewLine 
+    Write-Host "[Y] Yes [N] No (Default is Y): "
+
+    $answer = ""
+
+    do
+    {
+        $answer = (Read-Host).ToUpper()
+    } while(@("", "N", "NO", "Y", "YE", "YES") -contains $answer)
+    
+    if($answer[0] -eq "N") 
+    {
+        Write-Host "Setup Canceled [X]" -ForegroundColor red
+        return $false
+    }
+    Write-Host "Setting Up $title ..."
+    return $true
+}
+
+function installerExe($manager, $list) # Check with exe
+{
+    foreach($curr in $list)
     {
         while($true)
         {
@@ -99,10 +121,8 @@ function installerExe # Check with exe
     }
 }
 
-function installerList # Check with list
+function installerList($finder, $manager, $list) # Check with list
 {
-    param ($finder, $manager, $list)
-
     foreach ($curr in $list)
     {
         while($true)
@@ -121,38 +141,45 @@ function installerList # Check with list
     }
 }
 
-function gitRepoSetup
+function gitRepoSetup($repo, $path, $directory) # Setup From Git Repos
 {
-    param ($repo, $path, $title)
     $curr = Get-Location
-    Set-Location "$path$title"
+    Set-Location "$path$directory"
 
     $currPath = git config --get remote.origin.url
+    $userResponse = $true
 
     if($currPath -ne $repo)
     {
-        Write-Host "Setup Completed [X]"
-        Write-Host "Replacing Setup ..."
-        Remove-Item -r -force $path
-        git clone $repo $path
+        $userResponse = warnMSG($directory)
+
+        if($userResponse)
+        {
+            git clone $repo $tmpGitDotfile
+            Move-Item -r -force tmpGitDotfile/* "$path$directory"
+            Remove-Item -r -force tmpGitDotfile
+        }
+    }
+
+    if($userResponse)
+    {
+        Write-Host "Setup Completed [✓]" -ForegroundColor Green
     }
 
     Set-Location $curr
-    Write-Host "Setup Completed [✓]" -ForegroundColor Green
 }
 
-function fileChange
+function fileChange($path, $file)
 {
-    param($path, $file)
-
-    if(Test-Path -Path "$path$file")
+    $userResponse = warnMSG($file)
+    if($userResponse)
     {
-        Write-Host "File Exists [✓]" -ForegroundColor Green
-    } else
-    {
-        Write-Host "File Exists [X]"
-        Write-Host "Creating File ..."
         Copy-Item -force ".\$file" $path
+    }
+
+    if($userResponse)
+    {
+        Write-Host "Setup Completed [✓]" -ForegroundColor Green
     }
 }
 #endregion Functions
