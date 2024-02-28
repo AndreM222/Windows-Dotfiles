@@ -13,6 +13,14 @@ $packManagers = @( # (Name, executable, Path)
     @("Python", "py", "Python3")
 )
 
+$packScoop = @( # (Name, executable, Path)
+    @("Scoop", "scoop", "get.scoop.sh")
+)
+
+$npmVersions = @( # (Name, executable, Path)
+    @("NPM", "nvm use lts", "lts")
+)
+
 # Tools Installations
 $winList = @( # (Name, executable, Path) 
     # Tools
@@ -89,7 +97,7 @@ function warnMSG($title)
     do
     {
         $answer = (Read-Host).ToUpper()
-    } while(@("", "N", "NO", "Y", "YE", "YES") -contains $answer)
+    } while(@("", "N", "NO", "Y", "YE", "YES") -notcontains $answer)
     
     if($answer[0] -eq "N") 
     {
@@ -109,13 +117,13 @@ function installerExe($manager, $list) # Check with exe
             try
             {
                 $curr[1] | Out-Null
-                Write-Host "$curr[0] Is Installed [✓]" -ForegroundColor Green
+                Write-Host "$($curr[0]) Is Installed [✓]" -ForegroundColor Green
                 break
             } catch [System.Management.Automation.CommandNotFoundException]
             {
-                Write-Host "$curr[0] Is Installed [X]"
-                Write-Host "Installing $curr[0] ..."
-                Invoke-Expression "$manager $curr[2]"
+                Write-Host "$($curr[0]) Is Installed [X]"
+                Write-Host "Installing $($curr[0]) ..."
+                Invoke-Expression "$manager $($curr[2])"
             }
         }
     }
@@ -127,15 +135,15 @@ function installerList($finder, $manager, $list) # Check with list
     {
         while($true)
         {
-            if(Invoke-Expression "$finder $curr[1]")
+            if(Invoke-Expression "$finder $($curr[1])")
             {
-                Write-Host "$curr[0] Is Installed [✓]" -ForegroundColor Green
+                Write-Host "$($curr[0]) Is Installed [✓]" -ForegroundColor Green
                 break
             } else
             {
-                Write-Host "$curr[0] Is Installed [X]"
-                Write-Host "Installing $curr[0] ..."
-                Invoke-Expression "$manager $curr[1]"
+                Write-Host "$($curr[0]) Is Installed [X]"
+                Write-Host "Installing $($curr[0]) ..."
+                Invoke-Expression "$manager $($curr[1])"
             }
         }
     }
@@ -151,7 +159,7 @@ function gitRepoSetup($repo, $path, $directory) # Setup From Git Repos
 
     if($currPath -ne $repo)
     {
-        $userResponse = warnMSG($directory)
+        $userResponse = warnMSG "$directory"
 
         if($userResponse)
         {
@@ -171,7 +179,7 @@ function gitRepoSetup($repo, $path, $directory) # Setup From Git Repos
 
 function fileChange($path, $file)
 {
-    $userResponse = warnMSG($file)
+    $userResponse = warnMSG $file
     if($userResponse)
     {
         Copy-Item -force ".\$file" $path
@@ -185,30 +193,32 @@ function fileChange($path, $file)
 #endregion Functions
 
 #region Package Manager Setup
-installerExe("winget install", $packManagers)
-installerExe("Invoke-RestMethod", @("Scoop", "scoop", "get.scoop.sh"))
-installerExe("nvm", @("NPM", "npm", " install lts; nvm use lts"))
+installerExe "winget install" $packManagers
+
+installerExe "Invoke-RestMethod" $packScoop
+
+installerExe "nvm install" $npmVersions
 #endregion Package Manager Setup
 
 
 
 #region Setup Installations
 # -- Winget
-installerExe("winget install", $winList)
+installerExe "winget install" $winList
 
 # -- Scoop
-installerList("scoop list", "scoop install", $scoopPathList)
-installerList("scoop search", "scoop bucket add", $scoopBucketList)
+installerList "scoop list" "scoop install" $scoopPathList
+installerList "scoop search" "scoop bucket add" $scoopBucketList
 
 # -- NPM
-installerExe("npm install -g", $npmList)
+installerExe "npm install -g" $npmList
 Write-Output '{ "path": "cz-conventional-changelog" }' > ~/.czrc # Set Commitizen Path
 
 # -- Dotnet
-installerExe("dotnet tool install -g", $dotnetList)
+installerExe "dotnet tool install -g" $dotnetList
 
 # -- PIP
-installerExe("pip install --upgrade", $pipList)
+installerExe "pip install --upgrade" $pipList
 
 #endregion Setup Tools
 
@@ -218,26 +228,27 @@ installerExe("pip install --upgrade", $pipList)
 # Setup PowerShell file in its respective place
 if(Test-Path -Path $HOME\OneDrive\Documents)
 {
-    gitRepoSetup("https://github.com/AndreM222/PowerShell.git", "$HOME\OneDrive\Documents\", "PowerShell")
+    gitRepoSetup "https://github.com/AndreM222/PowerShell.git" "$HOME\OneDrive\Documents\" "PowerShell"
+
 } else
 {
-    gitRepoSetup("https://github.com/AndreM222/PowerShell.git", "$HOME\Documents\", "PowerShell")
+    gitRepoSetup "https://github.com/AndreM222/PowerShell.git" "$HOME\Documents\" "PowerShell"
 }
 
 # -- PowerShell Tools
-installerList("Get-Module -ListAvailable", "Install-Module -Force", $powerList)
+installerList "Get-Module -ListAvailable" "Install-Module -Force" $powerList
 #endregion PowerShell Config And Modules Setup
 
 
 
 #region NVIM Config Setup
-gitRepoSetup("https://github.com/AndreM222/nvim.git", "$HOME\AppData\Local\", "nvim")
+gitRepoSetup "https://github.com/AndreM222/nvim.git" "$HOME\AppData\Local\" "nvim"
 #endregion NVIM Setup
 
 #region Terminal Config Setup
-fileChange("$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\", "settings.json")
+fileChange "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" "settings.json"
 #endregion Terminal Config Setup
 
 #region .gitconfig Setup
-fileChange($HOME, ".gitconfig")
+fileChange $HOME ".gitconfig"
 #endregion .gitconfig Setup
