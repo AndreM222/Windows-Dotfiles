@@ -2,7 +2,6 @@ if($env:OS -notlike "*Windows*")
 { 
     exit 
 }
-exit
 
 # -- Exe Installations --
 
