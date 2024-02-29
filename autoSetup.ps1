@@ -13,7 +13,7 @@ Import-Module ".\library.psm1"
 
 
 #region Package Manager Setup
-installerExe "winget install" $container["packManagers"]
+installerSearch "winget list --id" "Winget Install" $container["packManagers"]
 # $packManagers
 
 installerExe "Invoke-RestMethod" @(,@("Scoop", "scoop", "get.scoop.sh"))
@@ -25,7 +25,7 @@ installerExe "nvm install" $container["npmVersions"]
 
 #region Setup Installations
 # -- Winget
-installerExe "winget install" $container["winList"]
+installerSearch "winget list --id" "Winget install" $container["winList"]
 
 # -- Scoop
 installerSearch "scoop list" "scoop install" $container["scoopPathList"]

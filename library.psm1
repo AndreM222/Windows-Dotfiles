@@ -1,12 +1,12 @@
 function section($type)
 {
     $type = $(if($type.IndexOf(' ') -ge 1)
-    {
-        $type.Substring(0, $type.IndexOf(' '))
-    } else
-    {
-        $type
-    })
+        {
+            $type.Substring(0, $type.IndexOf(' '))
+        } else
+        {
+            $type
+        })
     Write-Host ""
     Write-Host "⌂ $type Setup" -ForegroundColor Cyan
     Write-Host " " ('-' * ($type.Length + 6)) -ForegroundColor Cyan
@@ -83,7 +83,8 @@ function installerSearch($finder, $manager, $list) # Check with list
         $count = 0
         while(errorCheck 60 $curr[0] $count)
         {
-            if(Invoke-Expression "$finder $($curr[1])")
+            $table = Invoke-Expression "$finder $($curr[1])"
+            if($table -match $curr[1])
             {
                 Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green
                 break
@@ -105,12 +106,12 @@ function gitRepoSetup($list) # Setup From Git Repos
     foreach($curr in $list)
     {
         $curr[2] = $(if(Test-Path -Path "$HOME\OneDrive\$($curr[2])\") # Check if in OneDrive
-        {
-            "$HOME\OneDrive\$($curr[2])" # Change path to onedrive
-        } else
-        {
-            "$HOME\$($curr[2])" # Set normal path
-        })
+            {
+                "$HOME\OneDrive\$($curr[2])" # Change path to onedrive
+            } else
+            {
+                "$HOME\$($curr[2])" # Set normal path
+            })
 
         Set-Location "$($curr[2])\$($curr[0])\"
 

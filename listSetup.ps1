@@ -1,10 +1,9 @@
 @{
-    # -- Exe Installations --
     packManagers = @( # (Name, Id, Path)
-        @("PowerShell Core", "pwsh", "Microsoft.Powershell"),
-        @("Git", "git", "Git.Git"),
-        @("NVM", "nvm", "CoreyButler.NVMforWindows"),
-        @("Python", "Python.Python.3.12", "Python3")
+        @("PowerShell Core", " Microsoft.PowerShell_8wekyb3d8bbwe", "Microsoft.Powershell"),
+        @("Git", "Git.Git", "Git.Git"),
+        @("NVM", "CoreyButler.NVMforWindows", "CoreyButler.NVMforWindows"),
+        @("Python3", "Python.Python.3.12", "Python3")
     )
 
     npmVersions = @( # (Name, executable, Path)
@@ -12,22 +11,22 @@
     )
 
     # Tools Installations
-    winList = @( # (Name, executable, Path) 
+    winList = @( # (Name, Id, Path) 
         # Tools
-        @("SQLite", "sqlite3", "SQLite.SQLite"),
-        @("Neovim", "nvim", "Neovim"),
-        @("Oh My Posh", "oh-my-posh", "JanDeDobbeleer.OhMyPosh -s winget"),
-        @("Yarn", "yarn", "Yarn.Yarn"),
-        @("Fuzzy Finder", "fzf", "fzf"),
-        @("Bat", "bat", "sharkdp.bat"),
-        @("LazyDocker", "lazydocker", "lazydocker"),
-        @("NTop", "ntop", "ntop"),
-        @("RipGrep", "rg", "BurntSushi.ripgrep.MSVC"),
-        @("LazyGit", "lazygit", "lazygit"),
+        @("SQLite", "SQLite.SQLite", "SQLite.SQLite"),
+        @("Neovim", "Neovim.Neovim", "Neovim"),
+        @("Oh My Posh", "JanDeDobbeleer.OhMyPosh", "JanDeDobbeleer.OhMyPosh -s winget"),
+        @("Yarn", "Yarn.Yarn", "Yarn.Yarn"),
+        @("Fuzzy Finder", "junegunn.fzf", "fzf"),
+        @("Bat", "sharkdp.bat", "sharkdp.bat"),
+        @("LazyDocker", "JesseDuffield.Lazydocker", "lazydocker"),
+        @("NTop", "gsass1.NTop", "ntop"),
+        @("RipGrep", "BurntSushi.ripgrep.MSVC", "BurntSushi.ripgrep.MSVC"),
+        @("LazyGit", "JesseDuffield.lazygit", "lazygit"),
         # Server
-        @("Clangd", "clangd", "clangd"),
-        @("Lua Language Server", "lua-language-server", "lua-language-server"),
-        @("LLVM", "llvm", "-i LLVM.LLVM")
+        @("Clangd", "LLVM.clangd", "clangd"),
+        @("Lua Language Server", "LuaLS.lua-language-server", "lua-language-server"),
+        @("LLVM", "LLVM.LLVM", "-i LLVM.LLVM")
     )
 
     npmList = @( # (Name, executable, Path)
