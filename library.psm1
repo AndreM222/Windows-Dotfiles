@@ -194,3 +194,5 @@ function scriptSetup($list)
         }
     }
 }
+
+Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup

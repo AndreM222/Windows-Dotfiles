@@ -31,7 +31,7 @@
         @("LLVM", "LLVM.LLVM", "-i LLVM.LLVM")
     )
 
-    npmList = @( # (Name, executable, Path)
+    npmList = @( # (Name, Executable, Path)
         # Tools
         @("Commitizen", "commitizen", "commitizen cz-conventional-changelog"),
         @("Generate License", "generate", "generate generate-license"),
@@ -45,12 +45,12 @@
         @("prettier", "prettier", "prettier")
     )
 
-    dotnetList = @( # (Name, executable, Path)
+    dotnetList = @( # (Name, Executable, Path)
         # Server
         ,@("CSharp LS", "csharp-ls", "csharp-ls")
     )
 
-    pipList = @( # (Name, executable, Path)
+    pipList = @( # (Name, Executable, Path)
         # Formatter
         ,@("Autopep8", "autopep8", "autopep8")
     )
