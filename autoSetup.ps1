@@ -2,6 +2,7 @@ if($env:OS -notlike "*Windows*")
 { 
     exit 
 }
+exit
 
 # -- Exe Installations --
 
@@ -82,11 +83,30 @@ $gitDotfileList = @( # (Name, Repo, Path)
     @("nvim", "https://github.com/AndreM222/nvim.git", "AppData\Local")
 )
 
+$scriptDotfileList = @( # (Path, File)
+    @("AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState", "settings.json"),
+    @(".", ".gitconfig")
+)
+
 #region Functions
+function errorCheck($code, $title, $count)
+{
+    if($count -eq 2 || $count -eq 3)
+    {
+        Write-Host "Setup Failed [$count/3], Trying again ..." -ForegroundColor DarkRed
+    }
+    if($count -eq 4)
+    {
+        Write-Host "Setup Failed [X]" -ForegroundColor DarkRed
+        Write-Host "Error[$code]: $title" -ForegroundColor DarkRed
+        return $false
+    }
+
+    return $true
+}
+
 function warnMSG($title)
 {
-    Write-Host "Setup Completed [X]"; 
-
     Write-Host "[WARNING!: This might replace any setup you had] " -NoNewline -InformationAction $InformationPreference -ForegroundColor Yellow
     Write-Host "Are you sure you want to use my " -NoNewLine
     Write-Host "$title" -NoNewLine  -ForegroundColor Cyan
@@ -101,7 +121,7 @@ function warnMSG($title)
     
     if($answer[0] -eq "N") 
     {
-        Write-Host "৹ Setup Canceled [X]" -ForegroundColor red
+        Write-Host "৹ Setup Canceled [C]" -ForegroundColor red
         return $false
     }
     Write-Host "Setting Up $title ..."
@@ -112,7 +132,8 @@ function installerExe($manager, $list) # Check with exe
 {
     foreach($curr in $list)
     {
-        while($true)
+        $count = 0
+        while(errorCheck 50 $curr[0] $count)
         {
             try
             {
@@ -121,10 +142,11 @@ function installerExe($manager, $list) # Check with exe
                 break
             } catch [System.Management.Automation.CommandNotFoundException]
             {
-                Write-Host "$($curr[0]) Is Installed [X]"
                 Write-Host "Installing $($curr[0]) ..."
                 Invoke-Expression "$manager $($curr[2])"
             }
+
+            $count++
         }
     }
 }
@@ -133,7 +155,8 @@ function installerSearch($finder, $manager, $list) # Check with list
 {
     foreach ($curr in $list)
     {
-        while($true)
+        $count = 0
+        while(errorCheck 60 $curr[0] $count)
         {
             if(Invoke-Expression "$finder $($curr[1])")
             {
@@ -141,10 +164,11 @@ function installerSearch($finder, $manager, $list) # Check with list
                 break
             } else
             {
-                Write-Host "$($curr[0]) Is Installed [X]"
                 Write-Host "Installing $($curr[0]) ..."
                 Invoke-Expression "$manager $($curr[2])"
             }
+
+            $count++
         }
     }
 }
@@ -176,9 +200,18 @@ function gitRepoSetup($list) # Setup From Git Repos
 
             if($userResponse)
             {
-                git clone $curr[1] $tmpGitDotfile
-                Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])"
-                Remove-Item -r -force tmpGitDotfile
+                $count = 0
+                while(errorCheck 70 curr[0] $count)
+                {
+                    if(git clone $curr[1] $tmpGitDotfile)
+                    {
+                        Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])"
+                        Remove-Item -r -force tmpGitDotfile
+                        break
+                    }
+
+                    $count++
+                }
             }
         }
 
@@ -190,17 +223,19 @@ function gitRepoSetup($list) # Setup From Git Repos
 
 }
 
-function fileChange($path, $file)
+function scriptSetup($list)
 {
-    $userResponse = warnMSG $file
-    if($userResponse)
+    foreach($curr in $list)
     {
-        Copy-Item -force ".\$file" "$HOME\$path"
-    }
-
-    if($userResponse)
-    {
-        Write-Host "৹ Setup Completed [✓]" -ForegroundColor Green
+        $userResponse = warnMSG $curr[1]
+        if($userResponse)
+        {
+            Copy-Item -force ".\$($curr[1])" "$HOME\$($curr[0])"
+        }
+        if($userResponse)
+        {
+            Write-Host "৹ Setup Completed [✓]" -ForegroundColor Green
+        }
     }
 }
 #endregion Functions
@@ -245,9 +280,4 @@ gitRepoSetup $gitDotfileList
 
 
 #region Terminal Config Setup
-fileChange "AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" "settings.json"
-#endregion Terminal Config Setup
-
-#region .gitconfig Setup
-fileChange "." ".gitconfig"
-#endregion .gitconfig Setup
+scriptSetup $scriptDotfileList
