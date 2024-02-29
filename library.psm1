@@ -99,6 +99,22 @@ function installerSearch($finder, $manager, $list) # Check with list
     }
 }
 
+function gitChecker($currPos, $repoPos)
+{
+    Set-Location $repoPos # Set location to git repo
+
+    $gitCheck = git config --get remote.origin.url # Check if git repo exists
+
+    Set-Location $currPos # Set location back to original
+
+    if($gitCheck -ne $curr[1]) # If git repo does not exist than continue setup
+    {
+        return $true
+    }
+
+    return $false
+}
+
 function gitRepoSetup($list) # Setup From Git Repos
 {
     section "Git-Dotfiles" # Set section title
@@ -113,31 +129,24 @@ function gitRepoSetup($list) # Setup From Git Repos
                 "$HOME\$($curr[2])" # Set normal path
             })
 
-        Set-Location "$($curr[2])\$($curr[0])\" # Set location to git repo
-
-        $gitCheck = git config --get remote.origin.url # Check if git repo exists
         $userResponse = $true
 
-        Set-Location $pos # Set location back to original
-
-        if($gitCheck -ne $curr[1]) # If git repo does not exist than ask user if they want to install
+        if(gitChecker $pos "$($curr[2])\$($curr[0])\") # If git repo does not exist than ask user if they want to install
         {
             $userResponse = warnMSG "$($curr[0])"
+            $count = 0
 
             if($userResponse) # If user response is yes than install
             {
-                $count = 0
-                while(errorCheck 70 curr[0] $count)
+                while(gitChecker $pos "$($curr[2])\$($curr[0])\" && errorCheck 70 curr[0] $count)
                 {
-                    if(git clone $curr[1] $tmpGitDotfile) # Clone git repo
-                    {
-                        Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])" # Move git repo to designated location
-                        Remove-Item -r -force tmpGitDotfile # Remove temp git repo
-                        break
-                    }
+                    git clone $curr[1] $tmpGitDotfile # Clone git repo
+                    Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])" # Move git repo to designated location
+                    Remove-Item -r -force tmpGitDotfile # Remove temp git repo
 
                     $count++
                 }
+
             }
         }
 
@@ -149,15 +158,34 @@ function gitRepoSetup($list) # Setup From Git Repos
 
 }
 
+function scriptChecker($currScript, $destinedScript)
+{
+    if((Get-FileHash $currScript).Hash -ne (Get-FileHash $destinedScript).Hash)
+    {
+        return $true # If script does not exist than continue setup
+    }
+
+    return $false # If script exists than skip setup
+}
+
 function scriptSetup($list)
 {
     section "Script-Dotfiles" # Set section title
     foreach($curr in $list)
     {
-        $userResponse = warnMSG $curr[1] # Check if user wants to continue
-        if($userResponse)
+        $userResponse = $true
+        if(scriptChecker ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])\$($curr[1])")
         {
-            Copy-Item -force ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])" # Copy file to designated location
+            $userResponse = warnMSG $curr[1] # Check if user wants to continue
+            if($userResponse)
+            {
+                $count = 0
+                while(scriptChecker ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])\$($curr[1])" && errorCheck 80 $curr[1] $count)
+                {
+                    Copy-Item -force ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])" # Copy file to designated location
+                    $count++
+                }
+            }
         }
 
         if($userResponse)
