@@ -88,6 +88,20 @@ $scriptDotfileList = @( # (Path, File)
 )
 
 #region Functions
+function section($type)
+{
+    $type = $(if($type.IndexOf(' ') -ge 1)
+    {
+        $type.Substring(0, $type.IndexOf(' '))
+    } else
+    {
+        $type
+    })
+    Write-Host ""
+    Write-Host "⌂ $type Setup" -ForegroundColor Cyan
+    Write-Host " " ('-' * ($type.Length + 6)) -ForegroundColor Cyan
+}
+
 function errorCheck($code, $title, $count)
 {
     if($count -eq 2 || $count -eq 3)
@@ -129,6 +143,7 @@ function warnMSG($title)
 
 function installerExe($manager, $list) # Check with exe
 {
+    section $manager
     foreach($curr in $list)
     {
         $count = 0
@@ -152,6 +167,7 @@ function installerExe($manager, $list) # Check with exe
 
 function installerSearch($finder, $manager, $list) # Check with list
 {
+    section $manager
     foreach ($curr in $list)
     {
         $count = 0
@@ -174,16 +190,17 @@ function installerSearch($finder, $manager, $list) # Check with list
 
 function gitRepoSetup($list) # Setup From Git Repos
 {
+    section "Git-Dotfiles"
     $pos = Get-Location
     foreach($curr in $list)
     {
-        if(Test-Path -Path "$HOME\OneDrive\$($curr[2])\") # Check if in OneDrive
+        $curr[2] = $(if(Test-Path -Path "$HOME\OneDrive\$($curr[2])\") # Check if in OneDrive
         {
-            $curr[2] = "$HOME\OneDrive\$($curr[2])" # Change path to onedrive
+            "$HOME\OneDrive\$($curr[2])" # Change path to onedrive
         } else
         {
-            $curr[2] = "$HOME\$($curr[2])" # Set normal path
-        }
+            "$HOME\$($curr[2])" # Set normal path
+        })
 
         Set-Location "$($curr[2])\$($curr[0])\"
 
@@ -191,7 +208,6 @@ function gitRepoSetup($list) # Setup From Git Repos
         $userResponse = $true
 
         Set-Location $pos
-
 
         if($gitCheck -ne $curr[1])
         {
@@ -224,20 +240,24 @@ function gitRepoSetup($list) # Setup From Git Repos
 
 function scriptSetup($list)
 {
+    section "Script-Dotfiles"
     foreach($curr in $list)
     {
         $userResponse = warnMSG $curr[1]
         if($userResponse)
         {
-            Copy-Item -force ".\$($curr[1])" "$HOME\$($curr[0])"
+            Copy-Item -force ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])"
         }
+
         if($userResponse)
         {
-            Write-Host "৹ Setup Completed [✓]" -ForegroundColor Green
+            Write-Host "৹ Setup $($curr[1]) Completed [✓]" -ForegroundColor Green
         }
     }
 }
 #endregion Functions
+
+
 
 #region Package Manager Setup
 installerExe "winget install" $packManagers
