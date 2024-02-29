@@ -1,13 +1,20 @@
 if($env:OS -notlike "*Windows*")
 { 
-    exit 
+    Write-Host "> This script is only for Windows OS" -ForegroundColor DarkRed
+    exit
 }
 
-$container = & .\listSetup.ps1
+$container = & .\listSetup.ps1 # Importing the list of tools for install
 
 #region Functions
-
 Import-Module ".\library.psm1"
+
+# Imported Functions List:
+#  - installerSearch <- (Name, Executable, Path)
+#  - installerExe <- (Name, Id, Path)
+#  - gitRepoSetup <- (Name, Repo, Path)
+#  - scriptSetup <- (Path, File)
+
 #endregion Functions
 
 

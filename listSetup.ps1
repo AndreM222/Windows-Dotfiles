@@ -1,5 +1,6 @@
 @{
     packManagers = @( # (Name, Id, Path)
+        # Package Managers <- Required
         @("PowerShell Core", " Microsoft.PowerShell_8wekyb3d8bbwe", "Microsoft.Powershell"),
         @("Git", "Git.Git", "Git.Git"),
         @("NVM", "CoreyButler.NVMforWindows", "CoreyButler.NVMforWindows"),
@@ -7,6 +8,7 @@
     )
 
     npmVersions = @( # (Name, executable, Path)
+        # Node Versions <- Required
         ,@("NPM LTS", "nvm use lts", "lts")
     )
 
@@ -32,20 +34,20 @@
     npmList = @( # (Name, executable, Path)
         # Tools
         @("Commitizen", "commitizen", "commitizen cz-conventional-changelog"),
-        @("Generate-License", "generate", "generate generate-license"),
-        @("Npm-Check-Updates", "npm-check-updates", "npm-check-updates"),
+        @("Generate License", "generate", "generate generate-license"),
+        @("Npm Check Updates", "npm-check-updates", "npm-check-updates"),
         # Server
-        @("Live-server", "live-server", "live-server"),
+        @("Live Server", "live-server", "live-server"),
         @("Pyright", "pyright", "pyright"),
-        @("Typescript-Language-Server", "typescript-language-server", "typescript typescript-language-server"),
-        @("Tailwindcss-Language-Server", "tailwindcss-language-server", "tailwindcss-language-server"),
+        @("Typescript Language Server", "typescript-language-server", "typescript typescript-language-server"),
+        @("Tailwindcss Language Server", "tailwindcss-language-server", "tailwindcss-language-server"),
         # Formatter
         @("prettier", "prettier", "prettier")
     )
 
     dotnetList = @( # (Name, executable, Path)
         # Server
-        ,@("CSharp-LS", "csharp-ls", "csharp-ls")
+        ,@("CSharp LS", "csharp-ls", "csharp-ls")
     )
 
     pipList = @( # (Name, executable, Path)
@@ -53,29 +55,29 @@
         ,@("Autopep8", "autopep8", "autopep8")
     )
 
-    # -- List Installations --
-
-    # Tools Installations
-
     scoopPathList = @( # (Name, Id, Path)
+        # Tools
         @("Fira Code Font", "FiraCode-NF-Mono", "nerd-fonts/FiraCode-NF-Mono"),
         @("GCC", "gcc", "gcc")
     )
 
     powerList = @( # (Name, Id, Path)
+        # Tools
         @("PSFzf", "PSFzf", "PSFzf"),
-        @("Posh-Git", "posh-git", "posh-git"),
-        @("Terminal-Icons", "Terminal-Icons", "Terminal-Icons"),
-        @("PSReadline", "PSReadLine", "PSReadLine"),
+        @("Posh Git", "posh-git", "posh-git -Scope CurrentUser"),
+        @("Terminal Icons", "Terminal-Icons", "Terminal-Icons -Repository PSGallery"),
+        @("PSReadline", "PSReadLine", "PSReadLine -AllowPrereleas"),
         @("Z", "z", "z")
     )
 
     gitDotfileList = @( # (Name, Repo, Path)
+        # Dot Setup
         @("PowerShell", "https://github.com/AndreM222/PowerShell.git", "Documents"),
         @("nvim", "https://github.com/AndreM222/nvim.git", "AppData\Local")
     )
 
     scriptDotfileList = @( # (Path, File)
+        # Dot Setup
         @("AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState", "settings.json"),
         @(".", ".gitconfig")
     )
