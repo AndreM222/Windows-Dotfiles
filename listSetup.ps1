@@ -1,10 +1,10 @@
 @{
     # -- Exe Installations --
-    packManagers = @( # (Name, executable, Path)
+    packManagers = @( # (Name, Id, Path)
         @("PowerShell Core", "pwsh", "Microsoft.Powershell"),
         @("Git", "git", "Git.Git"),
         @("NVM", "nvm", "CoreyButler.NVMforWindows"),
-        @("Python", "py", "Python3")
+        @("Python", "Python.Python.3.12", "Python3")
     )
 
     npmVersions = @( # (Name, executable, Path)
