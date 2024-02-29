@@ -97,7 +97,7 @@ function errorCheck($code, $title, $count)
     if($count -eq 4)
     {
         Write-Host "Setup Failed [X]" -ForegroundColor DarkRed
-        Write-Host "Error[$code]: $title" -ForegroundColor DarkRed
+        Write-Host "৹ Error[$code]: $title" -ForegroundColor DarkRed
         return $false
     }
 
