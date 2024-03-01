@@ -1,3 +1,4 @@
+#region Notifications
 function section($type)
 {
     $type = $(if($type.IndexOf(' ') -ge 1) # Set type for title
@@ -12,23 +13,7 @@ function section($type)
     Write-Host " " ('-' * ($type.Length + 6)) -ForegroundColor Cyan # Set underline based on type length
 }
 
-function errorCheck($code, $title, $count)
-{
-    if($count -ge 2 -And $count -lt 4)
-    {
-        Write-Host "Setup Failed [$count/3], Trying again ..." -ForegroundColor DarkRed # If counter 2 or 3 than print counter
-    }
-    if($count -eq 4)
-    {
-        Write-Host "Setup Failed [X]" -ForegroundColor DarkRed
-        Write-Host "৹ Error[$code]: $title" -ForegroundColor DarkRed
-        return $false # If counter 4 than return false and print failed error
-    }
-
-    return $true
-}
-
-function warnMSG($title)
+function warnMSG($title) # <- Return true if user wants to proceed
 {
     Write-Host "[WARNING!: This might replace any setup you had] " -NoNewline -InformationAction $InformationPreference -ForegroundColor Yellow
     Write-Host "Are you sure you want to use my " -NoNewLine
@@ -50,7 +35,67 @@ function warnMSG($title)
     Write-Host "Setting Up $title ..."
     return $true # If user response is yes than return true and start setup
 }
+#endregion Notifications
 
+#region Checkers
+function errorCheck($code, $title, $count) # <- Return true if max tries reached
+{
+    if($count -ge 2 -and $count -lt 4)
+    {
+        Write-Host "Setup Failed [$count/3], Trying again ..." -ForegroundColor DarkRed # If counter 2 or 3 than print counter
+    }
+    if($count -eq 4)
+    {
+        Write-Host "Setup Failed [X]" -ForegroundColor DarkRed
+        Write-Host "৹ Error[$code]: $title" -ForegroundColor DarkRed
+        return $false # If counter 4 than return false and print failed error
+    }
+
+    return $true
+}
+
+function gitChecker($currPos, $repoPos) # <- Returns true if (git) files are different
+{
+    Set-Location $repoPos # Set location to git repo
+
+    $gitCheck = git config --get remote.origin.url # Check if git repo exists
+
+    Set-Location $currPos # Set location back to original
+
+    if($gitCheck -ne $curr[1]) # If git repo does not exist than continue setup
+    {
+        return $true
+    }
+
+    return $false
+}
+
+function scriptChecker($currScript, $destinedScript) # <- Returns true if not equal
+{
+    if((Get-FileHash $currScript).Hash -ne (Get-FileHash $destinedScript).Hash)
+    {
+        return $true # If script does not exist than continue setup
+    }
+
+    return $false # If script exists than skip setup
+}
+
+function onedriveChecker($destinedScript) # <- Return formatted directory
+{
+    if(@(".", "~") -contains $destinedScript)
+    {
+        return "$HOME" # <- Return (Home) directory
+    }
+    elseif((Test-Path -Path "$HOME\OneDrive\$destinedScript"))
+    {
+        return "$HOME\OneDrive\$destinedScript" # <- Return formatted (Default with OneDrive) directory
+    }
+
+    return "$HOME\$destinedScript" # <- Return fromatted (Default with Home) directory
+}
+#endregion Checkers
+
+#region Installers
 function installerExe($manager, $list) # Check with exe
 {
     section $manager # Set section title
@@ -98,36 +143,16 @@ function installerSearch($finder, $manager, $list) # Check with list
         }
     }
 }
+#endregion Installers
 
-function gitChecker($currPos, $repoPos)
-{
-    Set-Location $repoPos # Set location to git repo
-
-    $gitCheck = git config --get remote.origin.url # Check if git repo exists
-
-    Set-Location $currPos # Set location back to original
-
-    if($gitCheck -ne $curr[1]) # If git repo does not exist than continue setup
-    {
-        return $true
-    }
-
-    return $false
-}
-
+#region Setups
 function gitRepoSetup($list) # Setup From Git Repos
 {
     section "Git-Dotfiles" # Set section title
     $pos = Get-Location # Get current location
     foreach($curr in $list)
     {
-        $curr[2] = $(if(Test-Path -Path "$HOME\OneDrive\$($curr[2])\") # Check if in OneDrive
-            {
-                "$HOME\OneDrive\$($curr[2])" # Change path to onedrive
-            } else
-            {
-                "$HOME\$($curr[2])" # Set normal path
-            })
+        $curr[2] = onedriveChecker $curr[2]
 
         $userResponse = $true
 
@@ -138,7 +163,7 @@ function gitRepoSetup($list) # Setup From Git Repos
 
             if($userResponse) # If user response is yes than install
             {
-                while(gitChecker $pos "$($curr[2])\$($curr[0])\" -And errorCheck 70 curr[0] $count)
+                while(gitChecker $pos "$($curr[2])\$($curr[0])\" -and errorCheck 70 curr[0] $count)
                 {
                     git clone $curr[1] $tmpGitDotfile # Clone git repo
                     Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])" # Move git repo to designated location
@@ -150,7 +175,7 @@ function gitRepoSetup($list) # Setup From Git Repos
             }
         }
 
-        if($userResponse -And $count -lt 4)
+        if($userResponse -and $count -lt 4)
         {
             Write-Host "৹ Setup $($curr[0]) Completed [✓]" -ForegroundColor Green # If user response is yes than print completed
         }
@@ -158,37 +183,31 @@ function gitRepoSetup($list) # Setup From Git Repos
 
 }
 
-function scriptChecker($currScript, $destinedScript)
-{
-    if((Get-FileHash $currScript).Hash -ne (Get-FileHash $destinedScript).Hash)
-    {
-        return $true # If script does not exist than continue setup
-    }
-
-    return $false # If script exists than skip setup
-}
-
 function scriptSetup($list)
 {
     section "Script-Dotfiles" # Set section title
     foreach($curr in $list)
     {
+        $curr[0] = onedriveChecker $curr[0]
+
+        Write-Host $curr[0]
+
         $userResponse = $true
-        if(scriptChecker ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])\$($curr[1])")
+        if(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])")
         {
             $userResponse = warnMSG $curr[1] # Check if user wants to continue
             if($userResponse)
             {
                 $count = 0
-                while(scriptChecker ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])\$($curr[1])" -And errorCheck 80 $curr[1] $count)
+                while(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])" -and errorCheck 80 $curr[1] $count)
                 {
-                    Copy-Item -force ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])" # Copy file to designated location
+                    Copy-Item -force ".\TerminalConfig\$($curr[1])" "$($curr[0])" # Copy file to designated location
                     $count++
                 }
             }
         }
 
-        if($userResponse -And $count -lt 4)
+        if($userResponse -and $count -lt 4)
         {
             Write-Host "৹ Setup $($curr[1]) Completed [✓]" -ForegroundColor Green # If user response is yes than print completed
         }
@@ -202,17 +221,20 @@ function createSetup($list)
     foreach($curr in $list)
     {
         $count = 0
+        $curr[2] = onedriveChecker $curr[2]
+
         while(errorCheck 90 $curr[0] $count)
         {
-            if(Test-Path -Path "$HOME\$($curr[2])\$($curr[0])")
+            if(Test-Path -Path "$($curr[2])\$($curr[0])")
             {
                 Write-Host "৹ Setup $($curr[0]) Completed [✓]" -ForegroundColor Green # If user response is yes than print completed
                 break
             }
-            Write-Output $curr[1] > "$HOME\$($curr[2])\$($curr[0])" # Create directory
+            Write-Output $curr[1] > "$($curr[2])\$($curr[0])" # Create directory
             $count++
         }
     }
 }
+#endregion Setups
 
 Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup, createSetup
