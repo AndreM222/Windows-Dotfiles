@@ -145,4 +145,11 @@
             @(".", ".gitconfig")
         )
     }
+    @{
+        TITLE = "Create Dotfile"
+        INSTALL_TYPE = "Create"
+        CONTAINER = @(
+            ,@(".czrc", '{ "path": "cz-conventional-changelog" }', ".")
+        )
+    }
 )

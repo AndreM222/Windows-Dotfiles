@@ -52,8 +52,14 @@ foreach($item in $container)
             scriptSetup $item["CONTAINER"] 
         }
         #endregion Script Dotfile Setup
+
+        #region Create Dotfile Setup
+        "Create"
+        { 
+            createSetup $item["CONTAINER"] 
+        }
+        #endregion Script Dotfile Setup
+
     }
 }
 #region Setup Functions
-
-Write-Output '{ "path": "cz-conventional-changelog" }' > ~/.czrc # Set Commitizen Path

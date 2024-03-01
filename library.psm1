@@ -14,7 +14,7 @@ function section($type)
 
 function errorCheck($code, $title, $count)
 {
-    if($count -eq 2 || $count -eq 3)
+    if($count -ge 2 -And $count -lt 4)
     {
         Write-Host "Setup Failed [$count/3], Trying again ..." -ForegroundColor DarkRed # If counter 2 or 3 than print counter
     }
@@ -138,7 +138,7 @@ function gitRepoSetup($list) # Setup From Git Repos
 
             if($userResponse) # If user response is yes than install
             {
-                while(gitChecker $pos "$($curr[2])\$($curr[0])\" && errorCheck 70 curr[0] $count)
+                while(gitChecker $pos "$($curr[2])\$($curr[0])\" -And errorCheck 70 curr[0] $count)
                 {
                     git clone $curr[1] $tmpGitDotfile # Clone git repo
                     Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])" # Move git repo to designated location
@@ -150,7 +150,7 @@ function gitRepoSetup($list) # Setup From Git Repos
             }
         }
 
-        if($userResponse)
+        if($userResponse -And $count -lt 4)
         {
             Write-Host "৹ Setup $($curr[0]) Completed [✓]" -ForegroundColor Green # If user response is yes than print completed
         }
@@ -180,7 +180,7 @@ function scriptSetup($list)
             if($userResponse)
             {
                 $count = 0
-                while(scriptChecker ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])\$($curr[1])" && errorCheck 80 $curr[1] $count)
+                while(scriptChecker ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])\$($curr[1])" -And errorCheck 80 $curr[1] $count)
                 {
                     Copy-Item -force ".\TerminalConfig\$($curr[1])" "$HOME\$($curr[0])" # Copy file to designated location
                     $count++
@@ -188,11 +188,31 @@ function scriptSetup($list)
             }
         }
 
-        if($userResponse)
+        if($userResponse -And $count -lt 4)
         {
             Write-Host "৹ Setup $($curr[1]) Completed [✓]" -ForegroundColor Green # If user response is yes than print completed
         }
     }
 }
 
-Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup
+function createSetup($list)
+{
+    section "Create-Setup"
+
+    foreach($curr in $list)
+    {
+        $count = 0
+        while(errorCheck 90 $curr[0] $count)
+        {
+            if(Test-Path -Path "$HOME\$($curr[2])\$($curr[0])")
+            {
+                Write-Host "৹ Setup $($curr[0]) Completed [✓]" -ForegroundColor Green # If user response is yes than print completed
+                break
+            }
+            Write-Output $curr[1] > "$HOME\$($curr[2])\$($curr[0])" # Create directory
+            $count++
+        }
+    }
+}
+
+Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup, createSetup
