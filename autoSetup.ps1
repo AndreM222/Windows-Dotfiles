@@ -14,6 +14,7 @@ Import-Module ".\library.psm1"
 #  - installerExe <- (Name, Id, Path)
 #  - gitRepoSetup <- (Name, Repo, Path)
 #  - scriptSetup <- (Path, File)
+#  - createSetup <- (File, Content, Path)
 
 #endregion Functions
 
