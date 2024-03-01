@@ -1,13 +1,6 @@
 #region Notifications
 function section($type)
 {
-    $type = $(if($type.IndexOf(' ') -ge 1) # Set type for title
-        {
-            $type.Substring(0, $type.IndexOf(' ')) # If has a space than cut and return beginning
-        } else
-        {
-            $type # If no space then set type as is
-        })
     Write-Host ""
     Write-Host "⌂ $type Setup" -ForegroundColor Cyan
     Write-Host " " ('-' * ($type.Length + 6)) -ForegroundColor Cyan # Set underline based on type length
@@ -98,7 +91,6 @@ function onedriveChecker($destinedScript) # <- Return formatted directory
 #region Installers
 function installerExe($manager, $list) # Check with exe
 {
-    section $manager # Set section title
     foreach($curr in $list)
     {
         $count = 0
@@ -122,7 +114,6 @@ function installerExe($manager, $list) # Check with exe
 
 function installerSearch($finder, $manager, $list) # Check with list
 {
-    section $manager # Set section title
     foreach ($curr in $list)
     {
         $count = 0
@@ -148,7 +139,6 @@ function installerSearch($finder, $manager, $list) # Check with list
 #region Setups
 function gitRepoSetup($list) # Setup From Git Repos
 {
-    section "Git-Dotfiles" # Set section title
     $pos = Get-Location # Get current location
     foreach($curr in $list)
     {
@@ -185,12 +175,9 @@ function gitRepoSetup($list) # Setup From Git Repos
 
 function scriptSetup($list)
 {
-    section "Script-Dotfiles" # Set section title
     foreach($curr in $list)
     {
         $curr[0] = onedriveChecker $curr[0]
-
-        Write-Host $curr[0]
 
         $userResponse = $true
         if(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])")
@@ -216,8 +203,6 @@ function scriptSetup($list)
 
 function createSetup($list)
 {
-    section "Create-Setup"
-
     foreach($curr in $list)
     {
         $count = 0
@@ -237,4 +222,4 @@ function createSetup($list)
 }
 #endregion Setups
 
-Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup, createSetup
+Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup, createSetup, section

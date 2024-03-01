@@ -15,6 +15,8 @@ Import-Module ".\library.psm1"
 #  - gitRepoSetup <- (Name, Repo, Path)
 #  - scriptSetup <- (Path, File)
 #  - createSetup <- (File, Content, Path)
+#
+#  - section <- (Title)
 
 #endregion Functions
 
@@ -23,6 +25,8 @@ Import-Module ".\library.psm1"
 #region Setup Functions
 foreach($item in $container)
 {
+    section $item["TITLE"] # Print the section title
+
     Switch($item["INSTALL_TYPE"])
     {
 
