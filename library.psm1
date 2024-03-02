@@ -77,13 +77,13 @@ function onedriveChecker($destinedScript) # <- Return formatted directory
 {
     if(@(".", "~") -contains $destinedScript)
     {
-        return "$HOME" # <- Return (Home) directory
-    } elseif((Test-Path -Path "$HOME\OneDrive\$destinedScript"))
+        return "$env:USERPROFILE" # <- Return (Home) directory
+    } elseif((Test-Path -Path "$env:USERPROFILE\OneDrive\$destinedScript"))
     {
-        return "$HOME\OneDrive\$destinedScript" # <- Return formatted (Default with OneDrive) directory
+        return "$env:USERPROFILE\OneDrive\$destinedScript" # <- Return formatted (Default with OneDrive) directory
     }
 
-    return "$HOME\$destinedScript" # <- Return fromatted (Default with Home) directory
+    return "$env:USERPROFILE\$destinedScript" # <- Return fromatted (Default with Home) directory
 }
 #endregion Checkers
 
@@ -97,7 +97,7 @@ function installerExe($manager, $list) # Check with exe
         {
             try
             {
-                Invoke-Expression $curr[1] # Check if installed
+                Invoke-Expression $curr[1] | Out-Null # Check if installed
                 Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green # If installed than print
                 break
             } catch [System.Management.Automation.CommandNotFoundException]
