@@ -26,11 +26,11 @@
 
     @{
         TITLE = "Scoop Manager"
-        INSTALL_TYPE = "Executable"
+        INSTALL_TYPE = "Command"
         MANAGER = "Invoke-RestMethod"
-        CONTAINER = @( # (Name, executable, Path)
+        CONTAINER = @( # (Name, Command, Path)
             # Package Manager <- Required
-            ,@("Scoop", "scoop", "get.scoop.sh")
+            ,@("Scoop", "scoop update", "get.scoop.sh")
         )
     }
 
@@ -61,9 +61,10 @@
     
     @{
         TITLE = "NPM Tools"
-        INSTALL_TYPE = "Executable"
-        MANAGER = "NPM Install -g"
-        CONTAINER = @( # (Name, Executable, Path)
+        INSTALL_TYPE = "Search"
+        MANAGER = "npm install -g"
+        FINDER = "npm list -g"
+        CONTAINER = @( # (Name, Id, Path)
             # Tools
             @("Commitizen", "commitizen", "commitizen cz-conventional-changelog"),
             @("Generate License", "generate", "generate generate-license"),
@@ -80,9 +81,10 @@
     
     @{
         TITLE = "Dotnet Tools"
-        INSTALL_TYPE = "Executable"
-        MANAGER = "Dotnet Tool Install -g"
-        CONTAINER = @( # (Name, Executable, Path)
+        INSTALL_TYPE = "Search"
+        MANAGER = "dotnet tool install -g"
+        FINDER = "dotnet tool list -g"
+        CONTAINER = @( # (Name, Id, Path)
             # Server
             ,@("CSharp LS", "csharp-ls", "csharp-ls")
         )
@@ -90,9 +92,9 @@
 
     @{
         TITLE = "Pip Tools"
-        INSTALL_TYPE = "Executable"
+        INSTALL_TYPE = "Command"
         MANAGER = "Pip Install"
-        CONTAINER = @( # (Name, Executable, Path)
+        CONTAINER = @( # (Name, Command, Path)
             # Formatter
             ,@("Autopep8", "autopep8", "autopep8")
         )

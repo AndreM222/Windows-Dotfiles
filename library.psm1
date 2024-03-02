@@ -78,8 +78,7 @@ function onedriveChecker($destinedScript) # <- Return formatted directory
     if(@(".", "~") -contains $destinedScript)
     {
         return "$HOME" # <- Return (Home) directory
-    }
-    elseif((Test-Path -Path "$HOME\OneDrive\$destinedScript"))
+    } elseif((Test-Path -Path "$HOME\OneDrive\$destinedScript"))
     {
         return "$HOME\OneDrive\$destinedScript" # <- Return formatted (Default with OneDrive) directory
     }
@@ -98,7 +97,7 @@ function installerExe($manager, $list) # Check with exe
         {
             try
             {
-                $curr[1] | Out-Null # Check if installed
+                Invoke-Expression $curr[1] | Out-Null # Check if installed
                 Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green # If installed than print
                 break
             } catch [System.Management.Automation.CommandNotFoundException]
@@ -111,6 +110,30 @@ function installerExe($manager, $list) # Check with exe
         }
     }
 }
+
+function installerCommand($manager, $list) # Check with command
+{
+    foreach($curr in $list)
+    {
+        $count = 0
+        while(errorCheck 50 $curr[0] $count) # Check for errors
+        {
+            if([Boolean](Get-Command $curr[0] -ErrorAction SilentlyContinue)
+)
+            {
+                Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green # If installed than print
+                break
+            } else      
+            {
+                Write-Host "Installing $($curr[0]) ..."
+                Invoke-Expression "$manager $($curr[2])" # If not installed than install
+            }
+
+            $count++
+        }
+    }
+}
+
 
 function installerSearch($finder, $manager, $list) # Check with list
 {
@@ -222,4 +245,4 @@ function createSetup($list)
 }
 #endregion Setups
 
-Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, gitRepoSetup, createSetup, section
+Export-ModuleMember -Function scriptSetup, installerSearch, installerExe, installerCommand, gitRepoSetup, createSetup, section

@@ -10,8 +10,9 @@ $container = & .\listSetup.ps1 # Importing the list of tools for install
 Import-Module ".\library.psm1"
 
 # Imported Functions List:
-#  - installerSearch <- (Name, Executable, Path)
-#  - installerExe <- (Name, Id, Path)
+#  - installerExe <- (Name, Executable, Path)
+#  - installerCommand <- (Name, Executable, Path)
+#  - installerSearch <- (Name, Id, Path)
 #  - gitRepoSetup <- (Name, Repo, Path)
 #  - scriptSetup <- (Path, File)
 #  - createSetup <- (File, Content, Path)
@@ -36,6 +37,14 @@ foreach($item in $container)
             installerExe $item["MANAGER"] $item["CONTAINER"] 
         }
         #endregion Executable Installer
+
+        #region Executable Installer
+        "Command"
+        { 
+            installerCommand $item["MANAGER"] $item["CONTAINER"] 
+        }
+        #endregion Executable Installer
+
 
         #region Search Installer
         "Search"
