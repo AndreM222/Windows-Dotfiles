@@ -4,7 +4,13 @@ if($env:OS -notlike "*Windows*")
     exit
 }
 
-$container = & .\listSetup.ps1 # Importing the list of tools for install
+#region Variables
+Import-Module ".\listSetup.psm1" # Importing the list of tools for install
+
+# Imported List:
+#   - $list <- Variable containing installation list
+
+#endregion Variables
 
 #region Functions
 Import-Module ".\library.psm1"
@@ -24,7 +30,7 @@ Import-Module ".\library.psm1"
 
 
 #region Setup Functions
-foreach($item in $container)
+foreach($item in $list)
 {
     section $item["TITLE"] # Print the section title
 
@@ -76,4 +82,5 @@ foreach($item in $container)
 
     }
 }
-#region Setup Functions
+
+#endregion Setup Functions

@@ -1,4 +1,5 @@
-@(
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUserDeclaredVarsMoreThanAssignments', '', Scope='Function')] # <- Ignore Undeclared list variable
+[Object] $list = @(
     #region [Warning] Read the following before making any changes
 
     # (For any package manager, the package must be added to the list of package managers)
@@ -170,3 +171,5 @@
         )
     }
 )
+
+Export-ModuleMember -Variable list
