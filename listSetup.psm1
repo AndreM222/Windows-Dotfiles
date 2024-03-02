@@ -83,12 +83,14 @@
         CONTAINER = @( # (Name, Id, Path)
             # Tools
             @("Commitizen", "commitizen", "commitizen cz-conventional-changelog"),
-            @("Generate License", "generate", "generate generate-license"),
+            @("Generate", "generate", "generate"),
+            @("Generate License", "generate-license", "generate-license"),
             @("Npm Check Updates", "npm-check-updates", "npm-check-updates"),
             # Server
             @("Live Server", "live-server", "live-server"),
             @("Pyright", "pyright", "pyright"),
-            @("Typescript Language Server", "typescript-language-server", "typescript typescript-language-server"),
+            @("Typescript Language Server", "typescript-language-server", "typescript-language-server"),
+            @("Typescript", "typescript", "typescript"),
             @("Tailwindcss Language Server", "tailwindcss-language-server", "tailwindcss-language-server"),
             # Formatter
             @("prettier", "prettier", "prettier")
@@ -108,8 +110,9 @@
 
     @{
         TITLE = "Pip Tools"
-        INSTALL_TYPE = "Command"
+        INSTALL_TYPE = "Search"
         MANAGER = "Pip Install"
+        FINDER = "Pip show"
         CONTAINER = @( # (Name, Command, Path)
             # Formatter
             ,@("Autopep8", "autopep8", "autopep8")
