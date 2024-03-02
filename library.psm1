@@ -97,7 +97,7 @@ function installerExe($manager, $list) # Check with exe
         {
             try
             {
-                Invoke-Expression $curr[1] | Out-Null # Check if installed
+                Invoke-Expression $curr[1] # Check if installed
                 Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green # If installed than print
                 break
             } catch [System.Management.Automation.CommandNotFoundException]
@@ -116,10 +116,10 @@ function installerCommand($manager, $list) # Check with command
     foreach($curr in $list)
     {
         $count = 0
+
         while(errorCheck 50 $curr[0] $count) # Check for errors
         {
-            if([Boolean](Get-Command $curr[0] -ErrorAction SilentlyContinue)
-)
+            if([Boolean](Get-Command $curr[0] -ErrorAction SilentlyContinue))
             {
                 Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green # If installed than print
                 break
@@ -143,6 +143,7 @@ function installerSearch($finder, $manager, $list) # Check with list
         while(errorCheck 60 $curr[0] $count) # Check for errors
         {
             $table = Invoke-Expression "$finder $($curr[1])" # Check if installed
+
             if($table -match $curr[1])
             {
                 Write-Host "৹ $($curr[0]) Is Installed [✓]" -ForegroundColor Green # If installed than print
@@ -166,13 +167,12 @@ function gitRepoSetup($list) # Setup From Git Repos
     foreach($curr in $list)
     {
         $curr[2] = onedriveChecker $curr[2]
-
         $userResponse = $true
+        $count = 0
 
         if(gitChecker $pos "$($curr[2])\$($curr[0])\") # If git repo does not exist than ask user if they want to install
         {
             $userResponse = warnMSG "$($curr[0])"
-            $count = 0
 
             if($userResponse) # If user response is yes than install
             {
@@ -201,14 +201,14 @@ function scriptSetup($list)
     foreach($curr in $list)
     {
         $curr[0] = onedriveChecker $curr[0]
-
         $userResponse = $true
+        $count = 0
+
         if(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])")
         {
             $userResponse = warnMSG $curr[1] # Check if user wants to continue
             if($userResponse)
             {
-                $count = 0
                 while(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])" -and errorCheck 80 $curr[1] $count)
                 {
                     Copy-Item -force ".\TerminalConfig\$($curr[1])" "$($curr[0])" # Copy file to designated location

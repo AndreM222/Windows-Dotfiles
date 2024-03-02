@@ -1,4 +1,19 @@
 @(
+    #region [Warning] Read the following before making any changes
+
+    # (For any package manager, the package must be added to the list of package managers)
+
+    # [Setup for installation types]
+    #   - Search: Search for the package in the package manager <- Most of the times the answer
+    #   - Command: Command to install the package <- Sometimes the answer
+    #   - Executable: Run the executable <- Rarely the answer: [Try not to use]
+
+    # [Setup For Dotfile Types]
+    #   - Git: Git Repository to clone <- Sometimes the answer
+    #   - Create: Create a file with the given content <- Rarely the answer
+
+    #endregion [Warning] Read the following before making any changes
+
     # Pre-Requisites
     @{
         TITLE = "Package Managers"
