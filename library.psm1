@@ -1,19 +1,24 @@
 #region Notifications
-function section($type)
+function section
 {
+    Param( [Parameter(Mandatory=$true)][String] $title )
+
     Write-Host ""
-    Write-Host "⌂ $type Setup" -ForegroundColor Cyan
-    Write-Host " " ('-' * ($type.Length + 6)) -ForegroundColor Cyan # Set underline based on type length
+    Write-Host "⌂ $title Setup" -ForegroundColor Cyan
+    Write-Host " " ('-' * ($title.Length + 6)) -ForegroundColor Cyan # Set underline based on type length
 }
 
-function warnMSG($title) # <- Return true if user wants to proceed
+function warnMSG # <- Return true if user wants to proceed
 {
+    [OutputType([Boolean])]
+    Param( [Parameter(Mandatory=$true)][String] $title )
+
     Write-Host "[WARNING!: This might replace any setup you had] " -NoNewline -InformationAction $InformationPreference -ForegroundColor Yellow
     Write-Host "Are you sure you want to use my " -NoNewLine
     Write-Host "$title" -NoNewLine  -ForegroundColor Cyan
     Write-Host " setup? [Y] Yes [N] No (Default is Y): " -NoNewline
 
-    $answer = ""
+    [String] $answer = ""
 
     do
     {
@@ -31,8 +36,15 @@ function warnMSG($title) # <- Return true if user wants to proceed
 #endregion Notifications
 
 #region Checkers
-function errorCheck($code, $title, $count) # <- Return true if max tries reached
+function errorCheck # <- Return true if max tries reached
 {
+    [OutputType([Boolean])]
+    Param(
+        [Parameter(Mandatory=$true)][UInt16] $code, 
+        [Parameter(Mandatory=$true)][String] $message, 
+        [Parameter(Mandatory=$true)][UInt16] $count
+    )
+
     if($count -ge 2 -and $count -lt 4)
     {
         Write-Host "Setup Failed [$count/3], Trying again ..." -ForegroundColor DarkRed # If counter 2 or 3 than print counter
@@ -40,15 +52,52 @@ function errorCheck($code, $title, $count) # <- Return true if max tries reached
     if($count -eq 4)
     {
         Write-Host "Setup Failed [X]" -ForegroundColor DarkRed
-        Write-Host "৹ Error[$code]: $title" -ForegroundColor DarkRed
+        Write-Host "৹ Error[$code]: $message" -ForegroundColor DarkRed
         return $false # If counter 4 than return false and print failed error
     }
 
     return $true
 }
 
-function gitChecker($currPos, $repoPos) # <- Returns true if (git) files are different
+function managerCheck # <- Returns true if (manager) exists
 {
+    [OutputType([Boolean])]
+    param(
+        [Parameter(Mandatory=$true)][UINT16] $code,
+        [Parameter(Mandatory=$true)][String] $manager
+    )
+
+    $manager = $(if($manager.IndexOf(' ') -ge 1) # Set manager
+        {
+            $manager.Substring(0, $manager.IndexOf(' ')) # If has a space than cut and return beginning
+        } else
+        {
+            $manager # If no space then set manager as is
+        })
+
+    [UInt16] $count = 0
+
+    while(errorCheck 40 "$manager not found" $count)
+    {
+        if(Get-Command $manager -ErrorAction SilentlyContinue) # Check if manager exists
+        {
+            return $true
+        }
+
+        $count++
+    }
+
+    return $false # If manager does not exist than return false
+}
+
+function gitChecker # <- Returns true if (git) files are different
+{
+    [OutputType([Boolean])]
+    Param(
+        [Parameter(Mandatory=$true)][String] $currPos,
+        [Parameter(Mandatory=$true)][String] $repoPos
+    )
+
     Set-Location $repoPos # Set location to git repo
 
     $gitCheck = git config --get remote.origin.url # Check if git repo exists
@@ -63,8 +112,14 @@ function gitChecker($currPos, $repoPos) # <- Returns true if (git) files are dif
     return $false
 }
 
-function scriptChecker($currScript, $destinedScript) # <- Returns true if not equal
+function scriptChecker # <- Returns true if not equal
 {
+    [OutputType([Boolean])]
+    Param(
+        [Parameter(Mandatory=$true)][String] $currScript,
+        [Parameter(Mandatory=$true)][String] $destinedScript
+    )
+
     if((Get-FileHash $currScript).Hash -ne (Get-FileHash $destinedScript).Hash)
     {
         return $true # If script does not exist than continue setup
@@ -73,8 +128,11 @@ function scriptChecker($currScript, $destinedScript) # <- Returns true if not eq
     return $false # If script exists than skip setup
 }
 
-function onedriveChecker($destinedScript) # <- Return formatted directory
+function onedriveChecker # <- Return formatted directory
 {
+    [OutputType([String])]
+    Param( [Parameter(Mandatory=$true)][String] $destinedScript )
+
     if(@(".", "~") -contains $destinedScript)
     {
         return "$env:USERPROFILE" # <- Return (Home) directory
@@ -88,12 +146,22 @@ function onedriveChecker($destinedScript) # <- Return formatted directory
 #endregion Checkers
 
 #region Installers
-function installerExe($manager, $list) # Check with exe
+function installerExe # Check with exe
 {
+    Param(
+        [Parameter(Mandatory=$true)][String] $manager,
+        [Parameter(Mandatory=$true)][Object] $list
+    )
+
+    if(!(managerCheck 40 $manager)) # Check if manager exists
+    {
+        return
+    }
+
     foreach($curr in $list)
     {
-        $count = 0
-        while(errorCheck 50 $curr[0] $count) # Check for errors
+        [UInt16] $count = 0
+        while(errorCheck 40 $curr[0] $count) # Check for errors
         {
             try
             {
@@ -111,11 +179,21 @@ function installerExe($manager, $list) # Check with exe
     }
 }
 
-function installerCommand($manager, $list) # Check with command
+function installerCommand # Check with command
 {
+    Param(
+        [Parameter(Mandatory=$true)][String] $manager,
+        [Parameter(Mandatory=$true)][Object] $list
+    )
+
+    if(!(managerCheck 50 $manager)) # Check if manager exists
+    {
+        return
+    }
+
     foreach($curr in $list)
     {
-        $count = 0
+        [UInt16] $count = 0
 
         while(errorCheck 50 $curr[0] $count) # Check for errors
         {
@@ -135,11 +213,22 @@ function installerCommand($manager, $list) # Check with command
 }
 
 
-function installerSearch($finder, $manager, $list) # Check with list
+function installerSearch # Check with list
 {
+    Param(
+        [Parameter(Mandatory=$true)][String] $finder,
+        [Parameter(Mandatory=$true)][String] $manager,
+        [Parameter(Mandatory=$true)][Object] $list
+    )
+
+    if(!(managerCheck 60 $manager)) # Check if manager exists
+    {
+        return
+    }
+
     foreach ($curr in $list)
     {
-        $count = 0
+        [UInt16] $count = 0
         while(errorCheck 60 $curr[0] $count) # Check for errors
         {
             $table = Invoke-Expression "$finder $($curr[1])" # Check if installed
@@ -161,14 +250,22 @@ function installerSearch($finder, $manager, $list) # Check with list
 #endregion Installers
 
 #region Setups
-function gitRepoSetup($list) # Setup From Git Repos
+function gitRepoSetup # Setup From Git Repos
 {
+    Param( [Parameter(Mandatory=$true)][Object] $list )
+
+    if(!(managerCheck 70 "git")) # Check if manager exists
+    {
+        return
+    }
+
     $pos = Get-Location # Get current location
     foreach($curr in $list)
     {
         $curr[2] = onedriveChecker $curr[2]
-        $userResponse = $true
-        $count = 0
+
+        [Boolean] $userResponse = $true
+        [UInt16] $count = 0
 
         if(gitChecker $pos "$($curr[2])\$($curr[0])\") # If git repo does not exist than ask user if they want to install
         {
@@ -196,13 +293,16 @@ function gitRepoSetup($list) # Setup From Git Repos
 
 }
 
-function scriptSetup($list)
+function scriptSetup
 {
+    Param( [Parameter(Mandatory=$true)][Object] $list )
+
     foreach($curr in $list)
     {
         $curr[0] = onedriveChecker $curr[0]
-        $userResponse = $true
-        $count = 0
+
+        [Boolean] $userResponse = $true
+        [UInt16] $count = 0
 
         if(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])")
         {
@@ -224,12 +324,15 @@ function scriptSetup($list)
     }
 }
 
-function createSetup($list)
+function createSetup
 {
+    Param( [Parameter(Mandatory=$true)][Object] $list )
+
     foreach($curr in $list)
     {
-        $count = 0
         $curr[2] = onedriveChecker $curr[2]
+
+        [UInt16] $count = 0
 
         while(errorCheck 90 $curr[0] $count)
         {

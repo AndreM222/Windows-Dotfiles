@@ -165,7 +165,7 @@
     @{
         TITLE = "Create Dotfile"
         INSTALL_TYPE = "Create"
-        CONTAINER = @(
+        CONTAINER = @( # (File, Content, Path)
             ,@(".czrc", '{ "path": "cz-conventional-changelog" }', ".")
         )
     }
