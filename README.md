@@ -7,6 +7,11 @@
 <img src="doc/Terminal-Preview_4.png">
 </p>
 
+> [!WARNING]
+> Do not run the autosetup script in your computer if you do not know what it does.
+> When run it will install and configure everything in your computer.
+> Git cloning for powershell and nvim is used to make it fast to update when new changes are made
+
 <h2>Dependencies 📃</h2>
 
 - Neovim >= 0.9.0 (needs to be built with LuaJIT)
