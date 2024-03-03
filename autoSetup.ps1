@@ -5,7 +5,7 @@ if($env:OS -notlike "*Windows*")
 }
 
 #region Variables
-Import-Module ".\listSetup.psm1" # Importing the list of tools for install
+Import-Module "https://raw.githubusercontent.com/AndreM222/Windows-Dotfiles/master/listSetup.psm1" # Importing the list of tools for install
 
 # Imported List:
 #   - $list <- Variable containing installation list
@@ -13,7 +13,7 @@ Import-Module ".\listSetup.psm1" # Importing the list of tools for install
 #endregion Variables
 
 #region Functions
-Import-Module ".\library.psm1"
+Import-Module "https://raw.githubusercontent.com/AndreM222/Windows-Dotfiles/master/library.psm1"
 
 # Imported Functions List:
 #  - installerExe <- (Name, Executable, Path)
