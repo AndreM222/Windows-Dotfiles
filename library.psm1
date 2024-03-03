@@ -267,22 +267,34 @@ function gitRepoSetup # Setup From Git Repos
         [Boolean] $userResponse = $true
         [UInt16] $count = 0
 
-        if(gitChecker $pos "$($curr[2])\$($curr[0])\") # If git repo does not exist than ask user if they want to install
+        if(!(Test-Path -Path "$($curr[2])\$($curr[0])\"))
         {
             $userResponse = warnMSG "$($curr[0])"
-
-            if($userResponse) # If user response is yes than install
+            if($userResponse) 
             {
-                while(gitChecker $pos "$($curr[2])\$($curr[0])\" -and errorCheck 70 curr[0] $count)
-                {
-                    git clone $curr[1] $tmpGitDotfile # Clone git repo
-                    Move-Item -r -force tmpGitDotfile\* "$($curr[2])\$($curr[0])" # Move git repo to designated location
-                    Remove-Item -r -force tmpGitDotfile # Remove temp git repo
-
-                    $count++
-                }
-
+                New-Item -ItemType Directory -Path "$($curr[2])\$($curr[0])\" | Out-Null # If directory does not exist than create
             }
+        }
+        else
+        {
+            if(gitChecker $pos "$($curr[2])\$($curr[0])\") # If git repo does not exist than ask user if they want to install
+            {
+                $userResponse = warnMSG "$($curr[0])"
+            }
+        }
+
+        if($userResponse) # If user response is yes than install
+        {
+            while((gitChecker $pos "$($curr[2])\$($curr[0])\") -and (errorCheck 70 curr[0] $count))
+            {
+                git clone $curr[1] tmpGitDotfile # Clone git repo
+                Write-Host "tmpGitDotfile > $($curr[2])\$($curr[0])"
+                Move-Item -Force tmpGitDotfile\* "$($curr[2])\$($curr[0])" # Move git repo to designated location
+                Remove-Item -Recurse -Force tmpGitDotfile # Remove temp git repo
+
+                $count++
+            }
+
         }
 
         if($userResponse -and $count -lt 4)
@@ -304,14 +316,14 @@ function scriptSetup
         [Boolean] $userResponse = $true
         [UInt16] $count = 0
 
-        if(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])")
+        if(scriptChecker "$env:USERPROFILE\.config\Windows-Dotfiles\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])")
         {
             $userResponse = warnMSG $curr[1] # Check if user wants to continue
             if($userResponse)
             {
-                while(scriptChecker ".\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])" -and errorCheck 80 $curr[1] $count)
+                while(scriptChecker "$env:USERPROFILE\.config\Windows-Dotfiles\TerminalConfig\$($curr[1])" "$($curr[0])\$($curr[1])" -and errorCheck 80 $curr[1] $count)
                 {
-                    Copy-Item -force ".\TerminalConfig\$($curr[1])" "$($curr[0])" # Copy file to designated location
+                    Copy-Item -force "$env:USERPROFILE\.config\Windows-Dotfiles\TerminalConfig\$($curr[1])" "$($curr[0])" # Copy file to designated location
                     $count++
                 }
             }

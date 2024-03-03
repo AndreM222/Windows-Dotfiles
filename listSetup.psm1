@@ -152,6 +152,7 @@
         INSTALL_TYPE = "Git"
         CONTAINER = @( # (Name, Repo, Path)
             # Dot Setup
+            @("Windows-Dotfiles", "https://github.com/AndreM222/Windows-Dotfiles.git", ".config"),
             @("PowerShell", "https://github.com/AndreM222/PowerShell.git", "Documents"),
             @("nvim", "https://github.com/AndreM222/nvim.git", "AppData\Local")
         )
