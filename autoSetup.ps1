@@ -4,6 +4,18 @@ if($env:OS -notlike "*Windows*")
     exit
 }
 
+#region Module Setup
+[String] $urlGitLink = "https://raw.githubusercontent.com/AndreM222/Windows-Dotfiles/master" # Link to the git repository for modules
+
+[Object] $modules = @("listSetup.psm1", "library.psm1") # List of modules to import
+
+foreach($curr in $modules)
+{
+    Invoke-RestMethod "$urlGitLink/$curr" > $curr
+}
+
+#endregion Module Setup
+
 #region Variables
 Import-Module ".\listSetup.psm1" # Importing the list of tools for install
 
@@ -26,8 +38,6 @@ Import-Module ".\library.psm1"
 #  - section <- (Title)
 
 #endregion Functions
-
-
 
 #region Setup Functions
 foreach($item in $list)
@@ -84,3 +94,13 @@ foreach($item in $list)
 }
 
 #endregion Setup Functions
+
+#region Module Removal
+foreach($curr in $modules)
+{
+    if(Test-Path -Path $curr)
+    {
+        Remove-Item $curr # Remove modules from current location
+    }
+}
+#endregion Module Removal

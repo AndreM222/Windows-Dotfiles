@@ -167,6 +167,7 @@
             @(".", ".gitconfig")
         )
     }
+
     @{
         TITLE = "Create Dotfile"
         INSTALL_TYPE = "Create"
