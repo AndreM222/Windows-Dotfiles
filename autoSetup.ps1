@@ -39,6 +39,16 @@ Import-Module ".\library.psm1"
 
 #endregion Functions
 
+#region Module Removal
+foreach($curr in $modules)
+{
+    if(Test-Path -Path $curr)
+    {
+        Remove-Item $curr # Remove modules from current location
+    }
+}
+#endregion Module Removal
+
 #region Setup Functions
 foreach($item in $list)
 {
@@ -94,13 +104,3 @@ foreach($item in $list)
 }
 
 #endregion Setup Functions
-
-#region Module Removal
-foreach($curr in $modules)
-{
-    if(Test-Path -Path $curr)
-    {
-        Remove-Item $curr # Remove modules from current location
-    }
-}
-#endregion Module Removal
