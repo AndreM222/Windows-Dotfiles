@@ -9,9 +9,12 @@ if($env:OS -notlike "*Windows*")
 
 [Object] $modules = @("listSetup.psm1", "library.psm1") # List of modules to import
 
-foreach($curr in $modules)
+if([String](Split-Path -Path (Get-Location) -Leaf) -ne "Windows-Dotfiles")
 {
-    Invoke-RestMethod "$urlGitLink/$curr" > $curr
+    foreach($curr in $modules)
+    {
+        Invoke-RestMethod "$urlGitLink/$curr" > $curr
+    }
 }
 
 #endregion Module Setup
@@ -40,11 +43,14 @@ Import-Module ".\library.psm1"
 #endregion Functions
 
 #region Module Removal
-foreach($curr in $modules)
+if([String](Split-Path -Path (Get-Location) -Leaf) -ne "Windows-Dotfiles")
 {
-    if(Test-Path -Path $curr)
+    foreach($curr in $modules)
     {
-        Remove-Item $curr # Remove modules from current location
+        if(Test-Path -Path $curr)
+        {
+            Remove-Item $curr # Remove modules from current location
+        }
     }
 }
 #endregion Module Removal
