@@ -19,10 +19,11 @@
     @{
         TITLE = "Package Managers"
         INSTALL_TYPE = "Search"
-        MANAGER = "Winget Install"
+        MANAGER_INSTALLER = "Winget Install"
+        MANAGER_UNINSTALLER = "Winget Uninstall"
         FINDER = "Winget List --id"
         CONTAINER = @( # (Name, Id, Path)
-            # Package Managers <- Required
+            # Package managers <- Required
             @("PowerShell Core", " Microsoft.PowerShell_8wekyb3d8bbwe", "Microsoft.Powershell"),
             @("Git", "Git.Git", "Git.Git"),
             @("NVM", "CoreyButler.NVMforWindows", "CoreyButler.NVMforWindows"),
@@ -33,19 +34,21 @@
     @{
         TITLE = "Node Versions"
         INSTALL_TYPE = "Executable"
-        MANAGER = "NVM Install"
+        MANAGER_INSTALLER = "NVM Install"
+        MANAGER_UNINSTALLER = "NVM Uninstall"
         CONTAINER = @( # (Name, executable, Path)
             # Node Versions <- Required
-            ,@("Node LTS", "nvm use lts", "lts")
+            ,@("Node LTS", "", "lts") # Still unsure how to check
         )
     }
 
     @{
-        TITLE = "Scoop Manager"
+        TITLE = "Scoop MANAGER_INSTALLER"
         INSTALL_TYPE = "Command"
-        MANAGER = "Invoke-RestMethod"
+        MANAGER_INSTALLER = "Invoke-RestMethod"
+        MANAGER_UNINSTALLER = "scoop uninstall scoop"
         CONTAINER = @( # (Name, Command, Path)
-            # Package Manager <- Required
+            # Package manager <- Required
             ,@("Scoop", "scoop update", "get.scoop.sh")
         )
     }
@@ -54,7 +57,8 @@
     @{
         TITLE = "Winget Tools"
         INSTALL_TYPE = "Search"
-        MANAGER = "Winget Install"
+        MANAGER_INSTALLER = "Winget Install"
+        MANAGER_UNINSTALLER = "Winget Uninstall"
         FINDER = "Winget List --id"
         CONTAINER = @( # (Name, Id, Path) 
             # Tools
@@ -64,7 +68,7 @@
             @("Yarn", "Yarn.Yarn", "Yarn.Yarn"),
             @("Fuzzy Finder", "junegunn.fzf", "fzf"),
             @("Bat", "sharkdp.bat", "sharkdp.bat"),
-            @("LazyDocker", "JesseDuffield.Lazydocker", "lazydocker"),
+            @("LazyDocker", "JesseDuffield.Lazydocker", "JesseDuffield.Lazydocker"),
             @("NTop", "gsass1.NTop", "ntop"),
             @("RipGrep", "BurntSushi.ripgrep.MSVC", "BurntSushi.ripgrep.MSVC"),
             @("LazyGit", "JesseDuffield.lazygit", "lazygit"),
@@ -78,7 +82,8 @@
     @{
         TITLE = "NPM Tools"
         INSTALL_TYPE = "Search"
-        MANAGER = "npm install -g"
+        MANAGER_INSTALLER = "npm install -g"
+        MANAGER_UNINSTALLER = "npm uninstall -g"
         FINDER = "npm list -g"
         CONTAINER = @( # (Name, Id, Path)
             # Tools
@@ -100,7 +105,8 @@
     @{
         TITLE = "Dotnet Tools"
         INSTALL_TYPE = "Search"
-        MANAGER = "dotnet tool install -g"
+        MANAGER_INSTALLER = "dotnet tool install -g"
+        MANAGER_UNINSTALLER = "dotnet tool uninstall -g"
         FINDER = "dotnet tool list -g"
         CONTAINER = @( # (Name, Id, Path)
             # Server
@@ -111,7 +117,8 @@
     @{
         TITLE = "Pip Tools"
         INSTALL_TYPE = "Search"
-        MANAGER = "Pip Install"
+        MANAGER_INSTALLER = "Pip Install"
+        MANAGER_UNINSTALLER = "Pip Uninstall"
         FINDER = "Pip show"
         CONTAINER = @( # (Name, Command, Path)
             # Formatter
@@ -122,7 +129,8 @@
     @{
         TITLE = "Scoop Tools"
         INSTALL_TYPE = "Search"
-        MANAGER = "Scoop Install"
+        MANAGER_INSTALLER = "Scoop Install"
+        MANAGER_UNINSTALLER = "Scoop Uninstall"
         FINDER = "Scoop List"
         CONTAINER = @( # (Name, Id, Path)
             # Tools
@@ -134,7 +142,8 @@
     @{
         TITLE = "PowerShell Tools"
         INSTALL_TYPE = "Search"
-        MANAGER = "Install-Module -Force"
+        MANAGER_INSTALLER = "Install-Module -Force"
+        MANAGER_UNINSTALLER = "Uninstall-Module -Force"
         FINDER = "Get-Module -ListAvailable"
         CONTAINER = @( # (Name, Id, Path)
             # Tools

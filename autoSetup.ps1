@@ -66,14 +66,14 @@ foreach($item in $list)
         #region Executable Installer
         "Executable"
         { 
-            installerExe $item["MANAGER"] $item["CONTAINER"] 
+            installerExe $item["MANAGER_INSTALLER"] $item["CONTAINER"] 
         }
         #endregion Executable Installer
 
         #region Executable Installer
         "Command"
         { 
-            installerCommand $item["MANAGER"] $item["CONTAINER"] 
+            installerCommand $item["MANAGER_INSTALLER"] $item["CONTAINER"] 
         }
         #endregion Executable Installer
 
@@ -81,7 +81,7 @@ foreach($item in $list)
         #region Search Installer
         "Search"
         { 
-            installerSearch $item["FINDER"] $item["MANAGER"] $item["CONTAINER"] 
+            installerSearch $item["FINDER"] $item["MANAGER_INSTALLER"] $item["CONTAINER"] 
         }
         #region Search Installer
 
