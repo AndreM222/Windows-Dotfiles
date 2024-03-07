@@ -18,10 +18,7 @@
     # Pre-Requisites
     @{
         TITLE = "Package Managers"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "Winget Install"
-        MANAGER_UNINSTALLER = "Winget Uninstall"
-        FINDER = "Winget List --id"
+        MANAGER = "WINGET"
         CONTAINER = @( # (Name, Id, Path)
             # Package managers <- Required
             @("PowerShell Core", " Microsoft.PowerShell_8wekyb3d8bbwe", "Microsoft.Powershell"),
@@ -33,9 +30,7 @@
     
     @{
         TITLE = "Node Versions"
-        INSTALL_TYPE = "Executable"
-        MANAGER_INSTALLER = "NVM Install"
-        MANAGER_UNINSTALLER = "NVM Uninstall"
+        MANAGER = "NVM"
         CONTAINER = @( # (Name, executable, Path)
             # Node Versions <- Required
             ,@("Node LTS", "", "lts") # Still unsure how to check
@@ -44,9 +39,7 @@
 
     @{
         TITLE = "Scoop MANAGER_INSTALLER"
-        INSTALL_TYPE = "Command"
-        MANAGER_INSTALLER = "Invoke-RestMethod"
-        MANAGER_UNINSTALLER = "scoop uninstall scoop"
+        MANAGER = "SCOOP_MANAGER"
         CONTAINER = @( # (Name, Command, Path)
             # Package manager <- Required
             ,@("Scoop", "scoop update", "get.scoop.sh")
@@ -56,10 +49,7 @@
     # Tools Installations
     @{
         TITLE = "Winget Tools"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "Winget Install"
-        MANAGER_UNINSTALLER = "Winget Uninstall"
-        FINDER = "Winget List --id"
+        MANAGER = "WINGET"
         CONTAINER = @( # (Name, Id, Path) 
             # Tools
             @("SQLite", "SQLite.SQLite", "SQLite.SQLite"),
@@ -81,10 +71,7 @@
     
     @{
         TITLE = "NPM Tools"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "npm install -g"
-        MANAGER_UNINSTALLER = "npm uninstall -g"
-        FINDER = "npm list -g"
+        MANAGER = "NPM"
         CONTAINER = @( # (Name, Id, Path)
             # Tools
             @("Commitizen", "commitizen", "commitizen cz-conventional-changelog"),
@@ -104,10 +91,7 @@
     
     @{
         TITLE = "Dotnet Tools"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "dotnet tool install -g"
-        MANAGER_UNINSTALLER = "dotnet tool uninstall -g"
-        FINDER = "dotnet tool list -g"
+        MANAGER = "DOTNET"
         CONTAINER = @( # (Name, Id, Path)
             # Server
             ,@("CSharp LS", "csharp-ls", "csharp-ls")
@@ -116,10 +100,7 @@
 
     @{
         TITLE = "Pip Tools"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "Pip Install"
-        MANAGER_UNINSTALLER = "Pip Uninstall"
-        FINDER = "Pip show"
+        MANAGER = "PIP"
         CONTAINER = @( # (Name, Command, Path)
             # Formatter
             ,@("Autopep8", "autopep8", "autopep8")
@@ -128,10 +109,7 @@
     
     @{
         TITLE = "Scoop Tools"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "Scoop Install"
-        MANAGER_UNINSTALLER = "Scoop Uninstall"
-        FINDER = "Scoop List"
+        MANAGER = "SCOOP"
         CONTAINER = @( # (Name, Id, Path)
             # Tools
             @("Fira Code Font", "FiraCode-NF-Mono", "nerd-fonts/FiraCode-NF-Mono"),
@@ -141,10 +119,7 @@
     
     @{
         TITLE = "PowerShell Tools"
-        INSTALL_TYPE = "Search"
-        MANAGER_INSTALLER = "Install-Module -Force"
-        MANAGER_UNINSTALLER = "Uninstall-Module -Force"
-        FINDER = "Get-Module -ListAvailable"
+        MANAGER = "POWERSHELL"
         CONTAINER = @( # (Name, Id, Path)
             # Tools
             @("PSFzf", "PSFzf", "PSFzf"),
@@ -158,7 +133,7 @@
     # Dotfiles Setup
     @{
         TITLE = "Git Dotfiles"
-        INSTALL_TYPE = "Git"
+        MANAGER = "GIT"
         CONTAINER = @( # (Name, Repo, Path)
             # Dot Setup
             @("Windows-Dotfiles", "https://github.com/AndreM222/Windows-Dotfiles.git", ".config"),
@@ -169,7 +144,7 @@
     
     @{
         TITLE = "Script Dotfiles"
-        INSTALL_TYPE = "Script"
+        MANAGER = "SCRIPT"
         CONTAINER = @( # (Path, File)
             # Dot Setup
             @("AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState", "settings.json"),
@@ -179,7 +154,7 @@
 
     @{
         TITLE = "Create Dotfile"
-        INSTALL_TYPE = "Create"
+        MANAGER = "CREATE"
         CONTAINER = @( # (File, Content, Path)
             ,@(".czrc", '{ "path": "cz-conventional-changelog" }', ".")
         )

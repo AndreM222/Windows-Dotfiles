@@ -7,17 +7,25 @@ if($env:OS -notlike "*Windows*")
 #region Module Setup
 [String] $urlGitLink = "https://raw.githubusercontent.com/AndreM222/Windows-Dotfiles/master" # Link to the git repository for modules
 
-[Object] $modules = @("listSetup.psm1", "library.psm1") # List of modules to import
+[Object] $modules = @("listSetup.psm1", "library.psm1", "managerSetting.psm1") # List of modules to import
 
-if([String](Split-Path -Path (Get-Location) -Leaf) -ne "Windows-Dotfiles")
+if([String](Split-Path -Path (Get-Location) -Leaf) -ne "Windows-Dotfiles") # Check if the current location is not the Windows-Dotfiles folder
 {
     foreach($curr in $modules)
     {
-        Invoke-RestMethod "$urlGitLink/$curr" > $curr
+        Invoke-RestMethod "$urlGitLink/$curr" > $curr # Download the modules from the git repository
     }
 }
 
 #endregion Module Setup
+
+#region Managers
+Import-Module ".\managerSetting.psm1" # Importing the list of managers
+
+#   Imported List:
+#   - $manager <- Variable containing installation list
+
+#endregion Managers
 
 #region Variables
 Import-Module ".\listSetup.psm1" # Importing the list of tools for install
@@ -60,20 +68,20 @@ foreach($item in $list)
 {
     section $item["TITLE"] # Print the section title
 
-    Switch($item["INSTALL_TYPE"])
+    Switch($manager[$item["MANAGER"]]["INSTALL_TYPE"])
     {
 
         #region Executable Installer
         "Executable"
         { 
-            installerExe $item["MANAGER_INSTALLER"] $item["CONTAINER"] 
+            installerExe $manager[$item["MANAGER"]]["MANAGER_INSTALLER"] $item["CONTAINER"] 
         }
         #endregion Executable Installer
 
         #region Executable Installer
         "Command"
         { 
-            installerCommand $item["MANAGER_INSTALLER"] $item["CONTAINER"] 
+            installerCommand $manager[$item["MANAGER"]]["MANAGER_INSTALLER"] $item["CONTAINER"] 
         }
         #endregion Executable Installer
 
@@ -81,7 +89,7 @@ foreach($item in $list)
         #region Search Installer
         "Search"
         { 
-            installerSearch $item["FINDER"] $item["MANAGER_INSTALLER"] $item["CONTAINER"] 
+            installerSearch $manager[$item["MANAGER"]]["FINDER"] $manager[$item["MANAGER"]]["MANAGER_INSTALLER"] $item["CONTAINER"] 
         }
         #region Search Installer
 
