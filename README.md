@@ -13,7 +13,7 @@
 > Git cloning for powershell and nvim is used to make it fast to update when new changes are made
 > The following is the link to the autosetup script: DO NOT RUN WITHOUT READING WHAT THE SCRIPT DOES
 > ```
-> Invoke-RestMethod https://raw.githubusercontent.com/AndreM222/Windows-Dotfiles/master/autoSetup.ps1 | Invoke-Expression 
+> Invoke-RestMethod https://raw.githubusercontent.com/AndreM222/Dotfile-Automizer/master/autoSetup.ps1 | Invoke-Expression 
 > ```
 
 <h2>Dependencies 📃</h2>

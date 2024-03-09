@@ -4,3 +4,6 @@
 [submodule "PowerShell"]
 	path = PowerShell
 	url = https://github.com/AndreM222/PowerShell
+[submodule "Dotfile-Automizer"]
+	path = Dotfile-Automizer
+	url = https://github.com/AndreM222/Dotfile-Automizer
