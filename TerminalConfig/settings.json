@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "up"
@@ -20,7 +20,7 @@
             "keys": "ctrl+v"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "up"
@@ -88,44 +88,22 @@
             "keys": "ctrl+shift+l"
         },
         {
-            "command": 
+            "command": "unbound",
+            "keys": "ctrl+shift+\\"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+/"
+        },
+        {
+            "command":
             {
                 "action": "swapPane",
                 "direction": "up"
             }
         },
         {
-            "command": 
-            {
-                "action": "resizePane",
-                "direction": "right"
-            },
-            "keys": "ctrl+shift+right"
-        },
-        {
-            "command": 
-            {
-                "action": "adjustFontSize",
-                "delta": -1.0
-            },
-            "keys": "ctrl+shift+minus"
-        },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": 
-            {
-                "action": "scrollDown"
-            }
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "right",
@@ -134,7 +112,37 @@
             "keys": "ctrl+alt+right"
         },
         {
-            "command": 
+            "command":
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "keys": "ctrl+shift+right"
+        },
+        {
+            "command":
+            {
+                "action": "adjustFontSize",
+                "delta": -1.0
+            },
+            "keys": "ctrl+shift+minus"
+        },
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command":
+            {
+                "action": "scrollDown"
+            }
+        },
+        {
+            "command":
             {
                 "action": "splitPane",
                 "split": "left",
@@ -143,7 +151,7 @@
             "keys": "ctrl+alt+left"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "up",
@@ -152,7 +160,7 @@
             "keys": "ctrl+alt+up"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "down",
@@ -161,7 +169,7 @@
             "keys": "ctrl+alt+down"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollUp"
             }
@@ -171,7 +179,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "left"
@@ -179,7 +187,7 @@
             "keys": "ctrl+shift+left"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "adjustFontSize",
                 "delta": 1.0
@@ -187,14 +195,14 @@
             "keys": "ctrl+shift+plus"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "right"
             }
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "down"
@@ -202,7 +210,7 @@
             "keys": "ctrl+shift+down"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "left"
@@ -210,7 +218,7 @@
             "keys": "alt+shift+left"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "down"
@@ -218,7 +226,7 @@
             "keys": "alt+shift+down"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "right"
@@ -226,18 +234,22 @@
             "keys": "alt+shift+right"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "left"
             }
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "down"
             }
+        },
+        {
+            "command": "selectAll",
+            "keys": "ctrl+shift+a"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -252,19 +264,19 @@
     "initialCols": 200,
     "initialRows": 50,
     "language": "en-US",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "colorScheme": "Dracula",
             "experimental.retroTerminalEffect": false,
-            "font": 
+            "font":
             {
                 "face": "FiraCode Nerd Font Mono",
                 "size": 9.0
@@ -273,7 +285,7 @@
             "useAcrylic": true,
             "useAtlasEngine": false
         },
-        "list": 
+        "list":
         [
             {
                 "commandline": "pwsh -nologo",
@@ -300,15 +312,9 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
-                "name": "Ubuntu",
+                "name": "Arch",
                 "source": "Windows.Terminal.Wsl"
             },
             {
@@ -317,10 +323,16 @@
                 "hidden": false,
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash"
+            },
+            {
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "hidden": true,
+                "name": "Visual Studio Debug Console",
+                "source": "VSDebugConsole"
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
