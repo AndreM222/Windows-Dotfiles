@@ -8,15 +8,6 @@
 
 </p>
 
-> [!WARNING]
-> Do not run the autosetup script in your computer if you do not know what it does.
-> When run it will install and configure everything in your computer.
-> Git cloning for powershell and nvim is used to make it fast to update when new changes are made
-> The following is the link to the autosetup script: DO NOT RUN WITHOUT READING WHAT THE SCRIPT DOES
-> ```
-> Invoke-RestMethod https://raw.githubusercontent.com/AndreM222/Dotfile-Automizer/master/autoSetup.ps1 | Invoke-Expression
-> ```
-
 ## Contents 📦
 
 - Git Configuration
