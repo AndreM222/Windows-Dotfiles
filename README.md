@@ -18,6 +18,8 @@
 
 ## Navigation ✈️
 
+[Switch To MacOS-Dotfiles <-](https://github.com/AndreM222/MacOS-Dotfiles) (For Detailed Setup)
+
 - [Navigate To Powershell Dotfiles <-](https://github.com/AndreM222/PowerShell) (For Detailed Setup)
 
 - [Navigate To Neovim Dotfiles <-](https://github.com/AndreM222/nvim) (For Detailed Setup)
@@ -120,6 +122,8 @@ nvm use lts
 
 📂 $HOME/AppData/Local/Nvim
 |__📂lua/andrem222
+|   |__📂 po
+|   |   |__📑 All Translations Files
 |   |__📂 pluginDev
 |   |   |__📑 All Personal Plugin Installation and Setup Files
 |   |__📂 plugins
@@ -128,6 +132,7 @@ nvm use lts
 |   |__📄config.lua
 |   |__📄debug.lua
 |   |__📄devconfig.lua
+|   |__📄langMSG.lua
 |   |__📄lazy.lua
 |   |__📄theme.lua
 |__📄init.lua
